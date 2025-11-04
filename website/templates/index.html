@@ -1,0 +1,752 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+  <!--Hero container-->
+  <div class="web-hero-container">
+    <div class="container web-container">
+      <div class="row">
+        <div class="col-12 d-block d-lg-none">
+          <div class="web-cont-icon-socialmedia web-icon-header-m">
+            <a
+              href="https://www.facebook.com/profile.php?id=100086618873618"
+              target="_blank"
+              ><img
+                class="web-icon-socialmedia"
+                src="{% static 'website/img/facebook.svg' %}"
+                alt=""
+            /></a>
+            <a href="{{ social.instagram }}" target="_blank"
+              ><img
+                class="web-icon-socialmedia"
+                src="{% static 'website/img/instagram.svg' %}"
+                alt=""
+            /></a>
+            <a href="https://www.tiktok.com/@nietobariatric" target="_blank"
+              ><img
+                class="web-icon-socialmedia"
+                src="{% static 'website/img/tiktok.svg' %}"
+                alt=""
+            /></a>
+            <a href="https://wa.me/16199049303" target="_blank"
+              ><img
+                class="web-icon-socialmedia"
+                src="{% static 'website/img/wsp.svg' %}"
+                alt=""
+            /></a>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="web-txt-hero-contain">
+            <div>
+              <h1 class="text-nowrap">
+                Metabolic & Bariatric <br />
+                Surgery
+              </h1>
+              <p>
+                By your side on your journey to a new beginning, <br />
+                Your first consultation is<span class="font-weight-bold">
+                  free.</span
+                >
+              </p>
+              <div class="d-flex">
+                <img
+                  src="{% static 'website/img/clock.svg' %}"
+                  alt=""
+                  width="20"
+                  class="web-icons-hero"
+                />
+                <p class="web-txt-locate mb-0 pl-1">Lun - Vie 8:00 - 21:00</p>
+              </div>
+              <a href="?site=candidates"
+                ><button class="web-btn-hero btn">APPLY NOW</button></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6">
+          <div class="d-flex align-items-end">
+            <div
+              class="web-img-hero"
+              style="
+                background-image: url('{% static 'website/img/nietodoc.png' %}');
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-2">
+          <div class="web-cont-web-card-circle d-none d-lg-block">
+            <div>
+              <div class="row">
+                <div class="col-4 col-md-12 col-lg-12">
+                  <div class="web-card-circle mx-auto">
+                    <div>
+                      <img
+                        src="{% static 'website/img/awards.svg' %}"
+                        alt=""
+                        width="25"
+                      />
+                      <p>
+                        Certified <br />
+                        Doctor
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 col-md-12 col-lg-12">
+                  <div class="web-card-circle mx-auto">
+                    <div>
+                      <h3>5+</h3>
+                      <p>
+                        Years of <br />
+                        experience
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 col-md-12 col-lg-12">
+                  <div class="web-card-circle mx-auto">
+                    <div>
+                      <h3>100%</h3>
+                      <p>Committed</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="web-container-bmi p-0">
+  <div class="web-card-bmi">
+    <form id="bmi-form" class="web-form-bmi" onsubmit="return calcBMI()">
+      <div class="form-row m-0">
+        <div
+          class="col-12 col-md-6 col-lg-4 web-txt-left d-flex align-items-center"
+        >
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-6 d-flex align-items-center">
+              <h2 class="">BMI Calculator</h2>
+            </div>
+            <div class="col-12 col-md-12 col-lg-6 d-flex align-items-center">
+              <div class="">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input web-custom-radio ms-2"
+                    type="radio"
+                    id="bmi-metric"
+                    name="bmi-measure"
+                    onchange="measureBMI()"
+                    checked
+                  />
+                  <label
+                    class="form-check-label web-form-check-label p-0"
+                    for="bmi-metric"
+                    >Metric</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input web-custom-radio ms-2"
+                    type="radio"
+                    id="bmi-imperial"
+                    name="bmi-measure"
+                    onchange="measureBMI()"
+                  />
+                  <label
+                    class="form-check-label web-form-check-label p-0"
+                    for="bmi-imperial"
+                    >Imperial</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 d-flex align-items-center">
+          <div class="row">
+            <div class="col-6">
+              <label class="form-check-label web-form-check-label" for="bmi-age"
+                >AGE</label
+              >
+              <input
+                type="text"
+                id="bmi-age"
+                name="bmi-age"
+                class="form-control web-form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label
+                class="text-nowrap form-check-label web-form-check-label"
+                for="bmi-height"
+                >HEIGHT (<span id="bmi-height-unit">CM</span>)</label
+              >
+              <input
+                type="number"
+                id="bmi-height"
+                name="bmi-height"
+                class="form-control web-form-control"
+                min="54"
+                max="272"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 d-flex align-items-center">
+          <div class="row">
+            <div class="col-6 pt-3">
+              <label
+                class="text-nowrap form-check-label web-form-check-label"
+                for="bmi-weight"
+                >WEIGHT (<span id="bmi-weight-unit">KG</span>)</label
+              >
+              <input
+                type="number"
+                id="bmi-weight"
+                name="bmi-weight"
+                class="form-control web-form-control"
+                min="1"
+                max="635"
+                required
+              />
+            </div>
+            <div class="col-6">
+              <label class="form-check-label web-form-check-label pb-2"
+                >GENDER</label
+              >
+              <div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input web-custom-radio"
+                    type="radio"
+                    name="genero"
+                    id="bmi-male"
+                    value="Male"
+                  />
+                  <label class="form-check-label" for="bmi-male"> Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input web-custom-radio"
+                    type="radio"
+                    name="genero"
+                    id="bmi-female"
+                    value="Female"
+                  />
+                  <label class="form-check-label" for="bmi-female"
+                    >Female</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-2 py-2">
+          <button
+            type="submit"
+            value="Calculate BMI"
+            class="btn web-btn-bmi mt-0"
+          >
+            CALCULATE
+          </button>
+          <div id="bmi-result" class="bmi-result"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="container web-cont-fill"></div>
+<div class="container web-container web-cont-certification">
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-5 px-4 px-lg-0">
+      <div class="web-txt-left">
+        <h1>Are you foreigner?</h1>
+        <p>Request information to learn more about the benefit.</p>
+        <a href="?site=travel"
+          ><button class="web-btn-default btn">VIEW MORE</button></a
+        >
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-7">
+      <div class="row m-0" style="width: 100%">
+        <div class="col-4 col-md-4 col-lg-4 text-center">
+          <div
+            class="web-img-circle mx-auto"
+            style="
+              background-image: url('{% static 'website/img/transporte.jpg' %}');
+            "
+          ></div>
+          <div class="web-txt-card-procedures p-0 pt-3"><h4>TRAVEL</h4></div>
+        </div>
+        <div class="col-4 col-md-4 col-lg-4 text-center">
+          <div
+            class="web-img-circle mx-auto"
+            style="
+              background-image: url('{% static 'website/img/hospedaje.jpg' %}');
+            "
+          ></div>
+          <div class="web-txt-card-procedures p-0 pt-3"><h4>HOTEL</h4></div>
+        </div>
+        <div class="col-4 col-md-4 col-lg-4 text-center">
+          <div
+            class="web-img-circle mx-auto"
+            style="
+              background-image: url('{% static 'website/img/documentacion.jpg' %}')
+            "
+          ></div>
+          <div class="web-txt-card-procedures p-0 pt-3">
+            <h4>DOCUMENTATION</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid web-cont-card-procedures">
+  <div class="container web-container p-0">
+    <div class="row p-0">
+      <div class="col-12 text-center web-txt-center web-mb-80">
+        <h1>Procedures</h1>
+        <p>Your health is our #1 priority</p>
+      </div>
+      <a href="?site=gastricsleeve">
+        <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+          <div class="row web-card-procedures m-auto">
+            <div class="col-6 col-md-12 col-lg-12 p-0 text-center">
+              <div
+                class="web-card-icon-procedures"
+                style="
+                  background-image: url('{% static 'website/img/sleeve.png' %}');
+                "
+              ></div>
+            </div>
+            <div class="col-6 col-md-12 col-lg-12 p-0">
+              <div class="web-txt-card-procedures">
+                <h4 class="pb-0 pb-md-2 pb-lg-2">GASTRIC SLEEVE</h4>
+                <p class="d-sm-block d-none pb-4">
+                  A Gastric sleeve is a bariatric surgery procedure whose
+                  primary function is to facilitate intake restriction by
+                  permanently reducing the volume of a patient’s stomach.
+                  <br /><br />
+
+                  Removing a major portion of the stomach leads to a significant
+                  reduction in gastric volume, as well as reduction of the
+                  ghrelin hormone – which results in increased satiety and
+                  decreased appetite.
+                </p>
+                <a class="web-txt-procedure-price" href=""
+                  ><p>
+                    Starting at <span><br />$4,000</span>
+                  </p></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="?site=endoscopicsleeve">
+        <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+          <div class="row web-card-procedures m-auto">
+            <div class="col-6 col-md-12 col-lg-12 p-0 text-center">
+              <div
+                class="web-card-icon-procedures"
+                style="
+                  background-image: url('{% static 'website/img/sleeve.png' %}');
+                "
+              ></div>
+            </div>
+            <div class="col-6 col-md-12 col-lg-12 p-0">
+              <div class="web-txt-card-procedures">
+                <h4 class="pb-0 pb-md-2 pb-lg-2">ENDOSCOPIC GASTRIC SLEEVE</h4>
+                <p class="d-sm-block d-none">
+                  An Endoscopic Gastric Sleeve is a newer type of minimally
+                  invasive weight-loss procedure. In endoscopic sleeve
+                  gastroplasty, a suturing device is inserted into your throat
+                  and down to your stomach. <br />
+                  <br />
+                  The endoscopist then places sutures in your stomach to make it
+                  smaller. This procedure may be an option if you're
+                  significantly overweight — a body mass index of 30 or more —
+                  and diet and exercise haven't worked for you.
+                </p>
+                <a class="web-txt-procedure-price" href=""
+                  ><p>
+                    Starting at <span><br />$6,000</span>
+                  </p></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="?site=gastricballon">
+        <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+          <div class="row web-card-procedures m-auto">
+            <div class="col-6 col-md-12 col-lg-12 p-0 text-center">
+              <div
+                class="web-card-icon-procedures"
+                style="
+                  background-image: url('{% static 'website/img/ballon.png' %}');
+                "
+              ></div>
+            </div>
+            <div class="col-6 col-md-12 col-lg-12 p-0">
+              <div class="web-txt-card-procedures">
+                <h4 class="pb-2">GASTRIC BALLOON</h4>
+                <p class="d-sm-block d-none">
+                  A Gastric Balloon is a form of non-surgical management of
+                  obesity. It has the advantage of being less invasive,
+                  temporary, reversible, cheaper, and is an outpatient
+                  procedure. <br /><br />
+
+                  Gastric Balloon systems use an inflatable balloon, usually
+                  saline or air, to restrict the stomach’s capacity, thereby
+                  making the patient feel fuller faster. The duration for most
+                  gastric balloons is typically six months to 12 months.
+                </p>
+                <a class="web-txt-procedure-price" href=""
+                  ><p>
+                    Starting at <span><br />$3,000</span>
+                  </p></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="?site=gastricbypass">
+        <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+          <div class="row web-card-procedures m-auto">
+            <div class="col-6 col-md-12 col-lg-12 p-0 text-center">
+              <div
+                class="web-card-icon-procedures"
+                style="
+                  background-image: url('{% static 'website/img/minigastric.png' %}');
+                "
+              ></div>
+            </div>
+            <div class="col-6 col-md-12 col-lg-12 p-0">
+              <div class="web-txt-card-procedures">
+                <h4 class="pb-2">ONE ANASTOMOSIS GASTRIC BYPASS</h4>
+                <p class="d-sm-block d-none">
+                  Gаѕtriс Bураѕѕ Surgеrу, also called mini-bypass or BAGUA, is a
+                  рrосеѕѕ in which the ѕtоmасh is mаdе smaller in оrdеr tо
+                  rеduсе thе individual’s caloric intаkе аnd рrоmоtе significant
+                  weight loss, creating a small pouch from the stomach and
+                  connecting the newly created pouch directly to the lower part
+                  of the small intestine, resulting in malabsorption and
+                  restrictive function. <br />
+                </p>
+                <a class="web-txt-procedure-price" href=""
+                  ><p>
+                    Starting at <span><br />$5,000</span>
+                  </p></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="?site=bypassyderoux">
+        <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+          <div class="row web-card-procedures m-auto">
+            <div class="col-6 col-md-12 col-lg-12 p-0 text-center">
+              <div
+                class="web-card-icon-procedures"
+                style="
+                  background-image: url('{% static 'website/img/roux.png' %}');
+                "
+              ></div>
+            </div>
+            <div class="col-6 col-md-12 col-lg-12 p-0">
+              <div class="web-txt-card-procedures">
+                <h4 class="pb-2">Roux-en-Y gastric bypass</h4>
+                <p class="d-sm-block d-none">
+                  Roux-en-Y is the classic bypass, a type of weight-loss surgery
+                  that involves two anastomosis, one creating a small pouch from
+                  the stomach and connecting the newly created pouch directly to
+                  the small intestine at the 150 cm mark, and the second one
+                  attaching the small intestine 100 cm further, in order to
+                  avoid duodenogastric reflux. <br /><br />
+                </p>
+                <a class="web-txt-procedure-price" href=""
+                  ><p>
+                    Starting at<span
+                      ><br />
+                      $6,000</span
+                    >
+                  </p></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div
+  class="container-fluid web-cont-candidate p-0"
+  style="background-image: url('{% static 'website/img/candidate.jpg' %}')"
+>
+  <div class="web-overlay-gradient">
+    <div class="container web-container py-0 py-lg-5">
+      <div class="row">
+        <div
+          class="col-12 col-md-12 col-lg-6 p-4 d-flex align-items-center justify-content-center"
+        >
+          <div class="text-center">
+            <h1>Metabolic and Bariatric Surgery</h1>
+            <div class="row text-center">
+              <div class="col-12 my-4">
+                <a href="?site=candidates"
+                  ><button class="web-btn-contact btn">APPLY NOW</button></a
+                >
+              </div>
+              <div class="col-12">
+                <p>
+                  Your first consultation is<span class="font-weight-bold">
+                    free.</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 p-4">
+          <div class="web-card-bg-blur">
+            <p>
+              1. MBS is recommended for individuals with BMI 35 kg/m2,
+              regardless of presence, absence, or severity of comorbidities.
+              <br /><br />
+              2. MBS is recommended in patients with T2D and BMI 30 kg/m2.
+              <br /><br />
+
+              3. MBS should be considered in individuals with BMI of 30–34.9
+              kg/m2 who do not achieve substantial or durable weight loss or
+              co-morbidity improvement using nonsurgical methods. <br /><br />
+
+              4. There is no upper patient-age limit to MBS. Older individuals
+              who could benefit from MBS should be considered for surgery after
+              careful assessment of co-morbidities and frailty. <br /><br />
+
+              5. Carefully selected individuals considered higher risk for
+              general surgery may benefit from MBS. Children and adolescents
+              with BMI. 120% of the 95th percentile and a major co-morbidity, or
+              a BMI. 140% of the 95th percentile, should be considered for MBS
+              after evaluation by a multidisciplinary team in a specialty
+              center.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="team" class="container-fluid">
+  <div class="container web-container web-mb-80">
+    <div class="row">
+      <div class="col-12 web-txt-left mb-3 web-mt-80">
+        <h1>Our team of experts</h1>
+        <p>
+          Every doctor at your service is highly qualified to provide the best
+          care possible.
+        </p>
+      </div>
+      <div class="col-6 col-md-3 col-lg-3">
+        <div class="web-cont-img-team mb-4">
+          <img
+            class="web-img-team"
+            src="{% static 'website/img/jane.png' %}"
+            alt=""
+          />
+        </div>
+        <div class="web-txt-center">
+          <h4>Dra. Nilda Medina</h4>
+          <p>Psychologist</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-3">
+        <div class="web-cont-img-team mb-4">
+          <img
+            class="web-img-team"
+            src="{% static 'website/img/adriana.png' %}"
+            alt=""
+          />
+        </div>
+        <div class="web-txt-center">
+          <h4>Dra. Adriana Ortiz</h4>
+          <p>Endocrinologist</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-3">
+        <div class="web-cont-img-team mb-4">
+          <img
+            class="web-img-team"
+            src="{% static 'website/img/liliana.png' %}"
+            alt=""
+          />
+        </div>
+        <div class="web-txt-center">
+          <h4>Dra. Liliana Zertuche</h4>
+          <p>Nutritionist</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-3">
+        <div class="web-cont-img-team mb-4">
+          <img
+            class="web-img-team"
+            src="{% static 'website/img/lore.png' %}"
+            alt=""
+          />
+        </div>
+        <div class="web-txt-center">
+          <h4>Dra. Lorena Fabián</h4>
+          <p>Nutritionist</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="faq" class="container-fluid web-cont-card-procedures">
+  <div class="container web-container p-0">
+    <div class="row p-0">
+      <div class="col-12 text-center web-txt-center mb-4">
+        <h1>FAQ</h1>
+      </div>
+      <div class="col-12 mb-3">
+        <input
+          class="form-control"
+          placeholder="Search"
+          type="search"
+          id="searchFaqs"
+        />
+        <div class="p-3 content-search-faq"></div>
+      </div>
+      <div class="col-12 text-center">
+        <ul class="nav nav-tabs" id="myTab" role="tablist"></ul>
+      </div>
+      <!-- prueba de acordeon con javascripts  -->
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="tab-content web-mt-80 myTabContent" id="myTabContent"></div>
+      </div>
+      <!-- Fin de la prueba  -->
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="web-container-contact">
+          <div class="mb-4">
+            <h2>Do you have any more questions?</h2>
+          </div>
+          <!-- FORMULARIO CONTACTO -->
+          <form id="faq_form" action="?site=home" method="post">
+            <input type="hidden" name="submitInfo" value="addNewFaq" />
+            <div class="form-group web-label-form-group">
+              <label for="inputNameFaq">Name</label>
+              <input
+                type="text"
+                class="form-control web-form-control"
+                name="inputNameFaq"
+                id="inputNameFaq"
+                placeholder=""
+                required
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group web-label-form-group col-md-6">
+                <label for="inputCountryFaq">Country</label>
+                <select
+                  id="inputCountryFaq"
+                  name="inputCountryFaq"
+                  class="form-control web-form-control"
+                  required
+                ></select>
+              </div>
+              <div class="form-group web-label-form-group col-md-6">
+                <label for="inputPhoneFaq">Phone</label>
+                <input
+                  type="phone"
+                  class="form-control web-form-control"
+                  id="inputPhoneFaq"
+                  name="inputPhoneFaq"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group web-label-form-group">
+              <label for="inputMailFaq">Email</label>
+              <input
+                type="email"
+                class="form-control web-form-control"
+                id="inputMailFaq"
+                name="inputMailFaq"
+                required
+              />
+            </div>
+            <div class="form-group web-label-form-group">
+              <label for="QuestionFaq">Message or Questions</label>
+              <textarea
+                class="form-control web-form-control"
+                id="QuestionFaq"
+                name="QuestionFaq"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn web-btn-default" id="sendFaq">
+              SEND
+            </button>
+          </form>
+          <!-- END FORMULARIO CONTACTO -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid web-cont-hospital" id="facilities">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 web-txt-left web-mb-80 pb-0">
+        <h1>Hospitals</h1>
+        <p>Weight Loss Surgical Facilities</p>
+      </div>
+      <div class="col-6">
+        <div class="mb-5">
+          <div
+            class="web-cont-hospital-img"
+            style="background-image: url('{% static 'website/img/new.jpg' %}');"
+          ></div>
+          <div class="web-cont-hospital-info">
+            <h4>New city medical plaza</h4>
+            <p>Consultorio 1608 - Piso 16 <br />Tijuana, Baja California</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-5">
+          <div
+            class="web-cont-hospital-img"
+            style="
+              background-image: url('{% static 'website/img/dreams.jpg' %}');
+            "
+          ></div>
+          <div class="web-cont-hospital-info">
+            <h4>Hospital Dreams</h4>
+            <p>
+              Gobernador Ibarra 9721, America, 22044 <br />Tijuana, Baja
+              California
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  {% endblock %}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- styles -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/982c0f03a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300400500600700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <title>NIETO BARIATRICS</title>
+  </head>
+  <body>
+    <!--Top black navbar-->
+    <div class="web-nav-black">
+      <div class="container-fluid web-content-nav-black row m-auto">
+        <div class="col-12 col-md-6 col-lg-6 p-0">
+          <div class="row m-0 p-0">
+            <div class="col-12 col-md-12 col-lg-7 p-0">
+              <a class="pl-1 pl-lg-0 text-nowrap" href="#"
+                ><img
+                  src="{% static 'website/img/location.svg' %}"
+                  alt=""
+                  width="18"
+                />
+                New City Medical Plaza, piso 25. Tijuana, B.C.</a
+              >
+            </div>
+            <div class="col-12 col-md-12 col-lg-5 p-0">
+              <a class="pl-1 pl-lg-0 text-nowrap"
+                ><img
+                  src="{% static 'website/img/clock.svg' %}"
+                  alt=""
+                  width="18"
+                />
+                Lun - Vie 8:00 - 20:00</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-12 col-md-6 col-lg-6 text-right p-0 d-none d-md-block d-lg-block"
+        >
+          <a class="mr-auto pr-3" href="tel:+16199049303"
+            ><img
+              src="{% static 'website/img/usa.svg' %}"
+              alt=""
+              width="18"
+            />(+1) 619 904 9303</a
+          >
+
+          <a class="mr-auto" href="tel:+526647569466"
+            ><img
+              src="{% static 'website/img/mx.svg' %}"
+              alt=""
+              width="18"
+            />(+52) 664 756 9466</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid web-nav-fixed pt-0 pt-lg-3 px-0">
+      <div class="container web-container p-0">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg p-2">
+          <a class="navbar-brand" href="/home.php"
+            ><img
+              src="{% static 'website/img/logotipo.png' %}"
+              alt=""
+              width="180"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <img src="{% static 'website/img/menu.svg' %}" alt="" width="30" />
+          </button>
+          <div
+            class="collapse navbar-collapse web-collapse-navbar"
+            id="navbarText"
+          >
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link web-nav-link" href="/about.php">About us</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle web-nav-link"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Procedures
+                </a>
+                <div class="dropdown-menu web-dropdown-menu">
+                  <a
+                    class="dropdown-item web-dropdown-item"
+                    href="/gastricsleeve.php"
+                  >
+                    <img
+                      class="mr-2 mr-lg-4"
+                      src="{% static 'website/img/sleeve.png' %}"
+                      alt=""
+                      width="35"
+                    />
+                    Gastric Sleeve</a
+                  >
+                  <a
+                    class="dropdown-item web-dropdown-item"
+                    href="/endoscopicsleeve.php"
+                  >
+                    <img
+                      class="mr-2 mr-lg-4"
+                      src="{% static 'website/img/banding.png' %}"
+                      alt=""
+                      width="35"
+                    />
+                    Endoscopic Gastric Sleeve
+                  </a>
+                  <a
+                    class="dropdown-item web-dropdown-item"
+                    href="/gastricballon.php"
+                  >
+                    <img
+                      class="mr-2 mr-lg-4"
+                      src="{% static 'website/img/ballon.png' %}"
+                      alt=""
+                      width="35"
+                    />
+                    Gastric Ballon</a
+                  >
+                  <a
+                    class="dropdown-item web-dropdown-item"
+                    href="/gastricbypass.php"
+                  >
+                    <img
+                      class="mr-2 mr-lg-4"
+                      src="{% static 'website/img/minigastric.png' %}"
+                      alt=""
+                      width="35"
+                    />
+                    One Anastomosis Gastric Bypass
+                  </a>
+                  <a
+                    class="dropdown-item web-dropdown-item"
+                    href="/bypassyderoux.php"
+                    ><img
+                      class="mr-2 mr-lg-4"
+                      src="{% static 'website/img/roux.png' %}"
+                      alt=""
+                      width="35"
+                    />
+                    Bypass en Y de Roux
+                  </a>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link web-nav-link" href="/home#team">Our team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link web-nav-link" href="/travel.php"
+                  >Facilities</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link web-nav-link" href="/home#faq">FAQ</a>
+              </li>
+
+              <li>
+                <div class="web-cont-icon-socialmedia ml-3 py-0">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100086618873618"
+                    target="_blank"
+                    ><img
+                      class="web-icon-socialmedia"
+                      src="{% static 'website/img/facebook.svg' %}"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/nietobariatric/"
+                    target="_blank"
+                  >
+                    <img
+                      class="web-icon-socialmedia"
+                      src="{% static 'website/img/instagram.svg' %}"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@nietobariatric"
+                    target="_blank"
+                  >
+                    <img
+                      class="web-icon-socialmedia"
+                      src="{% static 'website/img/tiktok.svg' %}"
+                      alt=""
+                    />
+                  </a>
+                  <a href="https://wa.me/16199049303" target="_blank">
+                    <img
+                      class="web-icon-socialmedia"
+                      src="{% static 'website/img/wsp.svg' %}"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <a href="/contact.php"
+                ><button class="web-btn-contact btn">BOOK NOW</button>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!--Content-->
+    {% block content %} {% endblock %}
+
+    <!--Footer-->
+    <div class="container-fluid web-cont-footer">
+      <div class="container web-container">
+        <div class="row web-cont-foot m-0">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 col-md-12 col-lg-3">
+                <div class="mb-3">
+                  <a href="?site=home"
+                    ><img
+                      src="{% static 'website/img/logotipo.png' %}"
+                      alt=""
+                      width="220"
+                  /></a>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-lg-6 web-txt-center-footer">
+                <a class="navbar-brand mr-auto pr-4" href="tel:6199049003"
+                  ><h3>
+                    <img
+                      src="{% static 'website/img/usa.svg' %}"
+                      alt=""
+                      width="18"
+                    />
+                    (+1) 619 904 9303
+                  </h3></a
+                >
+                <a class="navbar-brand mr-auto pr-3" href="tel:6647569466"
+                  ><h3>
+                    <img
+                      src="{% static 'website/img/mx.svg' %}"
+                      alt=""
+                      width="18"
+                    />
+                    (+52) 664 756 9466
+                  </h3></a
+                >
+              </div>
+              <div class="col-12 col-md-12 col-lg-3">
+                <div class="web-txt-right">
+                  <a href="?site=contact"
+                    ><button class="web-btn-footer mb-3">BOOK NOW</button></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 my-4"></div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-3">
+            <div>
+              <h4 class="pb-3">Contact</h4>
+              <p>
+                New City Hospital,<br />
+                #1608 16th floor<br />
+                Tijuana, Baja California
+              </p>
+              <p>Mon - Fri 8:00 - 20:00</p>
+              <div class="d-flex align-items-center">
+                <img
+                  src="{% static 'website/img/usa.svg' %}"
+                  alt=""
+                  width="18"
+                />
+                <p class="mb-0 pl-2">(+1) 858 789 - 8388</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-6 col-lg-3">
+            <div>
+              <h4 class="pb-3">Procedures</h4>
+              <nav class="nav flex-column">
+                <a
+                  class="nav-link web-nav-link px-0 pt-0"
+                  href="/gastricsleeve.php"
+                  >▸ Gastric Sleeve</a
+                >
+                <a
+                  class="nav-link web-nav-link px-0 pt-0"
+                  href="/endoscopicsleeve.php"
+                  >▸ Endoscopic Gastric Sleeve</a
+                >
+                <a
+                  class="nav-link web-nav-link px-0 pt-0"
+                  href="/gastricballon.php"
+                  >▸ Gastric Ballon</a
+                >
+              </nav>
+            </div>
+          </div>
+          <div class="col-6 col-md-6 col-lg-3">
+            <div>
+              <nav class="nav flex-column pt-5">
+                <a
+                  class="nav-link web-nav-link px-0 pt-0"
+                  href="/gastricbypass.php"
+                  >▸ One Anastomosis Gastric Bypass</a
+                >
+                <a
+                  class="nav-link web-nav-link px-0 pt-0"
+                  href="/bypassyderoux.php"
+                  >▸ Bypass en Y de Roux</a
+                >
+              </nav>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-3 pr-0">
+            <div class="">
+              <a href="?site=about">
+                <h4 class="pb-3">About us</h4>
+              </a>
+              <nav class="nav flex-column">
+                <a class="nav-link web-nav-link px-0 pt-0" href="/home.php#team"
+                  >▸ Our team</a
+                >
+                <a class="nav-link web-nav-link px-0 pt-0" href="/travel.php"
+                  >▸ Facilities</a
+                >
+                <a class="nav-link web-nav-link px-0 pt-0" href="/home.php#faq"
+                  >▸ FAQ</a
+                >
+                <a class="nav-link web-nav-link px-0 pt-0" href="'dashboard'"
+                  >▸ Portal</a
+                >
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="row web-cont-copy m-0 mb-4">
+          <div class="col-12 col-md-12 col-lg-4">
+            <div class="web-cont-icon-socialmedia text-left">
+              <p class="mb-0">Copyright © 2025 NIETO BARIATRIC.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-4">
+            <div class="web-cont-icon-socialmedia">
+              <a
+                href="https://www.facebook.com/profile.php?id=100086618873618"
+                target="_blank"
+                ><img
+                  class="web-icon-socialmedia"
+                  src="{% static 'website/img/facebook.svg' %}"
+                  alt=""
+              /></a>
+              <a
+                href="https://www.instagram.com/nietobariatric/"
+                target="_blank"
+                ><img
+                  class="web-icon-socialmedia"
+                  src="{% static 'website/img/instagram.svg' %}"
+                  alt=""
+              /></a>
+              <a href="https://www.tiktok.com/@nietobariatric" target="_blank"
+                ><img
+                  class="web-icon-socialmedia"
+                  src="{% static 'website/img/tiktok.svg' %}"
+                  alt=""
+              /></a>
+              <a href="https://wa.me/16199049303" target="_blank"
+                ><img
+                  class="web-icon-socialmedia"
+                  src="{% static 'website/img/wsp.svg' %}"
+                  alt=""
+              /></a>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-lg-4">
+            <div class="web-cont-icon-socialmedia d-flex web-float">
+              <a href=""
+                ><p class="pr-3 mb-0 text-nowrap">Terms of Service</p></a
+              >
+              <a href=""
+                ><p class="mb-0 text-nowrap">Privacy Policy & Disclaimer</p></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
