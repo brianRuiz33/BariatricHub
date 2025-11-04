@@ -10,3 +10,6 @@ social_links = {
 
 def index(request):
     return render(request, 'index.html', {"social": social_links})
+
+def about(request):
+    return render(request, 'about.html')
