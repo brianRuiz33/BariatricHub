@@ -1,0 +1,161 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<!-- contenedor fondo gradient -->
+<div class="web-hero-container-contact">
+  <div class="container web-container">
+    <div class="web-form-page-contact">
+      <div class="web-txt-center">
+        <h1>Travel Guide</h1>
+        <div class="row mt-5">
+          <div class="col-3">
+            <div
+              class="nav flex-column nav-pills"
+              id="v-pills-tab"
+              role="tablist"
+              aria-orientation="vertical"
+            >
+              <button
+                class="web-nav-link-travel nav-link active"
+                id="v-pills-airport-tab"
+                data-toggle="pill"
+                data-target="#v-pills-airport"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-airport"
+                aria-selected="true"
+              >
+                Airport
+              </button>
+              <button
+                class="web-nav-link-travel nav-link"
+                id="v-pills-hotel-tab"
+                data-toggle="pill"
+                data-target="#v-pills-hotel"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-hotel"
+                aria-selected="false"
+              >
+                Hotel
+              </button>
+              <button
+                class="web-nav-link-travel nav-link"
+                id="v-pills-hospital-tab"
+                data-toggle="pill"
+                data-target="#v-pills-hospital"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-hospital"
+                aria-selected="false"
+              >
+                Hospital
+              </button>
+              <button
+                class="web-nav-link-travel nav-link"
+                id="v-pills-documentation-tab"
+                data-toggle="pill"
+                data-target="#v-pills-documentation"
+                type="button"
+                role="tab"
+                aria-controls="v-pills-documentation"
+                aria-selected="false"
+              >
+                Documentation
+              </button>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="tab-content cont-travel-tabs" id="v-pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="v-pills-airport"
+                role="tabpanel"
+                aria-labelledby="v-pills-airport-tab"
+              >
+                <h4>1. Arrival at San Diego airport</h4>
+                <p>
+                  The driver will pick you up and drop you off on the day of
+                  your arrival or departure regardless of when it is, as long as
+                  it is in the Hotel Zone we are not legally permitted to pick
+                  up outside of this area.
+                </p>
+                <h4>2. Transportation included</h4>
+                <p>
+                  On the first day of arrival the driver will take you from the
+                  airport to the hotel, on the second and third day the
+                  operation and recovery in the hospital, on the fourth day the
+                  driver will take you back to the hotel and finally on the
+                  fifth day to the airport.
+                </p>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-hotel"
+                role="tabpanel"
+                aria-labelledby="v-pills-hotel-tab"
+              >
+                <h4>1. Extra nights</h4>
+                <p>
+                  Our packages include 2 days in the hotel, the extra days in
+                  Tijuana generate an extra cost and are subject to availability
+                  (you must notify the coordinator as soon as possible; the
+                  coordinator indicates the extra hotel according to AC)
+                </p>
+                <h4>2. Recommended Hotel</h4>
+                <p>
+                  Tijuana:<a href="https://quartzhotel.mx/">
+                    Quartz Hotel & SPA Tijuana
+                  </a>
+                </p>
+                <p>
+                  Tijuana:
+                  <a href="https://grandhoteltj.com.mx/">Grand Hotel Tijuana</a>
+                </p>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-hospital"
+                role="tabpanel"
+                aria-labelledby="v-pills-hospital-tab"
+              >
+                <h4>1. Includes 2 days in the Hospital</h4>
+                <p>
+                  You will be able to stay in the hospital the day of the
+                  operation and 1 extra day for your recovery.
+                </p>
+                <h4></h4>
+                <p>
+                  Please confirm your flight and hotel reservation to verify
+                  arrival times with the driver.
+                </p>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-documentation"
+                role="tabpanel"
+                aria-labelledby="v-pills-documentation-tab"
+              >
+                <h4>1. Travel Warnings</h4>
+                <p>
+                  The US Department of State provides updated travel warnings to
+                  various countries. <br /><br />
+
+                  There are no other travel restrictions for U.S. government
+                  employees in Baja California state. These include high-traffic
+                  tourism areas of border and coastal communities, such as
+                  Tijuana, Ensenada, and Rosarito. <br /><br />
+
+                  Please view the most updated
+                  <a
+                    href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html"
+                    >travel warnings about visiting Mexico here.</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -13,3 +13,9 @@ def index(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def sleeve(request):
+    return render(request, 'gastric-sleeve.html')
+
+def travel(request):
+    return render(request, 'travel.html')

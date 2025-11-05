@@ -1,109 +1,106 @@
 {% extends "base.html" %} {% block content %} {% load static %}
-  <!--Hero container-->
-  <div class="web-hero-container">
-    <div class="container web-container">
-      <div class="row">
-        <div class="col-12 d-block d-lg-none">
-          <div class="web-cont-icon-socialmedia web-icon-header-m">
-            <a
-              href="https://www.facebook.com/profile.php?id=100086618873618"
-              target="_blank"
-              ><img
-                class="web-icon-socialmedia"
-                src="{% static 'website/img/facebook.svg' %}"
-                alt=""
-            /></a>
-            <a href="{{ social.instagram }}" target="_blank"
-              ><img
-                class="web-icon-socialmedia"
-                src="{% static 'website/img/instagram.svg' %}"
-                alt=""
-            /></a>
-            <a href="https://www.tiktok.com/@nietobariatric" target="_blank"
-              ><img
-                class="web-icon-socialmedia"
-                src="{% static 'website/img/tiktok.svg' %}"
-                alt=""
-            /></a>
-            <a href="https://wa.me/16199049303" target="_blank"
-              ><img
-                class="web-icon-socialmedia"
-                src="{% static 'website/img/wsp.svg' %}"
-                alt=""
-            /></a>
-          </div>
+<!--Hero container-->
+<div class="web-hero-container">
+  <div class="container web-container">
+    <div class="row">
+      <div class="col-12 d-block d-lg-none">
+        <div class="web-cont-icon-socialmedia web-icon-header-m">
+          <a
+            href="https://www.facebook.com/profile.php?id=100086618873618"
+            target="_blank"
+            ><img
+              class="web-icon-socialmedia"
+              src="{% static 'website/img/facebook.svg' %}"
+              alt=""
+          /></a>
+          <a href="{{ social.instagram }}" target="_blank"
+            ><img
+              class="web-icon-socialmedia"
+              src="{% static 'website/img/instagram.svg' %}"
+              alt=""
+          /></a>
+          <a href="https://www.tiktok.com/@nietobariatric" target="_blank"
+            ><img
+              class="web-icon-socialmedia"
+              src="{% static 'website/img/tiktok.svg' %}"
+              alt=""
+          /></a>
+          <a href="https://wa.me/16199049303" target="_blank"
+            ><img
+              class="web-icon-socialmedia"
+              src="{% static 'website/img/wsp.svg' %}"
+              alt=""
+          /></a>
         </div>
-        <div class="col-12 col-md-12 col-lg-4">
-          <div class="web-txt-hero-contain">
-            <div>
-              <h1 class="text-nowrap">
-                Metabolic & Bariatric <br />
-                Surgery
-              </h1>
-              <p>
-                By your side on your journey to a new beginning, <br />
-              </p>
-              <div class="d-flex">
-                <img
-                  src="{% static 'website/img/clock.svg' %}"
-                  alt=""
-                  width="20"
-                  class="web-icons-hero"
-                />
-                <p class="web-txt-locate mb-0 pl-1">Mon - Fri 8:00 - 20:00</p>
-              </div>
-              <a href="?site=candidates"
-                ><button class="web-btn-hero btn">BOOK NOW</button></a
-              >
+      </div>
+      <div class="col-12 col-md-12 col-lg-4">
+        <div class="web-txt-hero-contain">
+          <div>
+            <h1 class="text-nowrap">
+              Metabolic & Bariatric <br />
+              Surgery
+            </h1>
+            <p>By your side on your journey to a new beginning, <br /></p>
+            <div class="d-flex">
+              <img
+                src="{% static 'website/img/clock.svg' %}"
+                alt=""
+                width="20"
+                class="web-icons-hero"
+              />
+              <p class="web-txt-locate mb-0 pl-1">Mon - Fri 8:00 - 20:00</p>
             </div>
+            <a href="?site=candidates"
+              ><button class="web-btn-hero btn">BOOK NOW</button></a
+            >
           </div>
         </div>
-        <div class="col-12 col-md-12 col-lg-6">
-          <div class="d-flex align-items-end">
-            <div
-              class="web-img-hero"
-              style="
-                background-image: url('{% static 'website/img/nietodoc.png' %}');
-              "
-            ></div>
-          </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg-6">
+        <div class="d-flex align-items-end">
+          <div
+            class="web-img-hero"
+            style="
+              background-image: url('{% static 'website/img/nietodoc.png' %}');
+            "
+          ></div>
         </div>
-        <div class="col-12 col-md-12 col-lg-2">
-          <div class="web-cont-web-card-circle d-none d-lg-block">
-            <div>
-              <div class="row">
-                <div class="col-4 col-md-12 col-lg-12">
-                  <div class="web-card-circle mx-auto">
-                    <div>
-                      <img
-                        src="{% static 'website/img/award.svg' %}"
-                        alt=""
-                        width="25"
-                      />
-                      <p>
-                        Certified <br />
-                        Doctor
-                      </p>
-                    </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg-2">
+        <div class="web-cont-web-card-circle d-none d-lg-block">
+          <div>
+            <div class="row">
+              <div class="col-4 col-md-12 col-lg-12">
+                <div class="web-card-circle mx-auto">
+                  <div>
+                    <img
+                      src="{% static 'website/img/award.svg' %}"
+                      alt=""
+                      width="25"
+                    />
+                    <p>
+                      Certified <br />
+                      Doctor
+                    </p>
                   </div>
                 </div>
-                <div class="col-4 col-md-12 col-lg-12">
-                  <div class="web-card-circle mx-auto">
-                    <div>
-                      <h3>6+</h3>
-                      <p>
-                        Years of <br />
-                        experience
-                      </p>
-                    </div>
+              </div>
+              <div class="col-4 col-md-12 col-lg-12">
+                <div class="web-card-circle mx-auto">
+                  <div>
+                    <h3>6+</h3>
+                    <p>
+                      Years of <br />
+                      experience
+                    </p>
                   </div>
                 </div>
-                <div class="col-4 col-md-12 col-lg-12">
-                  <div class="web-card-circle mx-auto">
-                    <div>
-                      <h3>100%</h3>
-                      <p>Committed</p>
-                    </div>
+              </div>
+              <div class="col-4 col-md-12 col-lg-12">
+                <div class="web-card-circle mx-auto">
+                  <div>
+                    <h3>100%</h3>
+                    <p>Committed</p>
                   </div>
                 </div>
               </div>
@@ -115,6 +112,7 @@
   </div>
 </div>
 
+<!--Calculator-->
 <div class="web-container-bmi p-0">
   <div class="web-card-bmi">
     <form id="bmi-form" class="web-form-bmi" onsubmit="return calcBMI()">
@@ -259,7 +257,7 @@
   </div>
 </div>
 
-<div class="container web-cont-fill"></div>
+<!--Travel section-->
 <div class="container web-container web-cont-certification">
   <div class="row">
     <div class="col-12 col-md-12 col-lg-5 px-4 px-lg-0">
@@ -295,7 +293,7 @@
           <div
             class="web-img-circle mx-auto"
             style="
-              background-image: url('{% static 'website/img/documentacion.jpg' %}')
+              background-image: url('{% static 'website/img/documentacion.jpg' %}');
             "
           ></div>
           <div class="web-txt-card-procedures p-0 pt-3">
@@ -306,6 +304,8 @@
     </div>
   </div>
 </div>
+
+<!--Procedures-->
 <div class="container-fluid web-cont-card-procedures">
   <div class="container web-container p-0">
     <div class="row p-0">
@@ -338,11 +338,7 @@
                   ghrelin hormone – which results in increased satiety and
                   decreased appetite.
                 </p>
-                <a class="web-txt-procedure-price" href=""
-                  ><p>
-                    
-                  </p></a
-                >
+                <a class="web-txt-procedure-price" href=""><p></p></a>
               </div>
             </div>
           </div>
@@ -373,11 +369,7 @@
                   significantly overweight — a body mass index of 30 or more —
                   and diet and exercise haven't worked for you.
                 </p>
-                <a class="web-txt-procedure-price" href=""
-                  ><p>
-                   
-                  </p></a
-                >
+                <a class="web-txt-procedure-price" href=""><p></p></a>
               </div>
             </div>
           </div>
@@ -408,10 +400,7 @@
                   making the patient feel fuller faster. The duration for most
                   gastric balloons is typically six months to 12 months.
                 </p>
-                <a class="web-txt-procedure-price" href=""
-                  ><p>
-                  </p></a
-                >
+                <a class="web-txt-procedure-price" href=""><p></p></a>
               </div>
             </div>
           </div>
@@ -440,11 +429,7 @@
                   of the small intestine, resulting in malabsorption and
                   restrictive function. <br />
                 </p>
-                <a class="web-txt-procedure-price" href=""
-                  ><p>
-                    
-                  </p></a
-                >
+                <a class="web-txt-procedure-price" href=""><p></p></a>
               </div>
             </div>
           </div>
@@ -472,11 +457,7 @@
                   attaching the small intestine 100 cm further, in order to
                   avoid duodenogastric reflux. <br /><br />
                 </p>
-                <a class="web-txt-procedure-price" href=""
-                  ><p>
-                   
-                  </p></a
-                >
+                <a class="web-txt-procedure-price" href=""><p></p></a>
               </div>
             </div>
           </div>
@@ -485,6 +466,8 @@
     </div>
   </div>
 </div>
+
+<!--Metabolic and Bariatric Surgery-->
 <div
   class="container-fluid web-cont-candidate p-0"
   style="background-image: url('{% static 'website/img/candidate.jpg' %}')"
@@ -543,6 +526,8 @@
     </div>
   </div>
 </div>
+
+<!--Team section-->
 <div id="team" class="container-fluid">
   <div class="container web-container web-mb-80">
     <div class="row">
@@ -608,6 +593,8 @@
     </div>
   </div>
 </div>
+
+<!--FAQs section-->
 <div id="faq" class="container-fluid web-cont-card-procedures">
   <div class="container web-container p-0">
     <div class="row p-0">
@@ -702,6 +689,8 @@
     </div>
   </div>
 </div>
+
+<!--Hospital section-->
 <div class="container-fluid web-cont-hospital" id="facilities">
   <div class="container">
     <div class="row">
@@ -713,7 +702,7 @@
         <div class="mb-5">
           <div
             class="web-cont-hospital-img"
-            style="background-image: url('{% static 'website/img/new.jpg' %}');"
+            style="background-image: url('{% static 'website/img/new.jpg' %}')"
           ></div>
           <div class="web-cont-hospital-info">
             <h4>New city medical plaza</h4>
@@ -742,4 +731,4 @@
   </div>
 </div>
 
-  {% endblock %}
+{% endblock %}
