@@ -707,16 +707,17 @@ ul li {
   height: auto !important;
   background: rgb(0, 63, 99);
   background: linear-gradient(50deg, rgb(0, 63, 99) 0%, rgb(8, 103, 160) 20%, rgb(41, 193, 182) 80%, rgb(54, 199, 177) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#003f63",endColorstr="#36c7b1",GradientType=1);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+
+}
+.web-txt-center-wht p{
+  color: #f2faff !important;
+  text-align: center !important;
+  margin-bottom: 0px;
+}
+.web-txt-center-wht h1{
+  color: #f2faff !important;
+  text-align: center !important;
+  margin-bottom: 0px;
 }
 
 @media (max-width: 760px) {

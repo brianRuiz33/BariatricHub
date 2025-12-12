@@ -41,6 +41,25 @@
       crossorigin="anonymous"
     />
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let items = document.querySelectorAll("#smartCarousel .carousel-item");
+
+        items.forEach((el) => {
+          const minPerSlide = 3;
+          let next = el.nextElementSibling;
+          for (let i = 1; i < minPerSlide; i++) {
+            if (!next) {
+              next = items[0];
+            }
+            let cloneChild = next.firstElementChild.cloneNode(true);
+            el.appendChild(cloneChild);
+            next = next.nextElementSibling;
+          }
+        });
+      });
+    </script>
+
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -212,36 +231,28 @@
 
               <li>
                 <div class="web-cont-icon-socialmedia ml-3 py-0">
-                  <a
-                    href="https://www.facebook.com/profile.php?id=100086618873618"
-                    target="_blank"
+                  <a href="{{ social.facebook }}" target="_blank"
                     ><img
                       class="web-icon-socialmedia"
                       src="{% static 'website/img/facebook.svg' %}"
                       alt=""
                     />
                   </a>
-                  <a
-                    href="https://www.instagram.com/nietobariatric/"
-                    target="_blank"
-                  >
+                  <a href="{{ social.instagram }}" target="_blank">
                     <img
                       class="web-icon-socialmedia"
                       src="{% static 'website/img/instagram.svg' %}"
                       alt=""
                     />
                   </a>
-                  <a
-                    href="https://www.tiktok.com/@nietobariatric"
-                    target="_blank"
-                  >
+                  <a href="{{ social.tiktok }}" target="_blank">
                     <img
                       class="web-icon-socialmedia"
                       src="{% static 'website/img/tiktok.svg' %}"
                       alt=""
                     />
                   </a>
-                  <a href="https://wa.me/16199049303" target="_blank">
+                  <a href="{{ social.whatsapp }}" target="_blank">
                     <img
                       class="web-icon-socialmedia"
                       src="{% static 'website/img/wsp.svg' %}"
@@ -395,29 +406,25 @@
           </div>
           <div class="col-12 col-md-12 col-lg-4">
             <div class="web-cont-icon-socialmedia">
-              <a
-                href="https://www.facebook.com/profile.php?id=100086618873618"
-                target="_blank"
+              <a href="{{ social.facebook }}" target="_blank"
                 ><img
                   class="web-icon-socialmedia"
                   src="{% static 'website/img/facebook.svg' %}"
                   alt=""
               /></a>
-              <a
-                href="https://www.instagram.com/nietobariatric/"
-                target="_blank"
+              <a href="{{ social.instagram }}" target="_blank"
                 ><img
                   class="web-icon-socialmedia"
                   src="{% static 'website/img/instagram.svg' %}"
                   alt=""
               /></a>
-              <a href="https://www.tiktok.com/@nietobariatric" target="_blank"
+              <a href="{{ social.tiktok }}" target="_blank"
                 ><img
                   class="web-icon-socialmedia"
                   src="{% static 'website/img/tiktok.svg' %}"
                   alt=""
               /></a>
-              <a href="https://wa.me/16199049303" target="_blank"
+              <a href="{{ social.whatsapp }}" target="_blank"
                 ><img
                   class="web-icon-socialmedia"
                   src="{% static 'website/img/wsp.svg' %}"

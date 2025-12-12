@@ -1,80 +1,103 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <div class="container-fluid web-hero-cont-procedures">
   <div class="container web-container">
-    <h1>Gastric Sleeve</h1>
+    <h1>Title Here</h1>
   </div>
 </div>
 <div class="container web-container">
-  <div class="row">
-    <div class="col-12 col-md-4 col-lg-4">
-      <div class="web-cont-pack-procedures sticky">
-        <div>
-          <h2>All-inclusive Gastric Sleeve Package:</h2>
-          <p>
-            ✔ Pre-operative test: <br />
-            <span>
-              Blood tests <br />
-              Chest X-ray <br />
-              Electrocardiogram <br />
-              Spirometry <br />
-              Endoscopy <br />
-              Gastrography with fluoroscopy equipment (if needed)
-            </span>
-          </p>
-          <p>
-            ✔ Evaluations: <br /><span
-              >Anesthesiologist Internist <br />
-              Nutritionist <br />
-              Psychologist <br />
-              Inhalation therapy team
-            </span>
-          </p>
-          <p>
-            ✔ Hospital: <br />
-            <span
-              >Procedure performed by Dr. Felipe Octavio Nieto Segura <br />
-              Hospital fees
-            </span>
-          </p>
-          <p>
-            ✔ Logistics: <br />
-            <span>
-              Transportation from San Diego Airport to hospital <br />
-              Two nights in hospital, with a companion <br />
-              One night stay at hotel QUARTZ or Grand Hotel Tijuana* <br />
-              Transportation from hospital or hotel, to San Diego Airport
-            </span>
-          </p>
-          <p>
-            ✔ Post-operative care: <br />
-            <span>
-              Leak test <br />
-              Medicine <br />
-              One-year medical follow-up
-            </span>
-          </p>
-
-          <p class="font-italic">All promotions exclude hotel stay*</p>
-
-          <div class="mt-5">
-            <a href="contact.php"
-              ><button class="web-btn-footer mb-3">BOOK NOW</button></a
-            >
-          </div>
-        </div>
+  <div class="row mt-5">
+    <div
+      class="col-12 col-md-6 text-justify d-flex justify-content-center align-items-center"
+    >
+      {% lorem 2 b random %}
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+          class="embed-responsive-item"
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          allowfullscreen
+        >
+        </iframe>
       </div>
     </div>
-    <div class="col-12 col-md-8 col-lg-8">
-      <div class="web-cont-text-procedures">
-        <div></div>
-        <div class="web-video-procedures mt-0">Video</div>
-        <div class="mt-5">
-          <a href="contact.php"
-            ><button class="web-btn-default mb-3">BOOK NOW</button></a
-          >
-        </div>
+  </div>
+  <div class="row mt-5">
+    <h2>All-inclusive Gastric Sleeve Package</h2>
+  </div>
+  <div class="row text-center mt-5">
+    <div class="col">
+      <span> Pre-operative test</span>
+      <ul>
+        <li>Blood tests</li>
+        <li>Chest X-ray</li>
+        <li>Electrocardiogram</li>
+        <li>Spirometry</li>
+        <li>Endoscopy</li>
+        <li>Gastrography with fluoroscopy equipment (if needed)</li>
+      </ul>
+    </div>
+    <div class="col">2</div>
+    <div class="col">3</div>
+  </div>
+</div>
+{% endblock %}
+
+<div class="col">
+  <div class="web-cont-pack-procedures sticky">
+    <div>
+      <h2>All-inclusive Gastric Sleeve Package:</h2>
+      <p>
+        ✔ Pre-operative test: <br />
+        <span>
+          Blood tests <br />
+          Chest X-ray <br />
+          Electrocardiogram <br />
+          Spirometry <br />
+          Endoscopy <br />
+          Gastrography with fluoroscopy equipment (if needed)
+        </span>
+      </p>
+      <p>
+        ✔ Evaluations: <br /><span
+          >Anesthesiologist Internist <br />
+          Nutritionist <br />
+          Psychologist <br />
+          Inhalation therapy team
+        </span>
+      </p>
+      <p>
+        ✔ Hospital: <br />
+        <span
+          >Procedure performed by Dr. Felipe Octavio Nieto Segura <br />
+          Hospital fees
+        </span>
+      </p>
+      <p>
+        ✔ Logistics: <br />
+        <span>
+          Transportation from San Diego Airport to hospital <br />
+          Two nights in hospital, with a companion <br />
+          One night stay at hotel QUARTZ or Grand Hotel Tijuana* <br />
+          Transportation from hospital or hotel, to San Diego Airport
+        </span>
+      </p>
+      <p>
+        ✔ Post-operative care: <br />
+        <span>
+          Leak test <br />
+          Medicine <br />
+          One-year medical follow-up
+        </span>
+      </p>
+
+      <p class="font-italic">All promotions exclude hotel stay*</p>
+
+      <div class="mt-5">
+        <a href="contact.php"
+          ><button class="web-btn-footer mb-3">BOOK NOW</button></a
+        >
       </div>
     </div>
   </div>
 </div>
-{% endblock %}

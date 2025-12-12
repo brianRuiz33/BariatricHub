@@ -5,9 +5,7 @@
     <div class="row">
       <div class="col-12 d-block d-lg-none">
         <div class="web-cont-icon-socialmedia web-icon-header-m">
-          <a
-            href="https://www.facebook.com/profile.php?id=100086618873618"
-            target="_blank"
+          <a href="{{ social.facebook }}" target="_blank"
             ><img
               class="web-icon-socialmedia"
               src="{% static 'website/img/facebook.svg' %}"
@@ -19,13 +17,13 @@
               src="{% static 'website/img/instagram.svg' %}"
               alt=""
           /></a>
-          <a href="https://www.tiktok.com/@nietobariatric" target="_blank"
+          <a href="{{ social.tiktok }}" target="_blank"
             ><img
               class="web-icon-socialmedia"
               src="{% static 'website/img/tiktok.svg' %}"
               alt=""
           /></a>
-          <a href="https://wa.me/16199049303" target="_blank"
+          <a href="{{ social.whatsapp }}" target="_blank"
             ><img
               class="web-icon-socialmedia"
               src="{% static 'website/img/wsp.svg' %}"
@@ -283,6 +281,38 @@
           </div>
         </div>
       </a>
+      <a href="?site=bypassyde2">
+        <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+          <div class="row web-card-procedures m-auto">
+            <div class="col-6 col-md-12 col-lg-12 p-0 text-center">
+              <div
+                class="web-card-icon-procedures"
+                style="
+                  background-image: url('{% static 'website/img/roux.png' %}');
+                "
+              ></div>
+            </div>
+            <div class="col-6 col-md-12 col-lg-12 p-0">
+              <div class="web-txt-card-procedures">
+                <h4 class="pb-2">Another bypass</h4>
+                <p class="d-sm-block d-none">
+                  Roux-en-Y is the classic bypass, a type of weight-loss surgery
+                  that involves two anastomosis, one creating a small pouch from
+                  the stomach and connecting the newly created pouch directly to
+                  the small intestine at the 150 cm mark, and the second one
+                  attaching the small intestine 100 cm further, in order to
+                  avoid duodenogastric reflux. <br /><br />
+                </p>
+                <div class="web-txt-center">
+                  <a href="/gastric-sleeve"
+                    ><button class="btn web-btn-default">LEARN MORE</button></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </div>
@@ -340,180 +370,42 @@
   </div>
 </div>
 
-<!--Metabolic and Bariatric Surgery-->
-<div
-  class="container-fluid web-cont-candidate p-0"
-  style="background-image: url('{% static 'website/img/candidate.jpg' %}')"
->
-  <div class="web-overlay-gradient">
-    <div class="container web-container py-0 py-lg-5">
-      <div class="row">
-        <div
-          class="col-12 col-md-12 col-lg-6 p-4 d-flex align-items-center justify-content-center"
-        >
-          <div class="text-center">
-            <h1>Metabolic and Bariatric Surgery</h1>
-            <div class="row text-center">
-              <div class="col-12 my-4">
-                <a href="?site=candidates"
-                  ><button class="web-btn-contact btn">APPLY NOW</button></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-12 col-lg-6 p-4">
-          <div class="web-card-bg-blur">
-            <p>
-              1. MBS is recommended for individuals with BMI 35 kg/m2,
-              regardless of presence, absence, or severity of comorbidities.
-              <br /><br />
-              2. MBS is recommended in patients with T2D and BMI 30 kg/m2.
-              <br /><br />
-
-              3. MBS should be considered in individuals with BMI of 30–34.9
-              kg/m2 who do not achieve substantial or durable weight loss or
-              co-morbidity improvement using nonsurgical methods. <br /><br />
-
-              4. There is no upper patient-age limit to MBS. Older individuals
-              who could benefit from MBS should be considered for surgery after
-              careful assessment of co-morbidities and frailty. <br /><br />
-
-              5. Carefully selected individuals considered higher risk for
-              general surgery may benefit from MBS. Children and adolescents
-              with BMI. 120% of the 95th percentile and a major co-morbidity, or
-              a BMI. 140% of the 95th percentile, should be considered for MBS
-              after evaluation by a multidisciplinary team in a specialty
-              center.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--Team section-->
-<div id="team" class="container-fluid">
-  <div class="container web-container web-mb-80">
-    <div class="row">
-      <div class="col-12 web-txt-left mb-3 web-mt-80">
-        <h1>Our team of experts</h1>
-        <p>
-          Every doctor at your service is highly qualified to provide the best
-          care possible.
-        </p>
-      </div>
-      <div class="col-6 col-md-3 col-lg-3">
-        <div class="web-cont-img-team mb-4">
-          <img
-            class="web-img-team"
-            src="{% static 'website/img/jane.png' %}"
-            alt=""
-          />
-        </div>
-        <div class="web-txt-center">
-          <h4>Dra. Nilda Medina</h4>
-          <p>Psychologist</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 col-lg-3">
-        <div class="web-cont-img-team mb-4">
-          <img
-            class="web-img-team"
-            src="{% static 'website/img/adriana.png' %}"
-            alt=""
-          />
-        </div>
-        <div class="web-txt-center">
-          <h4>Dra. Adriana Ortiz</h4>
-          <p>Endocrinologist</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 col-lg-3">
-        <div class="web-cont-img-team mb-4">
-          <img
-            class="web-img-team"
-            src="{% static 'website/img/liliana.png' %}"
-            alt=""
-          />
-        </div>
-        <div class="web-txt-center">
-          <h4>Dra. Liliana Zertuche</h4>
-          <p>Nutritionist</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 col-lg-3">
-        <div class="web-cont-img-team mb-4">
-          <img
-            class="web-img-team"
-            src="{% static 'website/img/lore.png' %}"
-            alt=""
-          />
-        </div>
-        <div class="web-txt-center">
-          <h4>Dra. Lorena Fabián</h4>
-          <p>Nutritionist</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!--Patient Success Stories-->
-<section class="container-fluid py-5 bg-light">
-  <div class="text-center web-txt-center mb-4">
+<section class="container-fluid py-5 bg-light web-overlay-gradient">
+  <div class="text-center web-txt-center-wht mb-4">
     <h1>Patient Sucess Stories</h1>
     <p>Discover the experiences of patients who trusted us with their care.</p>
   </div>
   <div class="container-fluid px-0">
     <div class="row g-0">
-      <div class="col-6 col-md-3" data-aos="zoom-in">
+      <div class="col-6 col-md-4" data-aos="zoom-in">
         <div class="image-card">
           <img
             src="https://placehold.co/1080x1080"
             alt="Success Story 1"
             class="img-fluid w-100"
           />
-          <div class="overlay">
-            <p>Maria – Details</p>
-          </div>
+          <div class="overlay"><p>Maria – Details</p></div>
         </div>
       </div>
-      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
         <div class="image-card">
           <img
             src="https://placehold.co/1080x1080"
             alt="Success Story 2"
             class="img-fluid w-100"
           />
-          <div class="overlay">
-            <p>John – Details</p>
-          </div>
+          <div class="overlay"><p>John – Details</p></div>
         </div>
       </div>
-      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+      <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="200">
         <div class="image-card">
           <img
             src="https://placehold.co/1080x1080"
             alt="Success Story 3"
             class="img-fluid w-100"
           />
-          <div class="overlay">
-            <p>Ana – Details</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
-        <div class="image-card">
-          <img
-            src="https://placehold.co/1080x1080"
-            alt="Success Story 4"
-            class="img-fluid w-100"
-          />
-          <div class="overlay">
-            <p>Patient details</p>
-          </div>
+          <div class="overlay"><p>Ana – Details</p></div>
         </div>
       </div>
     </div>
@@ -657,29 +549,66 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="offset-md-4 col-md-4 text-center">
+      <img
+        class="w-50 mt-5"
+        src="{% static 'website/img/google-reviews.png' %}"
+      />
+      <br />
+      <button class="web-btn-default btn mt-5">Review us on Google</button>
+    </div>
+  </div>
 </section>
 
-<!--FAQs section-->
-<div id="faq" class="container-fluid web-cont-card-procedures">
-  <div class="container web-container p-0">
-    <div class="row p-0">
-      <div class="col-12 text-center web-txt-center mb-4">
-        <h1>FAQ</h1>
-        <p>Find quick answers about appointments, travel, and treatments.</p>
+<!--Hospital section-->
+<div class="container-fluid web-cont-hospital" id="facilities">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 web-txt-left web-mb-80 pb-0">
+        <h1>Where we operate</h1>
+        <p>
+          We work with trusted hospitals and surgical centers in Tijuana to
+          ensure your comfort, safety, and the highest quality of care during
+          your procedure.
+        </p>
       </div>
-      <div class="col-12 text-center">
-        <ul class="nav nav-tabs" id="myTab" role="tablist"></ul>
+      <div class="col-6">
+        <div class="mb-5">
+          <div
+            class="web-cont-hospital-img"
+            style="background-image: url('{% static 'website/img/new.jpg' %}')"
+          ></div>
+          <div class="web-cont-hospital-info">
+            <h4>New city medical plaza</h4>
+            <p>Consultorio 1608 - Piso 16 <br />Tijuana, Baja California</p>
+          </div>
+        </div>
       </div>
-      <!-- prueba de acordeon con javascripts  -->
-      <div class="col-12 col-md-12 col-lg-6">
-        <div class="tab-content web-mt-80 myTabContent" id="myTabContent"></div>
+      <div class="col-6">
+        <div class="mb-5">
+          <div
+            class="web-cont-hospital-img"
+            style="
+              background-image: url('{% static 'website/img/dreams.jpg' %}');
+            "
+          ></div>
+          <div class="web-cont-hospital-info">
+            <h4>Hospital Dreams</h4>
+            <p>
+              Gobernador Ibarra 9721, America, 22044 <br />Tijuana, Baja
+              California
+            </p>
+          </div>
+        </div>
       </div>
-      <!-- Fin de la prueba  -->
     </div>
   </div>
 </div>
+
 <!--Contact section-->
-<div class="container-fluid web-cont-hospital" id="facilities">
+<div class="container-fluid web-cont-hospital py-5 bg-light" id="facilities">
   <div class="container">
     <div class="row">
       <div class="col-12 web-txt-left mb-4 web-mb-80 pb-0">
@@ -760,51 +689,6 @@
               </button>
             </div>
           </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--Hospital section-->
-<div class="container-fluid web-cont-hospital" id="facilities">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 web-txt-left web-mb-80 pb-0">
-        <h1>Where we operate</h1>
-        <p>
-          We work with trusted hospitals and surgical centers in Tijuana to
-          ensure your comfort, safety, and the highest quality of care during
-          your procedure.
-        </p>
-      </div>
-      <div class="col-6">
-        <div class="mb-5">
-          <div
-            class="web-cont-hospital-img"
-            style="background-image: url('{% static 'website/img/new.jpg' %}')"
-          ></div>
-          <div class="web-cont-hospital-info">
-            <h4>New city medical plaza</h4>
-            <p>Consultorio 1608 - Piso 16 <br />Tijuana, Baja California</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="mb-5">
-          <div
-            class="web-cont-hospital-img"
-            style="
-              background-image: url('{% static 'website/img/dreams.jpg' %}');
-            "
-          ></div>
-          <div class="web-cont-hospital-info">
-            <h4>Hospital Dreams</h4>
-            <p>
-              Gobernador Ibarra 9721, America, 22044 <br />Tijuana, Baja
-              California
-            </p>
-          </div>
         </div>
       </div>
     </div>
