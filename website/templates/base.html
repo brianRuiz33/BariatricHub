@@ -1,9 +1,19 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'website/js/main.js' %}"></script>
 
     <!--Animate Libraries-->
     <!-- AOS CSS -->
@@ -21,15 +31,9 @@
     </script>
 
     <!-- styles -->
-    {% load static %}
     <link rel="stylesheet" href="{% static 'website/css/style.css' %}" />
     <script
       src="https://kit.fontawesome.com/982c0f03a9.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
     ></script>
 
@@ -218,15 +222,13 @@
                   </a>
                 </div>
               </li>
-
-              <li class="nav-item">
-                <a class="nav-link web-nav-link" href="/#team">Our team</a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link web-nav-link" href="/travel">Travel</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link web-nav-link" href="/#faq">FAQ</a>
+                <a class="nav-link web-nav-link" href="/#contact-us"
+                  >Contact us</a
+                >
               </li>
 
               <li>

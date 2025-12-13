@@ -1319,17 +1319,18 @@ min-height: 80vh;
   margin-bottom: 18px;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  background-color: transparent !important;
+    background-color: #29c5a3 !important;
   border: 0px !important;
+
 }
 
 .nav-link:active {
-  background-color: transparent !important;
+    background-color: #29c5a3 !important;
   border: 0px !important;
 }
 
 .nav-link:focus {
-  background-color: transparent !important;
+    background-color: #29c5a3 !important;
   border: 0px !important;
 }
 .cont-travel-tabs {
