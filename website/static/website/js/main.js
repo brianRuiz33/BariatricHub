@@ -33,6 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
       targetPane.classList.add('active', 'show')
     })
   })
+
+  // Treatment pages
+   const cards = document.querySelectorAll('.animate-on-scroll')
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+        }
+      })
+    },
+    { threshold: 0.15 }
+  )
+
+  cards.forEach(card => observer.observe(card))
 })
 
 function handleNavbarCollapse() {
