@@ -1449,12 +1449,13 @@ min-height: 80vh;
   font-size: 1rem;
 }
 
-
-/*Treatment pages*/
+/* Reusable variables */
 :root {
-  --brand-color: #2c7be5; /* replace with your brand */
+  --brand-color: #2F665C;
+  --font-primary: "Heebo", sans-serif;
+  --font-base: 16px;
 }
-
+/*Treatment pages*/
 .package-card {
   border: none;
   border-radius: 20px;

@@ -49,6 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
   )
 
   cards.forEach(card => observer.observe(card))
+
+  // Image Carousel 
+    let items = document.querySelectorAll("#smartCarousel .carousel-item");
+        items.forEach((el) => {
+          const minPerSlide = 3;
+          let next = el.nextElementSibling;
+          for (let i = 1; i < minPerSlide; i++) {
+            if (!next) {
+              next = items[0];
+            }
+            let cloneChild = next.firstElementChild.cloneNode(true);
+            el.appendChild(cloneChild);
+            next = next.nextElementSibling;
+          }
+        });
 })
 
 function handleNavbarCollapse() {

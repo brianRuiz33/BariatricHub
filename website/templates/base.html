@@ -39,25 +39,6 @@
       crossorigin="anonymous"
     />
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let items = document.querySelectorAll("#smartCarousel .carousel-item");
-
-        items.forEach((el) => {
-          const minPerSlide = 3;
-          let next = el.nextElementSibling;
-          for (let i = 1; i < minPerSlide; i++) {
-            if (!next) {
-              next = items[0];
-            }
-            let cloneChild = next.firstElementChild.cloneNode(true);
-            el.appendChild(cloneChild);
-            next = next.nextElementSibling;
-          }
-        });
-      });
-    </script>
-
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -67,6 +48,7 @@
     />
     <title>NIETO BARIATRICS</title>
   </head>
+
   <body>
     <!--Top black navbar-->
     <div class="web-nav-black">
@@ -154,7 +136,7 @@
                 <div class="dropdown-menu web-dropdown-menu">
                   <a
                     class="dropdown-item web-dropdown-item"
-                    href="/gastricsleeve.php"
+                    href="/gastric-sleeve"
                   >
                     <img
                       class="mr-2 mr-lg-4"
@@ -257,7 +239,9 @@
             </ul>
             <div class="d-flex">
               <a href="/contact.php"
-                ><button class="web-btn-contact btn">BOOK NOW</button>
+                ><button class="web-btn-contact btn">
+                  Schedule an appointment
+                </button>
               </a>
             </div>
           </div>
@@ -339,7 +323,7 @@
               <nav class="nav flex-column">
                 <a
                   class="nav-link web-nav-link px-0 pt-0"
-                  href="/gastricsleeve.php"
+                  href="/gastric-sleeve"
                   >▸ Gastric Sleeve</a
                 >
                 <a
