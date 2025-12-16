@@ -58,24 +58,9 @@ a {
     text-align: left !important;
   }
 }
-.web-txt-center-footer {
-  text-align: center !important;
-}
-.web-txt-center-footer h3 {
-  font-size: 1.5rem !important;
-  padding-top: 5px !important;
-}
 
-@media (max-width: 991px) {
-  .web-txt-center-footer {
-    text-align: left !important;
-  }
-}
-@media (max-width: 769px) {
-  .web-txt-center-footer h3 {
-    font-size: 1.2rem !important;
-  }
-}
+
+
 .web-float {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1454,6 +1439,7 @@ min-height: 80vh;
   --brand-color: #2F665C;
   --font-primary: "Heebo", sans-serif;
   --font-base: 16px;
+  --hero-gradient: linear-gradient(50deg, rgb(0, 63, 99) 0%, rgb(8, 103, 160) 20%, rgb(41, 193, 182) 80%, rgb(54, 199, 177) 100%);
 }
 /*Treatment pages*/
 .package-card {
@@ -1535,4 +1521,81 @@ min-height: 80vh;
 .appointment-btn:hover {
   background-color: #f8f9fa;
   transform: translateY(-2px);
+}
+/*Footer*/
+.footer-main {
+  background: var(--hero-gradient);
+  color: #fff;
+}
+
+.footer-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-cta {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.footer-social a {
+  font-size: 1.5rem;
+  color: #fff;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.footer-social a:hover {
+  opacity: 1;
+}
+
+.footer-backtotop {
+  background: rgba(0,0,0,0.05);
+}
+
+.footer-legal {
+  background: #f8f9fa;
+}
+
+
+/*DELETE*/
+/* Colores y tipografía */
+.bg-dark {
+    /* Puedes usar un gris oscuro más suave en lugar de negro puro */
+    background-color: #212529 !important; /* Gris oscuro estándar de Bootstrap */
+}
+
+/* Estilo del botón (botón de éxito moderno) */
+.btn-success {
+    background-color: #28a745; /* Verde estándar */
+    border-color: #28a745;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #1e7e34;
+    border-color: #1c7e34;
+}
+
+/* Estilo de los enlaces para contraste sutil */
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.6) !important;
+    transition: color 0.2s ease;
+}
+
+.text-white-50:hover {
+    color: #ffffff !important;
+}
+
+/* Iconos Sociales Modernos */
+.social-icon-modern {
+    width: 30px; /* Tamaño un poco más grande */
+    height: 30px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon-modern:hover {
+    opacity: 1;
+    transform: scale(1.1); /* Efecto sutil al pasar el ratón */
 }

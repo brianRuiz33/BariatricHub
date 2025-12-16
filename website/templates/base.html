@@ -252,175 +252,113 @@
     {% block content %} {% endblock %}
 
     <!--Footer-->
-    <div class="container-fluid web-cont-footer">
-      <div class="container web-container p-banner">
-        <div class="row web-cont-foot m-0">
-          <div class="col-12">
-            <div class="row">
-              <div class="col-12 col-md-12 col-lg-3">
-                <div class="mb-3">
-                  <a href="?site=home"
-                    ><img
-                      src="{% static 'website/img/logotipo.png' %}"
-                      alt=""
-                      width="220"
-                  /></a>
-                </div>
-              </div>
-              <div class="col-12 col-md-12 col-lg-6 web-txt-center-footer">
-                <a class="navbar-brand mr-auto pr-4" href="tel:6199049003"
-                  ><h3>
-                    <img
-                      src="{% static 'website/img/usa.svg' %}"
-                      alt=""
-                      width="18"
-                    />
-                    (+1) 619 904 9303
-                  </h3></a
-                >
-                <a class="navbar-brand mr-auto pr-3" href="tel:8587898388"
-                  ><h3>
-                    <img
-                      src="{% static 'website/img/usa.svg' %}"
-                      alt=""
-                      width="18"
-                    />
-                    (+1) 858 789 8388
-                  </h3></a
-                >
-              </div>
-              <div class="col-12 col-md-12 col-lg-3">
-                <div class="web-txt-center-footer">
-                  <a class="navbar-brand mr-auto pr-3" href="tel:6647569466"
-                    ><h3>
-                      <img
-                        src="{% static 'website/img/mx.svg' %}"
-                        alt=""
-                        width="18"
-                      />
-                      (+52) 664 756 9466
-                    </h3></a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col-12 my-4"></div>
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row pb-5 border-bottom border-secondary">
+          <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+            <h3 class="font-weight-bold mb-3">NIETO BARIATRIC</h3>
+            <h2 class="h4 mb-4 font-weight-light">
+              Start your journey to a **healthier life.**
+            </h2>
+            <a href="/contact.php">
+              <button
+                class="btn btn-lg btn-success text-uppercase font-weight-bold shadow-sm"
+              >
+                Schedule your appointment
+              </button>
+            </a>
           </div>
-          <div class="col-12 col-md-12 col-lg-3">
-            <div>
-              <h4 class="pb-3">Contact</h4>
-              <p>
-                New City Hospital,<br />
-                #1608 16th floor<br />
-                Tijuana, Baja California
-              </p>
-              <p>Mon - Fri 8:00 - 20:00</p>
-            </div>
+
+          <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4 text-secondary">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="/services.php"
+                  class="text-white-50 text-decoration-none"
+                  >Services</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="/about.php" class="text-white-50 text-decoration-none"
+                  >About Us</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="/faq.php" class="text-white-50 text-decoration-none"
+                  >FAQ</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="/testimonials.php"
+                  class="text-white-50 text-decoration-none"
+                  >Testimonials</a
+                >
+              </li>
+            </ul>
           </div>
-          <div class="col-6 col-md-6 col-lg-3">
-            <div>
-              <h4 class="pb-3">Procedures</h4>
-              <nav class="nav flex-column">
-                <a
-                  class="nav-link web-nav-link px-0 pt-0"
-                  href="/gastric-sleeve"
-                  >▸ Gastric Sleeve</a
-                >
-                <a
-                  class="nav-link web-nav-link px-0 pt-0"
-                  href="/endoscopicsleeve.php"
-                  >▸ Endoscopic Gastric Sleeve</a
-                >
-                <a
-                  class="nav-link web-nav-link px-0 pt-0"
-                  href="/gastricballon.php"
-                  >▸ Gastric Ballon</a
-                >
-              </nav>
+
+          <div class="col-6 col-md-3 col-lg-3 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4 text-secondary">Contact & Hours</h5>
+            <div class="mb-3">
+              <p class="mb-1">📍 New City Hospital, 16th Floor – #1608</p>
+              <p class="mb-0">Tijuana, Baja California</p>
             </div>
-          </div>
-          <div class="col-6 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <p class="mb-1">🕒 Mon – Fri: 8:00 – 20:00</p>
+            </div>
             <div>
-              <nav class="nav flex-column pt-5">
-                <a
-                  class="nav-link web-nav-link px-0 pt-0"
-                  href="/gastricbypass.php"
-                  >▸ One Anastomosis Gastric Bypass</a
-                >
-                <a
-                  class="nav-link web-nav-link px-0 pt-0"
-                  href="/bypassyderoux.php"
-                  >▸ Bypass en Y de Roux</a
-                >
-              </nav>
+              <p class="mb-1">📞 US: (+1) 619 904 9303</p>
+              <p class="mb-0">📞 MX: (+52) 664 756 9466</p>
             </div>
           </div>
 
-          <div class="col-12 col-md-12 col-lg-3 pr-0">
-            <div class="">
-              <a href="?site=about">
-                <h4 class="pb-3">About us</h4>
+          <div class="col-12 col-md-3 col-lg-2">
+            <h5 class="text-uppercase mb-4 text-secondary">Connect</h5>
+            <div class="d-flex web-cont-icon-socialmedia">
+              <a href="{{ social.instagram }}" target="_blank" class="mr-3">
+                <img
+                  class="social-icon-modern"
+                  src="{% static 'website/img/instagram.svg' %}"
+                  alt="Instagram"
+                />
               </a>
-              <nav class="nav flex-column">
-                <a class="nav-link web-nav-link px-0 pt-0" href="/home.php#team"
-                  >▸ Our team</a
-                >
-                <a class="nav-link web-nav-link px-0 pt-0" href="/travel.php"
-                  >▸ Where we operate</a
-                >
-                <a class="nav-link web-nav-link px-0 pt-0" href="/home.php#faq"
-                  >▸ FAQ</a
-                >
-              </nav>
+              <a href="{{ social.tiktok }}" target="_blank" class="mr-3">
+                <img
+                  class="social-icon-modern"
+                  src="{% static 'website/img/tiktok.svg' %}"
+                  alt="TikTok"
+                />
+              </a>
+              <a href="{{ social.youtube }}" target="_blank">
+                <img
+                  class="social-icon-modern"
+                  src="{% static 'website/img/youtube.svg' %}"
+                  alt="YouTube"
+                />
+              </a>
             </div>
           </div>
         </div>
-        <div class="row web-cont-copy m-0 mb-4">
-          <div class="col-12 col-md-12 col-lg-4">
-            <div class="web-cont-icon-socialmedia text-left">
-              <p class="mb-0">Copyright © 2025 NIETO BARIATRIC.</p>
-            </div>
+
+        <div class="row pt-4 align-items-center">
+          <div class="col-md-6 text-center text-md-left">
+            <p class="small text-white-50 mb-0">
+              © 2025 NIETO BARIATRIC. All rights reserved.
+            </p>
           </div>
-          <div class="col-12 col-md-12 col-lg-4">
-            <div class="web-cont-icon-socialmedia">
-              <a href="{{ social.facebook }}" target="_blank"
-                ><img
-                  class="web-icon-socialmedia"
-                  src="{% static 'website/img/facebook.svg' %}"
-                  alt=""
-              /></a>
-              <a href="{{ social.instagram }}" target="_blank"
-                ><img
-                  class="web-icon-socialmedia"
-                  src="{% static 'website/img/instagram.svg' %}"
-                  alt=""
-              /></a>
-              <a href="{{ social.tiktok }}" target="_blank"
-                ><img
-                  class="web-icon-socialmedia"
-                  src="{% static 'website/img/tiktok.svg' %}"
-                  alt=""
-              /></a>
-              <a href="{{ social.whatsapp }}" target="_blank"
-                ><img
-                  class="web-icon-socialmedia"
-                  src="{% static 'website/img/wsp.svg' %}"
-                  alt=""
-              /></a>
-            </div>
-          </div>
-          <div class="col-12 col-md-12 col-lg-4">
-            <div class="web-cont-icon-socialmedia d-flex web-float">
-              <a href=""
-                ><p class="pr-3 mb-0 text-nowrap">Terms of Service</p></a
-              >
-              <a href=""
-                ><p class="mb-0 text-nowrap">Privacy Policy & Disclaimer</p></a
-              >
-            </div>
+
+          <div class="col-md-6 text-center text-md-right mt-3 mt-md-0">
+            <a
+              href="#top"
+              class="text-white-50 text-decoration-none small text-uppercase font-weight-bold"
+            >
+              Back to Top &nbsp; <span class="h5 m-0 align-middle">↑</span>
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
