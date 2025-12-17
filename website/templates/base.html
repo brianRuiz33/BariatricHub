@@ -252,30 +252,29 @@
     {% block content %} {% endblock %}
 
     <!--Footer-->
-    <footer class="bg-dark text-white pt-5 pb-4">
-      <div class="container">
-        <div class="row pb-5 border-bottom border-secondary">
-          <div class="col-12 col-lg-5 mb-4 mb-lg-0">
-            <h3 class="font-weight-bold mb-3">NIETO BARIATRIC</h3>
-            <h2 class="h4 mb-4 font-weight-light">
-              Start your journey to a **healthier life.**
-            </h2>
-            <a href="/contact.php">
-              <button
-                class="btn btn-lg btn-success text-uppercase font-weight-bold shadow-sm"
-              >
-                Schedule your appointment
-              </button>
-            </a>
+    <footer class="nav-nb text-white pt-5 pb-3 text-left pl-5">
+      <div class="container-fluid">
+        <div class="row pb-5">
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5 class="mb-4">Contact Us</h5>
+            <div class="mb-3">
+              <p class="mb-1">
+                New City Hospital, 16th Floor #1608 Tijuana, Baja California,
+                Mexico
+              </p>
+            </div>
+            <div>
+              <p class="mb-1">US:(+1) 619 904 9303</p>
+              <p class="mb-0">MX:(+52) 664 756 9466</p>
+            </div>
           </div>
-
-          <div class="col-6 col-md-3 col-lg-2 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-4 text-secondary">Quick Links</h5>
+          <div class="col-md-4 offset-md-1 mt-3">
+            <h5 class="mb-4">More Info</h5>
             <ul class="list-unstyled">
               <li class="mb-2">
                 <a
                   href="/services.php"
-                  class="text-white-50 text-decoration-none"
+                  class="text-white-70 text-decoration-none"
                   >Services</a
                 >
               </li>
@@ -298,25 +297,16 @@
               </li>
             </ul>
           </div>
-
-          <div class="col-6 col-md-3 col-lg-3 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-4 text-secondary">Contact & Hours</h5>
-            <div class="mb-3">
-              <p class="mb-1">📍 New City Hospital, 16th Floor – #1608</p>
-              <p class="mb-0">Tijuana, Baja California</p>
-            </div>
-            <div class="mb-3">
-              <p class="mb-1">🕒 Mon – Fri: 8:00 – 20:00</p>
-            </div>
-            <div>
-              <p class="mb-1">📞 US: (+1) 619 904 9303</p>
-              <p class="mb-0">📞 MX: (+52) 664 756 9466</p>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-3 col-lg-2">
-            <h5 class="text-uppercase mb-4 text-secondary">Connect</h5>
+          <div class="col-md-4 mt-3">
+            <h5 class="mb-4">Stay Connected</h5>
             <div class="d-flex web-cont-icon-socialmedia">
+              <a href="{{ social.facebook }}" target="_blank" class="mr-3">
+                <img
+                  class="social-icon-modern"
+                  src="{% static 'website/img/facebook.svg' %}"
+                  alt="Facebook"
+                />
+              </a>
               <a href="{{ social.instagram }}" target="_blank" class="mr-3">
                 <img
                   class="social-icon-modern"
@@ -341,20 +331,19 @@
             </div>
           </div>
         </div>
-
         <div class="row pt-4 align-items-center">
           <div class="col-md-6 text-center text-md-left">
             <p class="small text-white-50 mb-0">
-              © 2025 NIETO BARIATRIC. All rights reserved.
+              Copyright 2025 - Nieto Bariatric.
             </p>
           </div>
 
           <div class="col-md-6 text-center text-md-right mt-3 mt-md-0">
             <a
               href="#top"
-              class="text-white-50 text-decoration-none small text-uppercase font-weight-bold"
+              class="text-white-50 text-decoration-none medium text-uppercase font-weight-bold"
             >
-              Back to Top &nbsp; <span class="h5 m-0 align-middle">↑</span>
+              <span class="h5 m-0 align-middle">↑</span>
             </a>
           </div>
         </div>
