@@ -31,6 +31,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["0.0.0.0", ".bariatrichub-production.up.railway.app"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://bariatrichub-production.up.railway.app"
+]
+
 
 # Application definition
 
