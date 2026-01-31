@@ -605,45 +605,45 @@
           below and we’ll get back to you shortly.
         </p>
         <div class="web-container-contact">
-          <form id="faq_form" action="?site=home" method="post">
-            <input type="hidden" name="submitInfo" value="addNewFaq" />
+          <form method="post">
+            {% csrf_token %}
             <div class="form-group web-label-form-group">
-              <label for="inputNameFaq">*Name</label>
+              <label for="contactName">*Name</label>
               <input
                 type="text"
                 class="form-control"
-                name="inputNameFaq"
-                id="inputNameFaq"
+                name="contactName"
+                id="contactName"
                 placeholder=""
                 required
               />
             </div>
             <div class="form-row">
               <div class="form-group web-label-form-group col-md-6">
-                <label for="inputCountryFaq">*Email</label>
+                <label for="contactEmail">*Email</label>
                 <input
                   type="text"
                   class="form-control"
-                  name="inputNameFaq"
-                  id="inputNameFaq"
+                  name="contactEmail"
+                  id="contactEmail"
                   placeholder=""
                   required
                 />
               </div>
               <div class="form-group web-label-form-group col-md-6">
-                <label for="inputPhoneFaq">Phone</label>
+                <label for="contactPhone">Phone</label>
                 <input
                   type="phone"
                   class="form-control"
-                  id="inputPhoneFaq"
-                  name="inputPhoneFaq"
+                  id="contactPhone"
+                  name="contactPhone"
                   required
                 />
               </div>
             </div>
             <div class="form-group web-label-form-group">
-              <label for="inputMailFaq">Reason for contact</label>
-              <select class="form-control" id="reason" name="reason" required>
+              <label for="contactReason">Reason for contact</label>
+              <select class="form-control" id="contactReason" name="contactReason" required>
                 <option value="" disabled selected></option>
                 <option value="appointment">Schedule an Appointment</option>
                 <option value="question">General Question</option>
@@ -655,20 +655,42 @@
               </select>
             </div>
             <div class="form-group web-label-form-group">
-              <label for="QuestionFaq">Message</label>
+              <label for="contactMessage">Message</label>
               <textarea
                 class="form-control"
-                id="QuestionFaq"
-                name="QuestionFaq"
+                id="contactMessage"
+                name="contactMessage"
                 rows="3"
                 required
               ></textarea>
             </div>
             <div class="web-txt-center">
               <br />
-              <button type="submit" class="btn web-btn-default" id="sendFaq">
+              <button type="submit" class="btn web-btn-default" id="btnContact">
                 Send Message
               </button>
+              <!--Errors sections-->
+                {% if form.contactName.errors %}
+                  <div class="text-danger">{{ form.contactName.errors }}</div>
+                {% endif %}
+                {% if form.contactEmail.errors %}
+                  <div class="text-danger">{{ form.contactEmail.errors }}</div>
+                {% endif %}
+                {% if form.contactPhone.errors %}
+                  <div class="text-danger">{{ form.contactPhone.errors }}</div>
+                {% endif %}
+                {% if form.contactReason.errors %}
+                  <div class="text-danger">{{ form.contactReason.errors }}</div>
+                {% endif %}
+                {% if form.contactMessage.errors %}
+                  <div class="text-danger">{{ form.contactMessage.errors }}</div>
+                {% endif %}
+              <!--Message Success-->
+              {% if success %}
+                <div class="alert alert-success">
+                  Message sent successfully
+                </div>
+            {% endif %}
             </div>
           </form>
         </div>
