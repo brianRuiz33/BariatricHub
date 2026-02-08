@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
           slidesPerView: 3,
         },
       },
+      autoplay: {
+    delay: 2000, 
+    disableOnInteraction: true
+  },
     });
 // Navbar
   handleNavbarCollapse()

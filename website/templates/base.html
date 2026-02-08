@@ -177,9 +177,12 @@
         </ul>
 
         <div class="d-flex">
-          <a href="/contact" class="btn web-btn-contact">
-            Schedule an appointment
-          </a>
+            <button class="btn web-btn-contact"  data-bs-toggle="modal"
+      data-bs-target="#appModal">
+      Schedule an appointment
+    
+    </button>
+          
         </div>
 
       </div>
@@ -293,5 +296,250 @@
     </div>
   </div>
 </footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="appModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="appModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog submit-modal">
+        <div class="modal-content">
+          <div class="modal-header header-app">
+            <h1 class="modal-title fs-5" id="appModalLabel">
+              Schedule an appoinment
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="app-intro">
+              <p>
+                🎉 You’ve taken the first step—our team is here to guide you
+                every step of the way.
+              </p>
+              <p>
+                This will only take 2–3 minutes. Answer a few quick questions so
+                we can guide you better.
+              </p>
+            </div>
+
+            <div class="app-step1" hidden>
+              <p>👋 Let’s get started</p>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="txtAppName"
+                  placeholder="John Doe"
+                />
+                <label for="txtAppAge">What's your name?</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="txtAppName"
+                  placeholder="18"
+                />
+                <label for="txtAppName">How old are you?</label>
+              </div>
+              <div class="center-items">Step 1 of 6</div>
+            </div>
+
+            <div class="app-step2" hidden>
+              <p>📏 A bit about you</p>
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="txtAppName"
+                  placeholder="18"
+                />
+                <label for="txtAppName">What is your current weight?</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="txtAppName"
+                  placeholder="100"
+                />
+                <label for="txtAppName">What is your height?</label>
+              </div>
+
+              <div class="center-items">Step 3 of 4</div>
+            </div>
+            <div class="app-step3" hidden>
+              <p>🎯 Your goals</p>
+              <div class="mb-3">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>
+                    Which procedure are you interested in?
+                  </option>
+                  <option value="Gastric sleeve">Gastric sleeve</option>
+                  <option value="Gastric bypass">Gastric bypass</option>
+                  <option value="Balloon">Balloon</option>
+                  <option value="Revision">Revision</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="txtAppName"
+                  placeholder="100"
+                />
+                <label for="txtAppName"
+                  >Approximately how many kilograms would you like to
+                  lose?</label
+                >
+              </div>
+
+              <div class="center-items">Step 3 of 4</div>
+            </div>
+            <div class="app-step4" hidden>
+              <p>🩺 Medical history</p>
+              <p>
+                This information is confidential and helps us guide you safely.
+              </p>
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="txtAppName"
+                  placeholder="100"
+                />
+                <label for="txtAppName"
+                  >Have you had any previous surgeries? If yes, please
+                  specify.</label
+                >
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="txtAppName"
+                  placeholder="100"
+                />
+                <label for="txtAppName"
+                  >Do you have any medical conditions or illnesses?</label
+                >
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="txtAppName"
+                  placeholder="100"
+                />
+                <label for="txtAppName"
+                  >Do you currently take any medications?</label
+                >
+              </div>
+            </div>
+            <div class="app-step5 center-items" hidden>
+              <p>✈️ Travel</p>
+
+              <p>Are you able to travel to Tijuana for your procedure?</p>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="options-base"
+                id="option5"
+                autocomplete="off"
+                checked
+              />
+              <label class="btn" for="option5">Yes</label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="options-base"
+                id="option6"
+                autocomplete="off"
+              />
+              <label class="btn" for="option6">No</label>
+            </div>
+            <div class="app-step6" hidden>
+              <p>📞 Contact preferences</p>
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="txtAppName"
+                  placeholder="100"
+                />
+                <label for="txtAppName"
+                  >What is the best phone number to reach you?</label
+                >
+              </div>
+
+              <p>How would you like us to contact you?</p>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Phone Call
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="checkChecked"
+                  checked
+                />
+                <label class="form-check-label" for="checkChecked">
+                  Whatsapp
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="checkChecked"
+                  checked
+                />
+                <label class="form-check-label" for="checkChecked"> SMS </label>
+              </div>
+            </div>
+            <div class="app-final" hidden>
+              <p>
+                🎉 Congratulations on taking the first step toward a healthier,
+                happier life.
+              </p>
+
+              <p>
+                Our medical team will review your information and contact you
+                shortly.
+              </p>
+            </div>
+            <div class="text-end">
+              <button type="button" class="btn-nb-main">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
