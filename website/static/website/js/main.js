@@ -2,25 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Image Swiper
 // JS
-   var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-        loop: true,
-
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+    new Swiper(".beforeAfterSwiper", {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
       breakpoints: {
-      640: {
-        slidesPerView: 2,
+        992: {
+          slidesPerView: 3,
+        },
       },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
     });
-
-
 // Navbar
   handleNavbarCollapse()
   handleDropdowns()

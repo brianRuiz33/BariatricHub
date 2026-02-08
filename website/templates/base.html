@@ -5,6 +5,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/86e15347da.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Bootstrap 5.3 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -17,21 +22,21 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <!-- New CSS -->
-    <link rel="stylesheet" href="{% static 'website/css/main.css' %}" />
-    <script
-      src="https://kit.fontawesome.com/86e15347da.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- End of New CSS -->
 
     <!--Swipper-->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+
+    <!--Custom Scripts-->
+    <link rel="stylesheet" href="{% static 'website/css/main.css' %}" />
+    <script src="{% static 'website/js/main.js' %}"/>
+
+
+
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -43,16 +48,10 @@
         });
       });
     </script>
-    <script src="{% static 'website/js/main.js' %}"></script>
     <!-- CSS -->
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{% static 'website/css/style.css' %}" />
-    <script
-      src="https://kit.fontawesome.com/982c0f03a9.js"
-      crossorigin="anonymous"
-    ></script>
-
+ 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -64,8 +63,8 @@
   </head>
 
   <body>
-   <div class="container-fluid web-nav-fixed pt-0 pt-lg-3 px-0">
-  <div class="container web-container p-0">
+  <div class="container-fluid web-nav-fixed pt-0 pt-lg-3 px-0">
+    <div class="container web-container p-0">
 
     <nav class="navbar navbar-expand-lg navbar-light p-2">
 
@@ -186,25 +185,24 @@
       </div>
     </nav>
 
+    </div>
   </div>
-</div>
 
 
     <!--Content-->
     {% block content %} {% endblock %}
 
     <!--Footer-->
-<footer class="footer-nb text-white pt-5 pb-3 text-start ps-5">
+<footer class="footer-nb text-white pt-5 pb-3 text-start">
   <div class="container-fluid">
-
-    <!-- Top Footer -->
+    <div class="container">
+ <!-- Top Footer -->
     <div class="row pb-5">
-
       <!-- Contact -->
       <div class="col-md-3 mb-4 mb-md-0 mt-3">
         <h5 class="mb-4">Contact Us</h5>
         <p class="mb-1">
-          New City Hospital, 16th Floor #1608 Tijuana, Baja California, Mexico
+          Dreams Hospital, Gobernador Ibarra 9721, America, 22044 Tijuana, Baja California, Mexico
         </p>
         <p class="mb-1">US: (+1) 619 904 9303</p>
         <p class="mb-0">MX: (+52) 664 756 9466</p>
@@ -240,7 +238,7 @@
       <!-- Social -->
       <div class="col-md-4 mt-3">
         <h5 class="mb-4">Stay Connected</h5>
-        <div class="d-flex web-cont-icon-socialmedia">
+        <div class="d-flex">
           <a href="{{ social.facebook }}" target="_blank" class="me-3">
             <img
               src="{% static 'website/img/facebook.svg' %}"
@@ -276,13 +274,11 @@
 
     <!-- Bottom Footer -->
     <div class="row pt-4 align-items-center">
-
       <div class="col-md-6 text-center text-md-start">
         <p class="small text-white-50 mb-0">
           © 2026 Nieto Bariatric.
         </p>
       </div>
-
       <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
         <a
           href="#top"
@@ -294,6 +290,7 @@
 
     </div>
 
+    </div>
   </div>
 </footer>
   </body>
