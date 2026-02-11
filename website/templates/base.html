@@ -297,7 +297,7 @@
   </div>
 </footer>
 
-    <!-- Modal -->
+   <!-- Modal -->
     <div
       class="modal fade"
       id="appModal"
@@ -321,7 +321,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <div class="app-intro">
+            <div id="app-step0">
               <p>
                 🎉 You’ve taken the first step—our team is here to guide you
                 every step of the way.
@@ -332,83 +332,106 @@
               </p>
             </div>
 
-            <div class="app-step1" hidden>
+            <div id="app-step1" hidden>
               <p>👋 Let’s get started</p>
               <div class="form-floating mb-3">
                 <input
                   type="text"
                   class="form-control"
                   id="txtAppName"
-                  placeholder="John Doe"
+                  required
+                  minlength="2"
+                  maxlength="50"
+                  pattern="[A-Za-zÀ-ÿ\s]+"
                 />
-                <label for="txtAppAge">What's your name?</label>
+                <label for="txtAppName">What's your full name?</label>
               </div>
               <div class="form-floating mb-3">
                 <input
                   type="number"
                   class="form-control"
-                  id="txtAppName"
+                  id="txtAppAge"
                   placeholder="18"
+                  min="16"
+                  max="90"
+                  step="1"
+                  required
                 />
-                <label for="txtAppName">How old are you?</label>
+                <label for="txtAppAge">How old are you?</label>
               </div>
-              <div class="center-items">Step 1 of 6</div>
             </div>
 
-            <div class="app-step2" hidden>
+            <div id="app-step2" hidden>
               <p>📏 A bit about you</p>
               <div class="form-floating mb-3">
                 <input
                   type="number"
                   class="form-control"
-                  id="txtAppName"
+                  id="txtAppWeight"
                   placeholder="18"
                 />
-                <label for="txtAppName">What is your current weight?</label>
+                <label for="txtAppWeight"
+                  >What is your current weight (kilograms)?</label
+                >
               </div>
               <div class="form-floating mb-3">
                 <input
                   type="number"
                   class="form-control"
-                  id="txtAppName"
-                  placeholder="100"
+                  id="txtAppHeight"
+                  placeholder="170"
+                  min="50"
+                  max="250"
+                  step="1"
+                  required
                 />
-                <label for="txtAppName">What is your height?</label>
+                <label for="txtAppHeight"
+                  >What is your height (centimeters)?</label
+                >
               </div>
-
-              <div class="center-items">Step 3 of 4</div>
             </div>
-            <div class="app-step3" hidden>
+            <div id="app-step3" hidden>
               <p>🎯 Your goals</p>
-              <div class="mb-3">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>
-                    Which procedure are you interested in?
+              <div class="form-floating mb-3">
+                <select
+                  id="selectAppProcedure"
+                  class="form-select"
+                  aria-label="Default select example"
+                  required
+                >
+                  <option selected value="Gastric sleeve">
+                    Gastric sleeve
                   </option>
-                  <option value="Gastric sleeve">Gastric sleeve</option>
                   <option value="Gastric bypass">Gastric bypass</option>
                   <option value="Balloon">Balloon</option>
                   <option value="Revision">Revision</option>
-                  <option value="Not sure">Not sure</option>
+                  <option value="Not sure (I need guidence)">
+                    Not sure (I need guidence)
+                  </option>
                 </select>
+                <label for="selectAppProcedure">
+                  Which procedure are you interested in?
+                </label>
               </div>
 
               <div class="form-floating mb-3">
                 <input
                   type="number"
                   class="form-control"
-                  id="txtAppName"
-                  placeholder="100"
+                  id="txtAppWeightOff"
+                  placeholder="30"
+                  min="1"
+                  max="300"
+                  step="1"
+                  required
                 />
-                <label for="txtAppName"
+                <label for="txtAppWeightOff"
                   >Approximately how many kilograms would you like to
                   lose?</label
                 >
               </div>
-
-              <div class="center-items">Step 3 of 4</div>
             </div>
-            <div class="app-step4" hidden>
+            <div id="app-step4" hidden>
               <p>🩺 Medical history</p>
               <p>
                 This information is confidential and helps us guide you safely.
@@ -450,9 +473,8 @@
                 >
               </div>
             </div>
-            <div class="app-step5 center-items" hidden>
+            <div id="app-step5" hidden>
               <p>✈️ Travel</p>
-
               <p>Are you able to travel to Tijuana for your procedure?</p>
 
               <input
@@ -474,7 +496,7 @@
               />
               <label class="btn" for="option6">No</label>
             </div>
-            <div class="app-step6" hidden>
+            <div id="app-step6" hidden>
               <p>📞 Contact preferences</p>
               <div class="form-floating mb-3">
                 <input
@@ -523,7 +545,7 @@
                 <label class="form-check-label" for="checkChecked"> SMS </label>
               </div>
             </div>
-            <div class="app-final" hidden>
+            <div id="app-step7" hidden>
               <p>
                 🎉 Congratulations on taking the first step toward a healthier,
                 happier life.
@@ -534,12 +556,198 @@
                 shortly.
               </p>
             </div>
+            <div id="txtStepLabel" hidden class="center-items">Step X of Y</div>
+
             <div class="text-end">
-              <button type="button" class="btn-nb-main">Next</button>
+              <button
+                hidden
+                id="btnPrev"
+                type="button"
+                class="btn-nb-main"
+                onclick="prevStep()"
+              >
+                Prev
+              </button>
+              <button id="btnNext" class="btn-nb-main" onclick="nextStep()">
+                Next
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </body>
+      <script>
+      let currentStep = 0;
+      let TOTAL_STEPS = 6;
+
+      function showOnlyStepNumber(stepNumber) {
+        const steps = document.querySelectorAll('[id^="app-step"]');
+        steps.forEach((step) => {
+          step.hidden = step.id !== `app-step${stepNumber}`;
+        });
+
+        // Steps Label
+        const label = document.getElementById("txtStepLabel");
+        if (stepNumber === 0 || stepNumber === 7) {
+          label.hidden = true;
+        } else {
+          debugger;
+          label.hidden = false;
+          label.textContent = `Step ${stepNumber} of ${TOTAL_STEPS}`;
+        }
+      }
+
+      function showPrevButton() {
+        document.getElementById("btnPrev").hidden = !(
+          currentStep > 0 && currentStep != 7
+        );
+      }
+      function nextStep() {
+        if (currentStep >= 1) {
+          // Validations Step 01
+          if (currentStep === 1) {
+            // Name should not be empty
+            const nameInput = document.getElementById("txtAppName");
+            nameInput.setCustomValidity("");
+
+            if (!nameInput.value.trim()) {
+              nameInput.setCustomValidity("Please enter your name");
+            } else if (nameInput.value.length < 2) {
+              nameInput.setCustomValidity("Name must be at least 2 characters");
+            }
+
+            if (!nameInput.checkValidity()) {
+              nameInput.reportValidity();
+              return;
+            }
+            // Age between 16 - 90
+            const ageInput = document.getElementById("txtAppAge");
+            ageInput.setCustomValidity("");
+            const age = Number(ageInput.value);
+
+            if (!ageInput.value) {
+              ageInput.setCustomValidity("Please enter your age");
+            } else if (age < 16) {
+              ageInput.setCustomValidity("You must be at least 16 years old");
+            } else if (age > 90) {
+              ageInput.setCustomValidity("Age must be 90 or less");
+            }
+
+            if (!ageInput.checkValidity()) {
+              ageInput.reportValidity();
+              return;
+            }
+          }
+
+          if (currentStep === 2) {
+            if (!validateWeight()) return;
+            if (!validateHeight()) return;
+          }
+
+          if (currentStep == 3) {
+            //Weight Selection
+            if (!validateWeightOff()) return;
+          }
+          // Move after validation
+          currentStep++;
+          console.log(currentStep);
+          showPrevButton();
+          showOnlyStepNumber(currentStep);
+        } else {
+          // Nothing to validate on step 0, will skip to next screen
+          currentStep++;
+          console.log(currentStep);
+          showPrevButton();
+          showOnlyStepNumber(currentStep);
+        }
+
+        if (currentStep === 7) {
+          // Hide next button
+          document.getElementById("btnNext").hidden = true;
+          // show close modal instead
+          document.getElementById("btnCloseModal").hidden = false;
+        }
+      }
+
+      function prevStep() {
+        currentStep--;
+        console.log(currentStep);
+        showPrevButton();
+        showOnlyStepNumber(currentStep);
+      }
+
+      // Validations
+      function validateHeight() {
+        const heightInput = document.getElementById("txtAppHeight");
+        heightInput.setCustomValidity("");
+        const value = Number(heightInput.value);
+        if (!heightInput.value) {
+          heightInput.setCustomValidity("Please enter your height");
+        } else if (value < 50) {
+          heightInput.setCustomValidity("Height must be at least 50 cm");
+        } else if (value > 250) {
+          heightInput.setCustomValidity("Height must be 250 cm or less");
+        }
+
+        if (!heightInput.checkValidity()) {
+          heightInput.reportValidity();
+          return false;
+        }
+
+        return true;
+      }
+
+      function validateWeight() {
+        const weightInput = document.getElementById("txtAppWeight");
+        weightInput.setCustomValidity("");
+
+        const value = Number(weightInput.value);
+
+        if (!weightInput.value) {
+          weightInput.setCustomValidity("Please enter your weight");
+        } else if (value < 20) {
+          weightInput.setCustomValidity("Weight must be at least 20 kg");
+        } else if (value > 500) {
+          weightInput.setCustomValidity("Weight must be 500 kg or less");
+        }
+
+        if (!weightInput.checkValidity()) {
+          weightInput.reportValidity();
+          return false;
+        }
+
+        return true;
+      }
+
+      function validateWeightOff() {
+        const weightInput = document.getElementById("txtAppWeight");
+        const weightOffInput = document.getElementById("txtAppWeightOff");
+        weightOffInput.setCustomValidity("");
+
+        const weight = Number(weightInput.value);
+        const weightOff = Number(weightOffInput.value);
+
+        if (!weightOffInput.value) {
+          weightOffInput.setCustomValidity(
+            "Please enter how many kg you want to lose",
+          );
+        } else if (weightOff <= 0) {
+          weightOffInput.setCustomValidity(
+            "Weight loss must be greater than 0",
+          );
+        } else if (weightOff >= weight) {
+          weightOffInput.setCustomValidity(
+            "Weight loss must be less than your current weight",
+          );
+        }
+
+        if (!weightOffInput.checkValidity()) {
+          weightOffInput.reportValidity();
+          return false;
+        }
+
+        return true;
+      }
+    </script>
 </html>
