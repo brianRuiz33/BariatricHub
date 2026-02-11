@@ -298,6 +298,7 @@
 </footer>
 
    <!-- Modal -->
+     <!-- Modal -->
     <div
       class="modal fade"
       id="appModal"
@@ -440,10 +441,11 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="txtAppName"
-                  placeholder="100"
+                  id="txtAppPrevSurgeries"
+                  placeholder="None"
+                  required
                 />
-                <label for="txtAppName"
+                <label for="txtAppPrevSurgeries"
                   >Have you had any previous surgeries? If yes, please
                   specify.</label
                 >
@@ -453,10 +455,11 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="txtAppName"
-                  placeholder="100"
+                  id="txtAppIllnesses"
+                  placeholder="None"
+                  required
                 />
-                <label for="txtAppName"
+                <label for="txtAppIllnesses"
                   >Do you have any medical conditions or illnesses?</label
                 >
               </div>
@@ -465,10 +468,11 @@
                 <input
                   type="text"
                   class="form-control"
-                  id="txtAppName"
-                  placeholder="100"
+                  id="txtAppMedications"
+                  placeholder="None"
+                  required
                 />
-                <label for="txtAppName"
+                <label for="txtAppMedications"
                   >Do you currently take any medications?</label
                 >
               </div>
@@ -476,25 +480,26 @@
             <div id="app-step5" hidden>
               <p>✈️ Travel</p>
               <p>Are you able to travel to Tijuana for your procedure?</p>
+              <div class="center-items">
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="options-base"
+                  id="option5"
+                  autocomplete="off"
+                  checked
+                />
+                <label class="btn" for="option5">Yes</label>
 
-              <input
-                type="radio"
-                class="btn-check"
-                name="options-base"
-                id="option5"
-                autocomplete="off"
-                checked
-              />
-              <label class="btn" for="option5">Yes</label>
-
-              <input
-                type="radio"
-                class="btn-check"
-                name="options-base"
-                id="option6"
-                autocomplete="off"
-              />
-              <label class="btn" for="option6">No</label>
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="options-base"
+                  id="option6"
+                  autocomplete="off"
+                />
+                <label class="btn" for="option6">No</label>
+              </div>
             </div>
             <div id="app-step6" hidden>
               <p>📞 Contact preferences</p>
@@ -556,7 +561,9 @@
                 shortly.
               </p>
             </div>
-            <div id="txtStepLabel" hidden class="center-items">Step X of Y</div>
+            <div id="txtStepLabel" hidden class="step-label center-items">
+              Step X of Y
+            </div>
 
             <div class="text-end">
               <button
@@ -577,7 +584,7 @@
       </div>
     </div>
   </body>
-      <script>
+          <script>
       let currentStep = 0;
       let TOTAL_STEPS = 6;
 
@@ -592,7 +599,6 @@
         if (stepNumber === 0 || stepNumber === 7) {
           label.hidden = true;
         } else {
-          debugger;
           label.hidden = false;
           label.textContent = `Step ${stepNumber} of ${TOTAL_STEPS}`;
         }
@@ -603,6 +609,7 @@
           currentStep > 0 && currentStep != 7
         );
       }
+
       function nextStep() {
         if (currentStep >= 1) {
           // Validations Step 01
@@ -644,10 +651,30 @@
             if (!validateWeight()) return;
             if (!validateHeight()) return;
           }
-
           if (currentStep == 3) {
             //Weight Selection
             if (!validateWeightOff()) return;
+          }
+          if (currentStep == 4) {
+            debugger;
+            // Surgeries
+            const prevSurgeriesInput = document.getElementById(
+              "txtAppPrevSurgeries",
+            );
+            const surgeriesMessage =
+              "If you do not take have any prev surgeries, write ‘None’.";
+            if (!validateMedical(prevSurgeriesInput, surgeriesMessage)) return;
+            // Illness
+            const currentIllness = document.getElementById("txtAppIllnesses");
+            const IllnessMessage =
+              "If you do not have any illness, write ‘None’.";
+            if (!validateMedical(currentIllness, IllnessMessage)) return;
+            // Medications
+            const currentMedications =
+              document.getElementById("txtAppMedications");
+            const medicationMessage =
+              "If you do not take any medications, write ‘None’.";
+            if (!validateMedical(currentMedications, medicationMessage)) return;
           }
           // Move after validation
           currentStep++;
@@ -744,6 +771,21 @@
 
         if (!weightOffInput.checkValidity()) {
           weightOffInput.reportValidity();
+          return false;
+        }
+
+        return true;
+      }
+
+      function validateMedical(inputElement, message) {
+        inputElement.setCustomValidity("");
+
+        if (!inputElement.value) {
+          inputElement.setCustomValidity(message);
+        }
+
+        if (!inputElement.checkValidity()) {
+          inputElement.reportValidity();
           return false;
         }
 
