@@ -17,3 +17,21 @@ class Contact(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
      
 #Patient
+
+class Appointment(models.Model):
+    full_name = models.CharField(max_length=100)
+    age = models.PositiveIntegerField()
+    phone = models.CharField(max_length=20)
+    weight = models.PositiveIntegerField()  # kg
+    height = models.PositiveIntegerField()  # cm
+    procedure_of_interest = models.CharField(max_length=150)
+    weight_to_lose = models.PositiveIntegerField(blank=True, null=True)
+    prev_surgeries = models.TextField(blank=True)
+    medical_conditions = models.TextField(blank=True)
+    medications = models.TextField(blank=True)
+    travel = models.BooleanField(default=True)
+    forms_of_contact = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+def __str__(self):
+        return f"{self.full_name} - {self.phone}"

@@ -207,8 +207,8 @@
         <p class="mb-1">
           Dreams Hospital, Gobernador Ibarra 9721, America, 22044 Tijuana, Baja California, Mexico
         </p>
-        <p class="mb-1">US: (+1) 619 904 9303</p>
-        <p class="mb-0">MX: (+52) 664 756 9466</p>
+        <p class="mb-1">US: (+1) 413 321 9187</p>
+        <p class="mb-0">MX: (+52) 646 102 4717</p>
       </div>
 
       <!-- Links -->
@@ -296,9 +296,9 @@
     </div>
   </div>
 </footer>
-
-   <!-- Modal -->
-     <!-- Modal -->
+    <!-- Modal -->
+    <form method="post" action="{% url 'appointment_create' %}">
+    {% csrf_token %}
     <div
       class="modal fade"
       id="appModal"
@@ -340,6 +340,7 @@
                   type="text"
                   class="form-control"
                   id="txtAppName"
+                  name="full_name"
                   required
                   minlength="2"
                   maxlength="50"
@@ -352,6 +353,7 @@
                   type="number"
                   class="form-control"
                   id="txtAppAge"
+                  name="age"
                   placeholder="18"
                   min="16"
                   max="90"
@@ -369,6 +371,7 @@
                   type="number"
                   class="form-control"
                   id="txtAppWeight"
+                  name="weight"
                   placeholder="18"
                 />
                 <label for="txtAppWeight"
@@ -380,6 +383,7 @@
                   type="number"
                   class="form-control"
                   id="txtAppHeight"
+                  name="height"
                   placeholder="170"
                   min="50"
                   max="250"
@@ -396,6 +400,7 @@
               <div class="form-floating mb-3">
                 <select
                   id="selectAppProcedure"
+                  name="procedure_of_interest"
                   class="form-select"
                   aria-label="Default select example"
                   required
@@ -420,6 +425,7 @@
                   type="number"
                   class="form-control"
                   id="txtAppWeightOff"
+                  name="weight_to_lose"
                   placeholder="30"
                   min="1"
                   max="300"
@@ -442,6 +448,7 @@
                   type="text"
                   class="form-control"
                   id="txtAppPrevSurgeries"
+                  name="prev_surgeries"
                   placeholder="None"
                   required
                 />
@@ -456,6 +463,7 @@
                   type="text"
                   class="form-control"
                   id="txtAppIllnesses"
+                  name="medical_conditions"
                   placeholder="None"
                   required
                 />
@@ -471,6 +479,7 @@
                   id="txtAppMedications"
                   placeholder="None"
                   required
+                  name="medications"
                 />
                 <label for="txtAppMedications"
                   >Do you currently take any medications?</label
@@ -487,6 +496,7 @@
                   name="options-base"
                   id="option5"
                   autocomplete="off"
+                  value="true"
                   checked
                 />
                 <label class="btn" for="option5">Yes</label>
@@ -497,6 +507,7 @@
                   name="options-base"
                   id="option6"
                   autocomplete="off"
+                  value="false"
                 />
                 <label class="btn" for="option6">No</label>
               </div>
@@ -505,12 +516,13 @@
               <p>📞 Contact preferences</p>
               <div class="form-floating mb-3">
                 <input
-                  type="number"
+                  type="tel"
                   class="form-control"
-                  id="txtAppName"
-                  placeholder="100"
+                  id="txtAppPhone"
+                  required
+                  name="phone"
                 />
-                <label for="txtAppName"
+                <label for="txtAppPhone"
                   >What is the best phone number to reach you?</label
                 >
               </div>
@@ -522,6 +534,8 @@
                   type="checkbox"
                   value=""
                   id="checkDefault"
+                  value="phone"
+                  checked
                 />
                 <label class="form-check-label" for="checkDefault">
                   Phone Call
@@ -533,6 +547,7 @@
                   type="checkbox"
                   value=""
                   id="checkChecked"
+                  value="whatsapp"
                   checked
                 />
                 <label class="form-check-label" for="checkChecked">
@@ -545,6 +560,7 @@
                   type="checkbox"
                   value=""
                   id="checkChecked"
+                  value="sms"
                   checked
                 />
                 <label class="form-check-label" for="checkChecked"> SMS </label>
@@ -578,16 +594,21 @@
               <button id="btnNext" class="btn-nb-main" onclick="nextStep()">
                 Next
               </button>
+              <button hidden id="btnSubmit" type="submit" class="btn-nb-main">
+                Submit
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
-          <script>
+  </form>
+</body>
+ <script>
       let currentStep = 0;
       let TOTAL_STEPS = 6;
 
+      //Modal functions
       function showOnlyStepNumber(stepNumber) {
         const steps = document.querySelectorAll('[id^="app-step"]');
         steps.forEach((step) => {
@@ -609,6 +630,14 @@
           currentStep > 0 && currentStep != 7
         );
       }
+
+       function showPrevButton() {
+        document.getElementById("btnSubmit").hidden = (
+          currentStep > 0 && currentStep != 7
+        );
+      }
+
+      
 
       function nextStep() {
         if (currentStep >= 1) {
@@ -662,7 +691,7 @@
               "txtAppPrevSurgeries",
             );
             const surgeriesMessage =
-              "If you do not take have any prev surgeries, write ‘None’.";
+              "If you do not have any prev surgeries, write ‘None’.";
             if (!validateMedical(prevSurgeriesInput, surgeriesMessage)) return;
             // Illness
             const currentIllness = document.getElementById("txtAppIllnesses");
@@ -676,6 +705,11 @@
               "If you do not take any medications, write ‘None’.";
             if (!validateMedical(currentMedications, medicationMessage)) return;
           }
+
+          if (currentStep == 6) {
+            if (!validatePhone()) return;
+          }
+
           // Move after validation
           currentStep++;
           console.log(currentStep);
@@ -786,6 +820,39 @@
 
         if (!inputElement.checkValidity()) {
           inputElement.reportValidity();
+          return false;
+        }
+
+        return true;
+      }
+
+      function validatePhone() {
+        const phoneInput = document.getElementById("txtAppPhone");
+        phoneInput.setCustomValidity("");
+
+        let value = phoneInput.value.trim();
+
+        if (!value) {
+          phoneInput.setCustomValidity("Please enter your phone number");
+        } else {
+          // Remove spaces, dashes, parentheses
+          const cleaned = value.replace(/[\s\-()]/g, "");
+
+          // Match:
+          // +1XXXXXXXXXX
+          // +52XXXXXXXXXX
+          // 10 digit local number
+          const phoneRegex = /^(\+1\d{10}|\+52\d{10}|\d{10})$/;
+
+          if (!phoneRegex.test(cleaned)) {
+            phoneInput.setCustomValidity(
+              "Enter a valid US or Mexico phone number",
+            );
+          }
+        }
+
+        if (!phoneInput.checkValidity()) {
+          phoneInput.reportValidity();
           return false;
         }
 
