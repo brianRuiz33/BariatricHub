@@ -10,22 +10,6 @@ social_links = {
     }
 
 def index(request):
-    form = ContactForm(request.POST or None)
-
-    if request.method == "POST":
-        if form.is_valid():
-            Contact.objects.create(
-            name=form.cleaned_data["contactName"],
-            email=form.cleaned_data["contactEmail"],
-            phone=form.cleaned_data["contactPhone"],
-            reason=form.cleaned_data["contactReason"],
-            message=form.cleaned_data["contactMessage"],
-        )            
-            return render(request, "index.html", {
-                "form": ContactForm(),
-                "success": True,
-                "social": social_links
-            })
     return render(request, 'index.html', {"social": social_links})
 
 def about(request):
@@ -37,12 +21,22 @@ def sleeve(request):
 def travel(request):
     return render(request, 'travel.html')
 
-
-
 def table_view(request):
     contacts = Contact.objects.all().order_by("-created_date")
     leads = Appointment.objects.all().order_by("-created_at")
     return render(request, "tables.html", {"leads": leads, "contacts": contacts})
+
+def contact_submit(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return render(request, "partials/contact_success.html")
+
+        return render(request, "partials/contact_errors.html", {
+            "form": form
+        })
 
 def appointment_create(request):
     if request.method == "POST":

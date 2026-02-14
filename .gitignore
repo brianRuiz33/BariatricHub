@@ -126,3 +126,7 @@ dmypy.json
 website/static/website/img/.DS_Store
 
 website/static/website/.DS_Store
+
+web-tests/
+
+website/static/website/css/style2.css
