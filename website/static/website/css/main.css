@@ -597,3 +597,15 @@ a {
         font-size: 1rem;
         margin-top: 2rem;
       }
+
+
+/*tables*/
+
+.tables-nb h1{
+  color: var(--main-color);
+}
+
+.tables-nb th{
+background-color: var(--main-color);
+color: white;
+}

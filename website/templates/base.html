@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- Fontawesome -->
+    <!-- Fontawesome -->
     <script
       src="https://kit.fontawesome.com/86e15347da.js"
       crossorigin="anonymous"
@@ -30,13 +30,9 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
-
     <!--Custom Scripts-->
     <link rel="stylesheet" href="{% static 'website/css/main.css' %}" />
-    <script src="{% static 'website/js/main.js' %}"/>
-
-
-
+    <script src="{% static 'website/js/main.js' %}" />
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -51,7 +47,7 @@
     <!-- CSS -->
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
- 
+
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -63,800 +59,853 @@
   </head>
 
   <body>
-  <div class="container-fluid web-nav-fixed pt-0 pt-lg-3 px-0">
-    <div class="container web-container p-0">
+    <div class="container-fluid web-nav-fixed pt-0 pt-lg-3 px-0">
+      <div class="container web-container p-0">
+        <nav class="navbar navbar-expand-lg navbar-light p-2">
+          <a class="navbar-brand" href="/">
+            <img
+              src="{% static 'website/img/logotipo.png' %}"
+              alt="Logo"
+              width="180"
+            />
+          </a>
 
-    <nav class="navbar navbar-expand-lg navbar-light p-2">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <img src="{% static 'website/img/menu.svg' %}" alt="" width="30" />
+          </button>
 
-      <a class="navbar-brand" href="/">
-        <img
-          src="{% static 'website/img/logotipo.png' %}"
-          alt="Logo"
-          width="180"
-        />
-      </a>
-
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <img src="{% static 'website/img/menu.svg' %}" alt="" width="30" />
-      </button>
-
-      <div
-        class="collapse navbar-collapse web-collapse-navbar"
-        id="navbarSupportedContent"
-      >
-
-        <ul class="navbar-nav me-auto">
-
-          <li class="nav-item">
-            <a class="nav-link web-nav-link" href="/about">About us</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle web-nav-link"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Procedures
-            </a>
-
-            <ul class="dropdown-menu web-dropdown-menu">
-
-              <li>
-                <a class="dropdown-item web-dropdown-item" href="/gastric-sleeve">
-                  <img class="me-2 me-lg-4" src="{% static 'website/img/sleeve.png' %}" width="35" />
-                  Gastric Sleeve
-                </a>
+          <div
+            class="collapse navbar-collapse web-collapse-navbar"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link web-nav-link" href="/about">About us</a>
               </li>
 
-              <li>
-                <a class="dropdown-item web-dropdown-item" href="/endoscopicsleeve">
-                  <img class="me-2 me-lg-4" src="{% static 'website/img/banding.png' %}" width="35" />
-                  Endoscopic Gastric Sleeve
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle web-nav-link"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Procedures
                 </a>
+
+                <ul class="dropdown-menu web-dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item web-dropdown-item"
+                      href="/gastric-sleeve"
+                    >
+                      <img
+                        class="me-2 me-lg-4"
+                        src="{% static 'website/img/sleeve.png' %}"
+                        width="35"
+                      />
+                      Gastric Sleeve
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item web-dropdown-item"
+                      href="/endoscopicsleeve"
+                    >
+                      <img
+                        class="me-2 me-lg-4"
+                        src="{% static 'website/img/banding.png' %}"
+                        width="35"
+                      />
+                      Endoscopic Gastric Sleeve
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item web-dropdown-item"
+                      href="/gastricballon"
+                    >
+                      <img
+                        class="me-2 me-lg-4"
+                        src="{% static 'website/img/ballon.png' %}"
+                        width="35"
+                      />
+                      Gastric Balloon
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item web-dropdown-item"
+                      href="/gastricbypass"
+                    >
+                      <img
+                        class="me-2 me-lg-4"
+                        src="{% static 'website/img/minigastric.png' %}"
+                        width="35"
+                      />
+                      One Anastomosis Gastric Bypass
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class="dropdown-item web-dropdown-item"
+                      href="/bypassyderoux"
+                    >
+                      <img
+                        class="me-2 me-lg-4"
+                        src="{% static 'website/img/roux.png' %}"
+                        width="35"
+                      />
+                      Bypass en Y de Roux
+                    </a>
+                  </li>
+                </ul>
               </li>
 
-              <li>
-                <a class="dropdown-item web-dropdown-item" href="/gastricballon">
-                  <img class="me-2 me-lg-4" src="{% static 'website/img/ballon.png' %}" width="35" />
-                  Gastric Balloon
-                </a>
+              <li class="nav-item">
+                <a class="nav-link web-nav-link" href="/travel">Travel</a>
               </li>
 
-              <li>
-                <a class="dropdown-item web-dropdown-item" href="/gastricbypass">
-                  <img class="me-2 me-lg-4" src="{% static 'website/img/minigastric.png' %}" width="35" />
-                  One Anastomosis Gastric Bypass
-                </a>
+              <li class="nav-item">
+                <a class="nav-link web-nav-link" href="/#contact-us"
+                  >Contact us</a
+                >
               </li>
 
-              <li>
-                <a class="dropdown-item web-dropdown-item" href="/bypassyderoux">
-                  <img class="me-2 me-lg-4" src="{% static 'website/img/roux.png' %}" width="35" />
-                  Bypass en Y de Roux
-                </a>
-              </li>
-
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link web-nav-link" href="/travel">Travel</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link web-nav-link" href="/#contact-us">Contact us</a>
-          </li>
-
-          <li class="nav-item">
-            <div class="web-cont-icon-socialmedia ms-3 py-0">
-                  <a href="https://www.facebook.com/profile.php?id=100086618873618" target="_blank"><img class="web-icon-socialmedia" src="/static/website/img/facebook.svg" alt="">
+              <li class="nav-item">
+                <div class="web-cont-icon-socialmedia ms-3 py-0">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100086618873618"
+                    target="_blank"
+                    ><img
+                      class="web-icon-socialmedia"
+                      src="/static/website/img/facebook.svg"
+                      alt=""
+                    />
                   </a>
-                  <a href="https://www.instagram.com/nietobariatric/" target="_blank">
-                    <img class="web-icon-socialmedia" src="/static/website/img/instagram.svg" alt="">
+                  <a
+                    href="https://www.instagram.com/nietobariatric/"
+                    target="_blank"
+                  >
+                    <img
+                      class="web-icon-socialmedia"
+                      src="/static/website/img/instagram.svg"
+                      alt=""
+                    />
                   </a>
-                  <a href="https://www.tiktok.com/@nietobariatric" target="_blank">
-                    <img class="web-icon-socialmedia" src="/static/website/img/tiktok.svg" alt="">
+                  <a
+                    href="https://www.tiktok.com/@nietobariatric"
+                    target="_blank"
+                  >
+                    <img
+                      class="web-icon-socialmedia"
+                      src="/static/website/img/tiktok.svg"
+                      alt=""
+                    />
                   </a>
                   <a href="https://wa.me/16199049303" target="_blank">
-                    <img class="web-icon-socialmedia" src="/static/website/img/wsp.svg" alt="">
+                    <img
+                      class="web-icon-socialmedia"
+                      src="/static/website/img/wsp.svg"
+                      alt=""
+                    />
                   </a>
                 </div>
-          </li>
+              </li>
+            </ul>
 
-        </ul>
-
-        <div class="d-flex">
-            <button class="btn web-btn-contact"  data-bs-toggle="modal"
-      data-bs-target="#appModal">
-      Schedule an appointment
-    
-    </button>
-          
-        </div>
-
+            <div class="d-flex">
+              <button
+                class="btn web-btn-contact"
+                data-bs-toggle="modal"
+                data-bs-target="#appModal"
+              >
+                Schedule an appointment
+              </button>
+            </div>
+          </div>
+        </nav>
       </div>
-    </nav>
-
     </div>
-  </div>
-
 
     <!--Content-->
     {% block content %} {% endblock %}
 
     <!--Footer-->
-<footer class="footer-nb text-white pt-5 pb-3 text-start">
-  <div class="container-fluid">
-    <div class="container">
- <!-- Top Footer -->
-    <div class="row pb-5">
-      <!-- Contact -->
-      <div class="col-md-3 mb-4 mb-md-0 mt-3">
-        <h5 class="mb-4">Contact Us</h5>
-        <p class="mb-1">
-          Dreams Hospital, Gobernador Ibarra 9721, America, 22044 Tijuana, Baja California, Mexico
-        </p>
-        <p class="mb-1">US: (+1) 413 321 9187</p>
-        <p class="mb-0">MX: (+52) 646 102 4717</p>
-      </div>
+    <footer class="footer-nb text-white pt-5 pb-3 text-start">
+      <div class="container-fluid">
+        <div class="container">
+          <!-- Top Footer -->
+          <div class="row pb-5">
+            <!-- Contact -->
+            <div class="col-md-3 mb-4 mb-md-0 mt-3">
+              <h5 class="mb-4">Contact Us</h5>
+              <p class="mb-1">
+                Dreams Hospital, Gobernador Ibarra 9721, America, 22044 Tijuana,
+                Baja California, Mexico
+              </p>
+              <p class="mb-1">US: (+1) 413 321 9187</p>
+              <p class="mb-0">MX: (+52) 646 102 4717</p>
+            </div>
 
-      <!-- Links -->
-      <div class="col-md-4 offset-md-1 mt-3">
-        <h5 class="mb-4">More Info</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2">
-            <a href="/services" class="text-white-50 text-decoration-none">
-              Services
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="/about" class="text-white-50 text-decoration-none">
-              About Us
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="/faq" class="text-white-50 text-decoration-none">
-              FAQ
-            </a>
-          </li>
-          <li class="mb-2">
-            <a href="/testimonials" class="text-white-50 text-decoration-none">
-              Testimonials
-            </a>
-          </li>
-        </ul>
-      </div>
+            <!-- Links -->
+            <div class="col-md-4 offset-md-1 mt-3">
+              <h5 class="mb-4">More Info</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a
+                    href="/services"
+                    class="text-white-50 text-decoration-none"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/about" class="text-white-50 text-decoration-none">
+                    About Us
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/faq" class="text-white-50 text-decoration-none">
+                    FAQ
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a
+                    href="/testimonials"
+                    class="text-white-50 text-decoration-none"
+                  >
+                    Testimonials
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-      <!-- Social -->
-      <div class="col-md-4 mt-3">
-        <h5 class="mb-4">Stay Connected</h5>
-        <div class="d-flex">
-          <a href="{{ social.facebook }}" target="_blank" class="me-3">
-            <img
-              src="{% static 'website/img/facebook.svg' %}"
-              alt="Facebook"
-              class="social-icon-modern"
-            />
-          </a>
-          <a href="{{ social.instagram }}" target="_blank" class="me-3">
-            <img
-              src="{% static 'website/img/instagram.svg' %}"
-              alt="Instagram"
-              class="social-icon-modern"
-            />
-          </a>
-          <a href="{{ social.tiktok }}" target="_blank" class="me-3">
-            <img
-              src="{% static 'website/img/tiktok.svg' %}"
-              alt="TikTok"
-              class="social-icon-modern"
-            />
-          </a>
-          <a href="{{ social.youtube }}" target="_blank">
-            <img
-              src="{% static 'website/img/youtube.svg' %}"
-              alt="YouTube"
-              class="social-icon-modern"
-            />
-          </a>
+            <!-- Social -->
+            <div class="col-md-4 mt-3">
+              <h5 class="mb-4">Stay Connected</h5>
+              <div class="d-flex">
+                <a href="{{ social.facebook }}" target="_blank" class="me-3">
+                  <img
+                    src="{% static 'website/img/facebook.svg' %}"
+                    alt="Facebook"
+                    class="social-icon-modern"
+                  />
+                </a>
+                <a href="{{ social.instagram }}" target="_blank" class="me-3">
+                  <img
+                    src="{% static 'website/img/instagram.svg' %}"
+                    alt="Instagram"
+                    class="social-icon-modern"
+                  />
+                </a>
+                <a href="{{ social.tiktok }}" target="_blank" class="me-3">
+                  <img
+                    src="{% static 'website/img/tiktok.svg' %}"
+                    alt="TikTok"
+                    class="social-icon-modern"
+                  />
+                </a>
+                <a href="{{ social.youtube }}" target="_blank">
+                  <img
+                    src="{% static 'website/img/youtube.svg' %}"
+                    alt="YouTube"
+                    class="social-icon-modern"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Footer -->
+          <div class="row pt-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="small text-white-50 mb-0">© 2026 Nieto Bariatric.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+              <a
+                href="#top"
+                class="text-white-50 text-decoration-none text-uppercase fw-bold"
+              >
+                <span class="h5 m-0 align-middle">↑</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-
-    </div>
-
-    <!-- Bottom Footer -->
-    <div class="row pt-4 align-items-center">
-      <div class="col-md-6 text-center text-md-start">
-        <p class="small text-white-50 mb-0">
-          © 2026 Nieto Bariatric.
-        </p>
-      </div>
-      <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-        <a
-          href="#top"
-          class="text-white-50 text-decoration-none text-uppercase fw-bold"
-        >
-          <span class="h5 m-0 align-middle">↑</span>
-        </a>
-      </div>
-
-    </div>
-
-    </div>
-  </div>
-</footer>
+    </footer>
     <!-- Modal -->
     <form method="post" action="{% url 'appointment_create' %}">
-    {% csrf_token %}
-    <div
-      class="modal fade"
-      id="appModal"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="appModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog submit-modal">
-        <div class="modal-content">
-          <div class="modal-header header-app">
-            <h1 class="modal-title fs-5" id="appModalLabel">
-              Schedule an appoinment
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div id="app-step0">
-              <p>
-                🎉 You’ve taken the first step—our team is here to guide you
-                every step of the way.
-              </p>
-              <p>
-                This will only take 2–3 minutes. Answer a few quick questions so
-                we can guide you better.
-              </p>
-            </div>
-
-            <div id="app-step1" hidden>
-              <p>👋 Let’s get started</p>
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="txtAppName"
-                  name="full_name"
-                  required
-                  minlength="2"
-                  maxlength="50"
-                  pattern="[A-Za-zÀ-ÿ\s]+"
-                />
-                <label for="txtAppName">What's your full name?</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="txtAppAge"
-                  name="age"
-                  placeholder="18"
-                  min="16"
-                  max="90"
-                  step="1"
-                  required
-                />
-                <label for="txtAppAge">How old are you?</label>
-              </div>
-            </div>
-
-            <div id="app-step2" hidden>
-              <p>📏 A bit about you</p>
-              <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="txtAppWeight"
-                  name="weight"
-                  placeholder="18"
-                />
-                <label for="txtAppWeight"
-                  >What is your current weight (kilograms)?</label
-                >
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="txtAppHeight"
-                  name="height"
-                  placeholder="170"
-                  min="50"
-                  max="250"
-                  step="1"
-                  required
-                />
-                <label for="txtAppHeight"
-                  >What is your height (centimeters)?</label
-                >
-              </div>
-            </div>
-            <div id="app-step3" hidden>
-              <p>🎯 Your goals</p>
-              <div class="form-floating mb-3">
-                <select
-                  id="selectAppProcedure"
-                  name="procedure_of_interest"
-                  class="form-select"
-                  aria-label="Default select example"
-                  required
-                >
-                  <option selected value="Gastric sleeve">
-                    Gastric sleeve
-                  </option>
-                  <option value="Gastric bypass">Gastric bypass</option>
-                  <option value="Balloon">Balloon</option>
-                  <option value="Revision">Revision</option>
-                  <option value="Not sure (I need guidence)">
-                    Not sure (I need guidence)
-                  </option>
-                </select>
-                <label for="selectAppProcedure">
-                  Which procedure are you interested in?
-                </label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="txtAppWeightOff"
-                  name="weight_to_lose"
-                  placeholder="30"
-                  min="1"
-                  max="300"
-                  step="1"
-                  required
-                />
-                <label for="txtAppWeightOff"
-                  >Approximately how many kilograms would you like to
-                  lose?</label
-                >
-              </div>
-            </div>
-            <div id="app-step4" hidden>
-              <p>🩺 Medical history</p>
-              <p>
-                This information is confidential and helps us guide you safely.
-              </p>
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="txtAppPrevSurgeries"
-                  name="prev_surgeries"
-                  placeholder="None"
-                  required
-                />
-                <label for="txtAppPrevSurgeries"
-                  >Have you had any previous surgeries? If yes, please
-                  specify.</label
-                >
-              </div>
-
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="txtAppIllnesses"
-                  name="medical_conditions"
-                  placeholder="None"
-                  required
-                />
-                <label for="txtAppIllnesses"
-                  >Do you have any medical conditions or illnesses?</label
-                >
-              </div>
-
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="txtAppMedications"
-                  placeholder="None"
-                  required
-                  name="medications"
-                />
-                <label for="txtAppMedications"
-                  >Do you currently take any medications?</label
-                >
-              </div>
-            </div>
-            <div id="app-step5" hidden>
-              <p>✈️ Travel</p>
-              <p>Are you able to travel to Tijuana for your procedure?</p>
-              <div class="center-items">
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="options-base"
-                  id="option5"
-                  autocomplete="off"
-                  value="true"
-                  checked
-                />
-                <label class="btn" for="option5">Yes</label>
-
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="options-base"
-                  id="option6"
-                  autocomplete="off"
-                  value="false"
-                />
-                <label class="btn" for="option6">No</label>
-              </div>
-            </div>
-            <div id="app-step6" hidden>
-              <p>📞 Contact preferences</p>
-              <div class="form-floating mb-3">
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="txtAppPhone"
-                  required
-                  name="phone"
-                />
-                <label for="txtAppPhone"
-                  >What is the best phone number to reach you?</label
-                >
-              </div>
-
-              <p>How would you like us to contact you?</p>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="checkDefault"
-                  value="phone"
-                  checked
-                />
-                <label class="form-check-label" for="checkDefault">
-                  Phone Call
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="checkChecked"
-                  value="whatsapp"
-                  checked
-                />
-                <label class="form-check-label" for="checkChecked">
-                  Whatsapp
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="checkChecked"
-                  value="sms"
-                  checked
-                />
-                <label class="form-check-label" for="checkChecked"> SMS </label>
-              </div>
-            </div>
-            <div id="app-step7" hidden>
-              <p>
-                🎉 Congratulations on taking the first step toward a healthier,
-                happier life.
-              </p>
-
-              <p>
-                Our medical team will review your information and contact you
-                shortly.
-              </p>
-            </div>
-            <div id="txtStepLabel" hidden class="step-label center-items">
-              Step X of Y
-            </div>
-
-            <div class="text-end">
+      {% csrf_token %}
+      <div
+        class="modal fade"
+        id="appModal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="appModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog submit-modal">
+          <div class="modal-content">
+            <div class="modal-header header-app">
+              <h1 class="modal-title fs-5" id="appModalLabel">
+                Schedule an appoinment
+              </h1>
               <button
-                hidden
-                id="btnPrev"
                 type="button"
-                class="btn-nb-main"
-                onclick="prevStep()"
-              >
-                Prev
-              </button>
-              <button id="btnNext" class="btn-nb-main" onclick="nextStep()">
-                Next
-              </button>
-              <button hidden id="btnSubmit" type="submit" class="btn-nb-main">
-                Submit
-              </button>
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div id="app-step0">
+                <p>
+                  🎉 You’ve taken the first step—our team is here to guide you
+                  every step of the way.
+                </p>
+                <p>
+                  This will only take 2–3 minutes. Answer a few quick questions
+                  so we can guide you better.
+                </p>
+              </div>
+
+              <div id="app-step1" hidden>
+                <p>👋 Let’s get started</p>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="txtAppName"
+                    name="full_name"
+                    required
+                    minlength="2"
+                    maxlength="50"
+                    pattern="[A-Za-zÀ-ÿ\s]+"
+                  />
+                  <label for="txtAppName">What's your full name?</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="txtAppAge"
+                    name="age"
+                    placeholder="18"
+                    min="16"
+                    max="90"
+                    step="1"
+                    required
+                  />
+                  <label for="txtAppAge">How old are you?</label>
+                </div>
+              </div>
+
+              <div id="app-step2" hidden>
+                <p>📏 A bit about you</p>
+                <div class="form-floating mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="txtAppWeight"
+                    name="weight"
+                    placeholder="18"
+                  />
+                  <label for="txtAppWeight"
+                    >What is your current weight (kilograms)?</label
+                  >
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="txtAppHeight"
+                    name="height"
+                    placeholder="170"
+                    min="50"
+                    max="250"
+                    step="1"
+                    required
+                  />
+                  <label for="txtAppHeight"
+                    >What is your height (centimeters)?</label
+                  >
+                </div>
+              </div>
+              <div id="app-step3" hidden>
+                <p>🎯 Your goals</p>
+                <div class="form-floating mb-3">
+                  <select
+                    id="selectAppProcedure"
+                    name="procedure_of_interest"
+                    class="form-select"
+                    aria-label="Default select example"
+                    required
+                  >
+                    <option selected value="Gastric sleeve">
+                      Gastric sleeve
+                    </option>
+                    <option value="Gastric bypass">Gastric bypass</option>
+                    <option value="Balloon">Balloon</option>
+                    <option value="Revision">Revision</option>
+                    <option value="Not sure (I need guidence)">
+                      Not sure (I need guidence)
+                    </option>
+                  </select>
+                  <label for="selectAppProcedure">
+                    Which procedure are you interested in?
+                  </label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="txtAppWeightOff"
+                    name="weight_to_lose"
+                    placeholder="30"
+                    min="1"
+                    max="300"
+                    step="1"
+                    required
+                  />
+                  <label for="txtAppWeightOff"
+                    >Approximately how many kilograms would you like to
+                    lose?</label
+                  >
+                </div>
+              </div>
+              <div id="app-step4" hidden>
+                <p>🩺 Medical history</p>
+                <p>
+                  This information is confidential and helps us guide you
+                  safely.
+                </p>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="txtAppPrevSurgeries"
+                    name="prev_surgeries"
+                    placeholder="None"
+                    required
+                  />
+                  <label for="txtAppPrevSurgeries"
+                    >Have you had any previous surgeries? If yes, please
+                    specify.</label
+                  >
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="txtAppIllnesses"
+                    name="medical_conditions"
+                    placeholder="None"
+                    required
+                  />
+                  <label for="txtAppIllnesses"
+                    >Do you have any medical conditions or illnesses?</label
+                  >
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="txtAppMedications"
+                    placeholder="None"
+                    required
+                    name="medications"
+                  />
+                  <label for="txtAppMedications"
+                    >Do you currently take any medications?</label
+                  >
+                </div>
+              </div>
+              <div id="app-step5" hidden>
+                <p>✈️ Travel</p>
+                <p>Are you able to travel to Tijuana for your procedure?</p>
+                <div class="center-items">
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="options-base"
+                    id="option5"
+                    autocomplete="off"
+                    value="true"
+                    checked
+                  />
+                  <label class="btn" for="option5">Yes</label>
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="options-base"
+                    id="option6"
+                    autocomplete="off"
+                    value="false"
+                  />
+                  <label class="btn" for="option6">No</label>
+                </div>
+              </div>
+              <div id="app-step6" hidden>
+                <p>📞 Contact preferences</p>
+                <div class="form-floating mb-3">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="txtAppPhone"
+                    required
+                    name="phone"
+                  />
+                  <label for="txtAppPhone"
+                    >What is the best phone number to reach you?</label
+                  >
+                </div>
+
+                <p>How would you like us to contact you?</p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="checkDefault"
+                    value="phone"
+                    name="forms_of_contact"
+                    checked
+                  />
+                  <label class="form-check-label" for="checkDefault">
+                    Phone Call
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="checkChecked"
+                    value="whatsapp"
+                    checked
+                    name="forms_of_contact"
+                  />
+                  <label class="form-check-label" for="checkChecked">
+                    Whatsapp
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="checkChecked"
+                    value="sms"
+                    name="forms_of_contact"
+                    checked
+                  />
+                  <label class="form-check-label" for="checkChecked">
+                    SMS
+                  </label>
+                </div>
+              </div>
+              <div id="app-step7" hidden>
+                <p>
+                  🎉 Congratulations on taking the first step toward a
+                  healthier, happier life.
+                </p>
+
+                <p>
+                  Our medical team will review your information and contact you
+                  shortly.
+                </p>
+              </div>
+              <div id="txtStepLabel" hidden class="step-label center-items">
+                Step X of Y
+              </div>
+
+              <div class="text-end">
+                <button
+                  hidden
+                  id="btnPrev"
+                  type="button"
+                  class="btn-nb-main"
+                  onclick="prevStep()"
+                >
+                  Prev
+                </button>
+                <button id="btnNext" class="btn-nb-main" onclick="nextStep()">
+                  Next
+                </button>
+                <button hidden id="btnSubmit" type="submit" class="btn-nb-main">
+                  Submit
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </form>
-</body>
- <script>
-      let currentStep = 0;
-      let TOTAL_STEPS = 6;
+    </form>
+  </body>
+  <script>
+    let currentStep = 0;
+    let TOTAL_STEPS = 6;
 
-      //Modal functions
-      function showOnlyStepNumber(stepNumber) {
-        const steps = document.querySelectorAll('[id^="app-step"]');
-        steps.forEach((step) => {
-          step.hidden = step.id !== `app-step${stepNumber}`;
-        });
+    //Modal functions
+    function showOnlyStepNumber(stepNumber) {
+      const steps = document.querySelectorAll('[id^="app-step"]');
+      steps.forEach((step) => {
+        step.hidden = step.id !== `app-step${stepNumber}`;
+      });
 
-        // Steps Label
-        const label = document.getElementById("txtStepLabel");
-        if (stepNumber === 0 || stepNumber === 7) {
-          label.hidden = true;
-        } else {
-          label.hidden = false;
-          label.textContent = `Step ${stepNumber} of ${TOTAL_STEPS}`;
-        }
+      // Steps Label
+      const label = document.getElementById("txtStepLabel");
+      if (stepNumber === 0 || stepNumber === 7) {
+        label.hidden = true;
+      } else {
+        label.hidden = false;
+        label.textContent = `Step ${stepNumber} of ${TOTAL_STEPS}`;
       }
+    }
 
-      function showPrevButton() {
-        document.getElementById("btnPrev").hidden = !(
-          currentStep > 0 && currentStep != 7
-        );
-      }
+    function showPrevButton() {
+      document.getElementById("btnPrev").hidden = !(
+        currentStep > 0 && currentStep != 7
+      );
+    }
 
-       function showPrevButton() {
-        document.getElementById("btnSubmit").hidden = (
-          currentStep > 0 && currentStep != 7
-        );
-      }
+    function showPrevButton() {
+      document.getElementById("btnSubmit").hidden =
+        currentStep > 0 && currentStep != 7;
+    }
 
-      
+    function nextStep() {
+      if (currentStep >= 1) {
+        // Validations Step 01
+        if (currentStep === 1) {
+          // Name should not be empty
+          const nameInput = document.getElementById("txtAppName");
+          nameInput.setCustomValidity("");
 
-      function nextStep() {
-        if (currentStep >= 1) {
-          // Validations Step 01
-          if (currentStep === 1) {
-            // Name should not be empty
-            const nameInput = document.getElementById("txtAppName");
-            nameInput.setCustomValidity("");
-
-            if (!nameInput.value.trim()) {
-              nameInput.setCustomValidity("Please enter your name");
-            } else if (nameInput.value.length < 2) {
-              nameInput.setCustomValidity("Name must be at least 2 characters");
-            }
-
-            if (!nameInput.checkValidity()) {
-              nameInput.reportValidity();
-              return;
-            }
-            // Age between 16 - 90
-            const ageInput = document.getElementById("txtAppAge");
-            ageInput.setCustomValidity("");
-            const age = Number(ageInput.value);
-
-            if (!ageInput.value) {
-              ageInput.setCustomValidity("Please enter your age");
-            } else if (age < 16) {
-              ageInput.setCustomValidity("You must be at least 16 years old");
-            } else if (age > 90) {
-              ageInput.setCustomValidity("Age must be 90 or less");
-            }
-
-            if (!ageInput.checkValidity()) {
-              ageInput.reportValidity();
-              return;
-            }
+          if (!nameInput.value.trim()) {
+            nameInput.setCustomValidity("Please enter your name");
+          } else if (nameInput.value.length < 2) {
+            nameInput.setCustomValidity("Name must be at least 2 characters");
           }
 
-          if (currentStep === 2) {
-            if (!validateWeight()) return;
-            if (!validateHeight()) return;
+          if (!nameInput.checkValidity()) {
+            nameInput.reportValidity();
+            return;
           }
-          if (currentStep == 3) {
-            //Weight Selection
-            if (!validateWeightOff()) return;
-          }
-          if (currentStep == 4) {
-            debugger;
-            // Surgeries
-            const prevSurgeriesInput = document.getElementById(
-              "txtAppPrevSurgeries",
-            );
-            const surgeriesMessage =
-              "If you do not have any prev surgeries, write ‘None’.";
-            if (!validateMedical(prevSurgeriesInput, surgeriesMessage)) return;
-            // Illness
-            const currentIllness = document.getElementById("txtAppIllnesses");
-            const IllnessMessage =
-              "If you do not have any illness, write ‘None’.";
-            if (!validateMedical(currentIllness, IllnessMessage)) return;
-            // Medications
-            const currentMedications =
-              document.getElementById("txtAppMedications");
-            const medicationMessage =
-              "If you do not take any medications, write ‘None’.";
-            if (!validateMedical(currentMedications, medicationMessage)) return;
+          // Age between 16 - 90
+          const ageInput = document.getElementById("txtAppAge");
+          ageInput.setCustomValidity("");
+          const age = Number(ageInput.value);
+
+          if (!ageInput.value) {
+            ageInput.setCustomValidity("Please enter your age");
+          } else if (age < 16) {
+            ageInput.setCustomValidity("You must be at least 16 years old");
+          } else if (age > 90) {
+            ageInput.setCustomValidity("Age must be 90 or less");
           }
 
-          if (currentStep == 6) {
-            if (!validatePhone()) return;
+          if (!ageInput.checkValidity()) {
+            ageInput.reportValidity();
+            return;
           }
-
-          // Move after validation
-          currentStep++;
-          console.log(currentStep);
-          showPrevButton();
-          showOnlyStepNumber(currentStep);
-        } else {
-          // Nothing to validate on step 0, will skip to next screen
-          currentStep++;
-          console.log(currentStep);
-          showPrevButton();
-          showOnlyStepNumber(currentStep);
         }
 
-        if (currentStep === 7) {
-          // Hide next button
-          document.getElementById("btnNext").hidden = true;
-          // show close modal instead
-          document.getElementById("btnCloseModal").hidden = false;
+        if (currentStep === 2) {
+          if (!validateWeight()) return;
+          if (!validateHeight()) return;
         }
-      }
+        if (currentStep == 3) {
+          //Weight Selection
+          if (!validateWeightOff()) return;
+        }
+        if (currentStep == 4) {
+          debugger;
+          // Surgeries
+          const prevSurgeriesInput = document.getElementById(
+            "txtAppPrevSurgeries",
+          );
+          const surgeriesMessage =
+            "If you do not have any prev surgeries, write ‘None’.";
+          if (!validateMedical(prevSurgeriesInput, surgeriesMessage)) return;
+          // Illness
+          const currentIllness = document.getElementById("txtAppIllnesses");
+          const IllnessMessage =
+            "If you do not have any illness, write ‘None’.";
+          if (!validateMedical(currentIllness, IllnessMessage)) return;
+          // Medications
+          const currentMedications =
+            document.getElementById("txtAppMedications");
+          const medicationMessage =
+            "If you do not take any medications, write ‘None’.";
+          if (!validateMedical(currentMedications, medicationMessage)) return;
+        }
 
-      function prevStep() {
-        currentStep--;
+        if (currentStep == 6) {
+          if (!validatePhone()) return;
+        }
+
+        // Move after validation
+        currentStep++;
+        console.log(currentStep);
+        showPrevButton();
+        showOnlyStepNumber(currentStep);
+      } else {
+        // Nothing to validate on step 0, will skip to next screen
+        currentStep++;
         console.log(currentStep);
         showPrevButton();
         showOnlyStepNumber(currentStep);
       }
 
-      // Validations
-      function validateHeight() {
-        const heightInput = document.getElementById("txtAppHeight");
-        heightInput.setCustomValidity("");
-        const value = Number(heightInput.value);
-        if (!heightInput.value) {
-          heightInput.setCustomValidity("Please enter your height");
-        } else if (value < 50) {
-          heightInput.setCustomValidity("Height must be at least 50 cm");
-        } else if (value > 250) {
-          heightInput.setCustomValidity("Height must be 250 cm or less");
-        }
+      if (currentStep === 7) {
+        // Hide next button
+        document.getElementById("btnNext").hidden = true;
+        // show close modal instead
+        document.getElementById("btnCloseModal").hidden = false;
+      }
+    }
 
-        if (!heightInput.checkValidity()) {
-          heightInput.reportValidity();
-          return false;
-        }
+    function prevStep() {
+      currentStep--;
+      console.log(currentStep);
+      showPrevButton();
+      showOnlyStepNumber(currentStep);
+    }
 
-        return true;
+    // Validations
+    function validateHeight() {
+      const heightInput = document.getElementById("txtAppHeight");
+      heightInput.setCustomValidity("");
+      const value = Number(heightInput.value);
+      if (!heightInput.value) {
+        heightInput.setCustomValidity("Please enter your height");
+      } else if (value < 50) {
+        heightInput.setCustomValidity("Height must be at least 50 cm");
+      } else if (value > 250) {
+        heightInput.setCustomValidity("Height must be 250 cm or less");
       }
 
-      function validateWeight() {
-        const weightInput = document.getElementById("txtAppWeight");
-        weightInput.setCustomValidity("");
-
-        const value = Number(weightInput.value);
-
-        if (!weightInput.value) {
-          weightInput.setCustomValidity("Please enter your weight");
-        } else if (value < 20) {
-          weightInput.setCustomValidity("Weight must be at least 20 kg");
-        } else if (value > 500) {
-          weightInput.setCustomValidity("Weight must be 500 kg or less");
-        }
-
-        if (!weightInput.checkValidity()) {
-          weightInput.reportValidity();
-          return false;
-        }
-
-        return true;
+      if (!heightInput.checkValidity()) {
+        heightInput.reportValidity();
+        return false;
       }
 
-      function validateWeightOff() {
-        const weightInput = document.getElementById("txtAppWeight");
-        const weightOffInput = document.getElementById("txtAppWeightOff");
-        weightOffInput.setCustomValidity("");
+      return true;
+    }
 
-        const weight = Number(weightInput.value);
-        const weightOff = Number(weightOffInput.value);
+    function validateWeight() {
+      const weightInput = document.getElementById("txtAppWeight");
+      weightInput.setCustomValidity("");
 
-        if (!weightOffInput.value) {
-          weightOffInput.setCustomValidity(
-            "Please enter how many kg you want to lose",
+      const value = Number(weightInput.value);
+
+      if (!weightInput.value) {
+        weightInput.setCustomValidity("Please enter your weight");
+      } else if (value < 20) {
+        weightInput.setCustomValidity("Weight must be at least 20 kg");
+      } else if (value > 500) {
+        weightInput.setCustomValidity("Weight must be 500 kg or less");
+      }
+
+      if (!weightInput.checkValidity()) {
+        weightInput.reportValidity();
+        return false;
+      }
+
+      return true;
+    }
+
+    function validateWeightOff() {
+      const weightInput = document.getElementById("txtAppWeight");
+      const weightOffInput = document.getElementById("txtAppWeightOff");
+      weightOffInput.setCustomValidity("");
+
+      const weight = Number(weightInput.value);
+      const weightOff = Number(weightOffInput.value);
+
+      if (!weightOffInput.value) {
+        weightOffInput.setCustomValidity(
+          "Please enter how many kg you want to lose",
+        );
+      } else if (weightOff <= 0) {
+        weightOffInput.setCustomValidity("Weight loss must be greater than 0");
+      } else if (weightOff >= weight) {
+        weightOffInput.setCustomValidity(
+          "Weight loss must be less than your current weight",
+        );
+      }
+
+      if (!weightOffInput.checkValidity()) {
+        weightOffInput.reportValidity();
+        return false;
+      }
+
+      return true;
+    }
+
+    function validateMedical(inputElement, message) {
+      inputElement.setCustomValidity("");
+
+      if (!inputElement.value) {
+        inputElement.setCustomValidity(message);
+      }
+
+      if (!inputElement.checkValidity()) {
+        inputElement.reportValidity();
+        return false;
+      }
+
+      return true;
+    }
+
+    function validatePhone() {
+      const phoneInput = document.getElementById("txtAppPhone");
+      phoneInput.setCustomValidity("");
+
+      let value = phoneInput.value.trim();
+
+      if (!value) {
+        phoneInput.setCustomValidity("Please enter your phone number");
+      } else {
+        // Remove spaces, dashes, parentheses
+        const cleaned = value.replace(/[\s\-()]/g, "");
+
+        // Match:
+        // +1XXXXXXXXXX
+        // +52XXXXXXXXXX
+        // 10 digit local number
+        const phoneRegex = /^(\+1\d{10}|\+52\d{10}|\d{10})$/;
+
+        if (!phoneRegex.test(cleaned)) {
+          phoneInput.setCustomValidity(
+            "Enter a valid US or Mexico phone number",
           );
-        } else if (weightOff <= 0) {
-          weightOffInput.setCustomValidity(
-            "Weight loss must be greater than 0",
-          );
-        } else if (weightOff >= weight) {
-          weightOffInput.setCustomValidity(
-            "Weight loss must be less than your current weight",
-          );
         }
-
-        if (!weightOffInput.checkValidity()) {
-          weightOffInput.reportValidity();
-          return false;
-        }
-
-        return true;
       }
 
-      function validateMedical(inputElement, message) {
-        inputElement.setCustomValidity("");
-
-        if (!inputElement.value) {
-          inputElement.setCustomValidity(message);
-        }
-
-        if (!inputElement.checkValidity()) {
-          inputElement.reportValidity();
-          return false;
-        }
-
-        return true;
+      if (!phoneInput.checkValidity()) {
+        phoneInput.reportValidity();
+        return false;
       }
 
-      function validatePhone() {
-        const phoneInput = document.getElementById("txtAppPhone");
-        phoneInput.setCustomValidity("");
-
-        let value = phoneInput.value.trim();
-
-        if (!value) {
-          phoneInput.setCustomValidity("Please enter your phone number");
-        } else {
-          // Remove spaces, dashes, parentheses
-          const cleaned = value.replace(/[\s\-()]/g, "");
-
-          // Match:
-          // +1XXXXXXXXXX
-          // +52XXXXXXXXXX
-          // 10 digit local number
-          const phoneRegex = /^(\+1\d{10}|\+52\d{10}|\d{10})$/;
-
-          if (!phoneRegex.test(cleaned)) {
-            phoneInput.setCustomValidity(
-              "Enter a valid US or Mexico phone number",
-            );
-          }
-        }
-
-        if (!phoneInput.checkValidity()) {
-          phoneInput.reportValidity();
-          return false;
-        }
-
-        return true;
-      }
-    </script>
+      return true;
+    }
+  </script>
 </html>

@@ -7,4 +7,5 @@ urlpatterns = [
     path('gastric-sleeve', views.sleeve, name="gastric_sleeve"),
     path('travel', views.travel, name="travel"),
     path("appointment/create/", views.appointment_create, name="appointment_create"),
+    path('tables-test', views.table_view, name="tables")
 ]

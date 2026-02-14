@@ -37,6 +37,13 @@ def sleeve(request):
 def travel(request):
     return render(request, 'travel.html')
 
+
+
+def table_view(request):
+    contacts = Contact.objects.all().order_by("-created_date")
+    leads = Appointment.objects.all().order_by("-created_at")
+    return render(request, "tables.html", {"leads": leads, "contacts": contacts})
+
 def appointment_create(request):
     if request.method == "POST":
         Appointment.objects.create(
