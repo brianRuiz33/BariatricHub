@@ -420,33 +420,55 @@
 
               <div id="app-step2" hidden>
                 <p>📏 A bit about you</p>
-                <div class="form-floating mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="txtAppWeight"
-                    name="weight"
-                    placeholder="18"
-                  />
-                  <label for="txtAppWeight"
-                    >What is your current weight (kilograms)?</label
-                  >
+                <div class="mb-3">
+                  <label class="form-label">What is your current weight?</label>
+
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="txtAppWeight"
+                      name="weight"
+                      min="20"
+                      max="700"
+                      step="0.1"
+                      required
+                    />
+
+                    <select
+                      class="form-select"
+                      id="weightUnit"
+                      style="max-width: 100px"
+                      name="weight_unit"
+                    >
+                      <option value="kg" selected>kg</option>
+                      <option value="lb">lb</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="form-floating mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="txtAppHeight"
-                    name="height"
-                    placeholder="170"
-                    min="50"
-                    max="250"
-                    step="1"
-                    required
-                  />
-                  <label for="txtAppHeight"
-                    >What is your height (centimeters)?</label
-                  >
+                <div class="mb-3">
+                  <label class="form-label">What is your height?</label>
+
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="txtAppHeight"
+                      name="height"
+                      step="0.1"
+                      required
+                    />
+
+                    <select
+                      class="form-select"
+                      id="heightUnit"
+                      name="height_unit"
+                      style="max-width: 100px"
+                    >
+                      <option value="cm" selected>cm</option>
+                      <option value="in">in</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div id="app-step3" hidden>
@@ -474,22 +496,33 @@
                   </label>
                 </div>
 
-                <div class="form-floating mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="txtAppWeightOff"
-                    name="weight_to_lose"
-                    placeholder="30"
-                    min="1"
-                    max="300"
-                    step="1"
-                    required
-                  />
-                  <label for="txtAppWeightOff"
-                    >Approximately how many kilograms would you like to
-                    lose?</label
-                  >
+                <div class="mb-3">
+                  <label class="form-label">
+                    Approximately how much weight would you like to lose?
+                  </label>
+
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="txtAppWeightOff"
+                      name="weight_to_lose"
+                      min="1"
+                      max="700"
+                      step="0.1"
+                      required
+                    />
+
+                    <select
+                      class="form-select"
+                      id="weightToLoseUnit"
+                      style="max-width: 100px"
+                      name="weight_to_lose_unit"
+                    >
+                      <option value="kg" selected>kg</option>
+                      <option value="lb">lb</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div id="app-step4" hidden>
@@ -548,23 +581,22 @@
                   <input
                     type="radio"
                     class="btn-check"
-                    name="options-base"
-                    id="option5"
-                    autocomplete="off"
+                    name="travel"
+                    id="travelYes"
                     value="true"
                     checked
                   />
-                  <label class="btn" for="option5">Yes</label>
+                  <label class="btn" for="travelYes">Yes</label>
 
                   <input
                     type="radio"
                     class="btn-check"
-                    name="options-base"
-                    id="option6"
+                    name="travel"
+                    id="travelNo"
                     autocomplete="off"
                     value="false"
                   />
-                  <label class="btn" for="option6">No</label>
+                  <label class="btn" for="travelNo">No</label>
                 </div>
               </div>
               <div id="app-step6" hidden>
@@ -688,7 +720,7 @@
       );
     }
 
-    function showPrevButton() {
+    function showSubmitButton() {
       document.getElementById("btnSubmit").hidden =
         currentStep > 0 && currentStep != 7;
     }
@@ -739,7 +771,6 @@
           if (!validateWeightOff()) return;
         }
         if (currentStep == 4) {
-          debugger;
           // Surgeries
           const prevSurgeriesInput = document.getElementById(
             "txtAppPrevSurgeries",
@@ -766,13 +797,11 @@
 
         // Move after validation
         currentStep++;
-        console.log(currentStep);
         showPrevButton();
         showOnlyStepNumber(currentStep);
       } else {
         // Nothing to validate on step 0, will skip to next screen
         currentStep++;
-        console.log(currentStep);
         showPrevButton();
         showOnlyStepNumber(currentStep);
       }
@@ -787,7 +816,6 @@
 
     function prevStep() {
       currentStep--;
-      console.log(currentStep);
       showPrevButton();
       showOnlyStepNumber(currentStep);
     }
@@ -795,16 +823,17 @@
     // Validations
     function validateHeight() {
       const heightInput = document.getElementById("txtAppHeight");
+      // TODO: Add validations by KG
       heightInput.setCustomValidity("");
       const value = Number(heightInput.value);
       if (!heightInput.value) {
         heightInput.setCustomValidity("Please enter your height");
-      } else if (value < 50) {
+      }
+      /*else if (value < 50) {
         heightInput.setCustomValidity("Height must be at least 50 cm");
       } else if (value > 250) {
         heightInput.setCustomValidity("Height must be 250 cm or less");
-      }
-
+      }*/
       if (!heightInput.checkValidity()) {
         heightInput.reportValidity();
         return false;
@@ -821,11 +850,13 @@
 
       if (!weightInput.value) {
         weightInput.setCustomValidity("Please enter your weight");
-      } else if (value < 20) {
+      }
+
+      /*else if (value < 20) {
         weightInput.setCustomValidity("Weight must be at least 20 kg");
       } else if (value > 500) {
         weightInput.setCustomValidity("Weight must be 500 kg or less");
-      }
+      }*/
 
       if (!weightInput.checkValidity()) {
         weightInput.reportValidity();

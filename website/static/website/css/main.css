@@ -1,11 +1,7 @@
 * {
     font-family: var(--font-primary);
 }   
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
+
 :root {
   --bs-body-font-family: 'Kantumruy Pro', sans-serif;
   --font-primary: "Kantumruy Pro", sans-serif;

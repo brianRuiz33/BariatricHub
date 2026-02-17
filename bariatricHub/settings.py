@@ -27,7 +27,7 @@ load_dotenv(BASE_DIR / ".env", override=True)
 SECRET_KEY = 'django-insecure-n4yls3t_s!v0f9q06pptasz8kh4m3nyuv5y1o$wto$39(twlxt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["0.0.0.0", ".bariatrichub-production.up.railway.app", "192.168.68.58"]
 

@@ -22,10 +22,13 @@ class Appointment(models.Model):
     full_name = models.CharField(max_length=100)
     age = models.PositiveIntegerField()
     phone = models.CharField(max_length=20)
-    weight = models.PositiveIntegerField()  # kg
-    height = models.PositiveIntegerField()  # cm
+    weight = models.PositiveIntegerField()
+    weight_unit = models.CharField(max_length=3, default="kg")
+    height = models.PositiveIntegerField()
+    height_unit = models.CharField(max_length=3, default="cm")
     procedure_of_interest = models.CharField(max_length=150)
     weight_to_lose = models.PositiveIntegerField(blank=True, null=True)
+    weight_to_lose_unit = models.CharField(max_length=3, default="kg")
     prev_surgeries = models.TextField(blank=True)
     medical_conditions = models.TextField(blank=True)
     medications = models.TextField(blank=True)

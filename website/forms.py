@@ -1,5 +1,4 @@
 from django import forms
-
 from .models import Contact
 class AppointmentForm(forms.ModelForm):
 
@@ -24,16 +23,25 @@ class AppointmentForm(forms.ModelForm):
                 "min": 20,
                 "max": 500
             }),
+            "weight_unit": forms.TextInput(attrs={
+                "class": "form-control",
+            }),
             "height": forms.NumberInput(attrs={
                 "class": "form-control",
                 "min": 100,
                 "max": 250
+            }),
+            "height_unit": forms.TextInput(attrs={
+                "class": "form-control",
             }),
             "procedure_of_interest": forms.TextInput(attrs={
                 "class": "form-control"
             }),
             "weight_to_lose": forms.NumberInput(attrs={
                 "class": "form-control"
+            }),
+            "weight_to_lose_unit": forms.TextInput(attrs={
+                "class": "form-control",
             }),
             "prev_surgeries": forms.Textarea(attrs={
                 "class": "form-control",
