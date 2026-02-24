@@ -32,7 +32,8 @@ DEBUG = False
 ALLOWED_HOSTS = ["0.0.0.0", ".bariatrichub-production.up.railway.app", "192.168.68.58", "nietobariatric.com"]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://bariatrichub-production.up.railway.app"
+    "https://bariatrichub-production.up.railway.app",
+    "https://nietobariatric.com"
 ]
 
 
