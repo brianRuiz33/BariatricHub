@@ -5,7 +5,7 @@ from website.models import Appointment, Contact
 social_links = {
         "facebook": "https://www.facebook.com/profile.php?id=100086618873618",
         "instagram": "https://www.instagram.com/nietobariatric/",
-        "whatsapp": "https://wa.me/16199049303",
+        "whatsapp": "https://wa.me/14133219187", 
         "tiktok": "https://www.tiktok.com/@nietobariatric",
     }
 
@@ -51,9 +51,6 @@ def appointment_create(request):
             procedure_of_interest=request.POST.get("procedure_of_interest"),
             weight_to_lose=request.POST.get("weight_to_lose"),
             weight_to_lose_unit=request.POST.get("weight_to_lose_unit"),
-            prev_surgeries=request.POST.get("prev_surgeries"),
-            medical_conditions=request.POST.get("medical_conditions"),
-            medications=request.POST.get("medications"),
             travel=request.POST.get("travel") == "true",
             forms_of_contact=", ".join(request.POST.getlist("forms_of_contact")),
         )

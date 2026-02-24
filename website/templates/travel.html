@@ -1,161 +1,225 @@
 {% extends "base.html" %} {% block content %} {% load static %}
-<!-- contenedor fondo gradient -->
-<div class="web-hero-container-contact">
-  <div class="container web-container">
-    <div class="web-form-page-contact">
-      <div class="web-txt-center">
-        <h1>Travel Guide</h1>
-        <div class="row mt-5">
-          <div class="col-3">
-            <div
-              class="nav flex-column nav-pills"
-              id="v-pills-tab"
-              role="tablist"
-              aria-orientation="vertical"
-            >
-              <button
-                class="web-nav-link-travel nav-link"
-                id="v-pills-airport-tab"
-                data-toggle="pill"
-                data-target="#v-pills-airport"
-                type="button"
-                role="tab"
-                aria-controls="v-pills-airport"
-                aria-selected="true"
+
+<div>
+  <!-- HERO WITH IMAGE -->
+  <section class="position-relative text-white">
+    <img
+      src="images/tijuana-skyline.jpg"
+      class="w-100"
+      style="height: 400px; object-fit: cover"
+      alt="Tijuana Skyline"
+    />
+    <div class="position-absolute top-50 start-50 translate-middle text-center">
+      <h1 class="fw-bold">Travel & Safety Guide</h1>
+      <p class="lead">
+        For U.S. Patients Traveling to Tijuana for Bariatric Surgery
+      </p>
+    </div>
+  </section>
+
+  <!-- AIRPORT SECTION -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img
+            src="images/san-diego-airport.jpg"
+            class="img-fluid rounded shadow"
+            alt="San Diego International Airport"
+          />
+        </div>
+        <div class="col-lg-6">
+          <h2>Airport & Transportation</h2>
+          <p>
+            Patients typically arrive at
+            <strong>San Diego International Airport (SAN)</strong>, located
+            about 30 minutes from the U.S.–Mexico border.
+          </p>
+          <ul>
+            <li>Day 1: Airport → Hotel</li>
+            <li>Day 2–3: Hotel ↔ Hospital</li>
+            <li>Day 4: Hospital → Hotel</li>
+            <li>Day 5: Hotel → Airport</li>
+          </ul>
+          <p>
+            Private transportation is coordinated in advance for surgical
+            patients.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOTEL -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2">
+          <img
+            src="images/hotel-room.jpg"
+            class="img-fluid rounded shadow"
+            alt="Hotel in Tijuana"
+          />
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <h2>Hotel Accommodations</h2>
+          <p>
+            Your package includes <strong>2 hotel nights</strong> at a secure
+            hotel near the hospital.
+          </p>
+          <ul>
+            <li>Extra nights available at additional cost</li>
+            <li>Subject to availability</li>
+            <li>Must be requested in advance</li>
+          </ul>
+          <p><strong>Recommended Hotels:</strong></p>
+          <ul>
+            <li>Quartz Hotel & Spa Tijuana</li>
+            <li>Grand Hotel Tijuana</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOSPITAL -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img
+            src="images/modern-hospital.jpg"
+            class="img-fluid rounded shadow"
+            alt="Modern private hospital in Mexico"
+          />
+        </div>
+        <div class="col-lg-6">
+          <h2>Hospital Stay & Safety</h2>
+          <ul>
+            <li>Surgery day</li>
+            <li>1 additional recovery day</li>
+          </ul>
+          <p>
+            Procedures are performed in modern private hospitals with
+            board-certified surgeons, advanced laparoscopic equipment, and
+            post-operative monitoring.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTATION -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Required Documentation</h2>
+
+      <div class="row g-4">
+        <div class="col-md-4 text-center">
+          <img
+            src="images/us-passport.jpg"
+            class="img-fluid rounded shadow mb-3"
+            alt="US Passport"
+          />
+          <h5>Valid U.S. Passport</h5>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <img
+            src="images/travel-form.jpg"
+            class="img-fluid rounded shadow mb-3"
+            alt="Travel documentation"
+          />
+          <h5>Tourist Permit (FMM)</h5>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <img
+            src="images/flight-ticket.jpg"
+            class="img-fluid rounded shadow mb-3"
+            alt="Flight ticket"
+          />
+          <h5>Return Flight Confirmation</h5>
+        </div>
+      </div>
+      <div class="mt-4">
+        <p>
+          <strong>Important:</strong> While documentation requirements may vary
+          in practice when entering Mexico by land, U.S. Customs and Border
+          Protection requires a valid passport or approved travel document for
+          re-entry into the United States.
+        </p>
+
+        <p>
+          Return flight confirmation is <strong>not required</strong> for
+          patients crossing by land.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOVERNMENT RESOURCES -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Official U.S. Travel Resources</h2>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5>U.S. Department of State</h5>
+              <p>Review official Mexico travel advisories before departure.</p>
+              <a
+                href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm"
               >
-                Airport
-              </button>
-              <button
-                class="web-nav-link-travel nav-link"
-                id="v-pills-hotel-tab"
-                data-toggle="pill"
-                data-target="#v-pills-hotel"
-                type="button"
-                role="tab"
-                aria-controls="v-pills-hotel"
-                aria-selected="false"
-              >
-                Hotel
-              </button>
-              <button
-                class="web-nav-link-travel nav-link"
-                id="v-pills-hospital-tab"
-                data-toggle="pill"
-                data-target="#v-pills-hospital"
-                type="button"
-                role="tab"
-                aria-controls="v-pills-hospital"
-                aria-selected="false"
-              >
-                Hospital
-              </button>
-              <button
-                class="web-nav-link-travel nav-link"
-                id="v-pills-documentation-tab"
-                data-toggle="pill"
-                data-target="#v-pills-documentation"
-                type="button"
-                role="tab"
-                aria-controls="v-pills-documentation"
-                aria-selected="false"
-              >
-                Documentation
-              </button>
+                View Advisory
+              </a>
             </div>
           </div>
-          <div class="col-9">
-            <div class="tab-content cont-travel-tabs" id="v-pills-tabContent">
-              <div
-                class="tab-pane fade show active"
-                id="v-pills-airport"
-                role="tabpanel"
-                aria-labelledby="v-pills-airport-tab"
-              >
-                <h4>1. Arrival at San Diego airport</h4>
-                <p>
-                  The driver will pick you up and drop you off on the day of
-                  your arrival or departure regardless of when it is, as long as
-                  it is in the Hotel Zone we are not legally permitted to pick
-                  up outside of this area.
-                </p>
-                <h4>2. Transportation included</h4>
-                <p>
-                  On the first day of arrival the driver will take you from the
-                  airport to the hotel, on the second and third day the
-                  operation and recovery in the hospital, on the fourth day the
-                  driver will take you back to the hotel and finally on the
-                  fifth day to the airport.
-                </p>
-              </div>
-              <div
-                class="tab-pane fade"
-                id="v-pills-hotel"
-                role="tabpanel"
-                aria-labelledby="v-pills-hotel-tab"
-              >
-                <h4>1. Extra nights</h4>
-                <p>
-                  Our packages include 2 days in the hotel, the extra days in
-                  Tijuana generate an extra cost and are subject to availability
-                  (you must notify the coordinator as soon as possible; the
-                  coordinator indicates the extra hotel according to AC)
-                </p>
-                <h4>2. Recommended Hotel</h4>
-                <p>
-                  Tijuana:<a href="https://quartzhotel.mx/">
-                    Quartz Hotel & SPA Tijuana
-                  </a>
-                </p>
-                <p>
-                  Tijuana:
-                  <a href="https://grandhoteltj.com.mx/">Grand Hotel Tijuana</a>
-                </p>
-              </div>
-              <div
-                class="tab-pane fade"
-                id="v-pills-hospital"
-                role="tabpanel"
-                aria-labelledby="v-pills-hospital-tab"
-              >
-                <h4>1. Includes 2 days in the Hospital</h4>
-                <p>
-                  You will be able to stay in the hospital the day of the
-                  operation and 1 extra day for your recovery.
-                </p>
-                <h4></h4>
-                <p>
-                  Please confirm your flight and hotel reservation to verify
-                  arrival times with the driver.
-                </p>
-              </div>
-              <div
-                class="tab-pane fade"
-                id="v-pills-documentation"
-                role="tabpanel"
-                aria-labelledby="v-pills-documentation-tab"
-              >
-                <h4>1. Travel Warnings</h4>
-                <p>
-                  The US Department of State provides updated travel warnings to
-                  various countries. <br /><br />
+        </div>
 
-                  There are no other travel restrictions for U.S. government
-                  employees in Baja California state. These include high-traffic
-                  tourism areas of border and coastal communities, such as
-                  Tijuana, Ensenada, and Rosarito. <br /><br />
-
-                  Please view the most updated
-                  <a
-                    href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html"
-                    >travel warnings about visiting Mexico here.</a
-                  >
-                </p>
-              </div>
+        <div class="col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5>U.S. Embassy in Mexico</h5>
+              <p>
+                Access emergency resources and consular assistance information.
+              </p>
+              <a
+                href="https://mx.usembassy.gov/"
+                target="_blank"
+                class="btn btn-outline-primary btn-sm"
+              >
+                Visit Embassy Site
+              </a>
             </div>
           </div>
         </div>
       </div>
+
+      <p class="mt-4 text-center">
+        <strong>Emergency Number in Mexico: 911</strong>
+      </p>
     </div>
-  </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-5 text-white text-center">
+    <div class="cta-banner">
+      <div class="container">
+        <h2 class="mb-3">Start Your Journey Toward Better Health</h2>
+        <p class="mb-4">
+          Schedule a personalized consultation to explore the most effective
+          bariatric and metabolic treatment options for your health goals.
+        </p>
+        <button data-bs-toggle="modal" data-bs-target="#appModal">
+          Book Your Bariatric Consultation
+        </button>
+      </div>
+    </div>
+  </section>
 </div>
+
 {% endblock %}

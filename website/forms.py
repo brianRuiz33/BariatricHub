@@ -43,18 +43,6 @@ class AppointmentForm(forms.ModelForm):
             "weight_to_lose_unit": forms.TextInput(attrs={
                 "class": "form-control",
             }),
-            "prev_surgeries": forms.Textarea(attrs={
-                "class": "form-control",
-                "rows": 3
-            }),
-            "medical_conditions": forms.Textarea(attrs={
-                "class": "form-control",
-                "rows": 3
-            }),
-            "medications": forms.Textarea(attrs={
-                "class": "form-control",
-                "rows": 3
-            }),
             "travel": forms.CheckboxInput(attrs={
                 "class": "form-check-input"
             }),

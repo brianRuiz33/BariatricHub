@@ -94,88 +94,10 @@
                 <a class="nav-link web-nav-link" href="/about">About us</a>
               </li>
 
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle web-nav-link"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+              <li class="nav-item">
+                <a class="nav-link web-nav-link" href="/#procedures">
                   Procedures
                 </a>
-
-                <ul class="dropdown-menu web-dropdown-menu">
-                  <li>
-                    <a
-                      class="dropdown-item web-dropdown-item"
-                      href="/gastric-sleeve"
-                    >
-                      <img
-                        class="me-2 me-lg-4"
-                        src="{% static 'website/img/sleeve.png' %}"
-                        width="35"
-                      />
-                      Gastric Sleeve
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      class="dropdown-item web-dropdown-item"
-                      href="/endoscopicsleeve"
-                    >
-                      <img
-                        class="me-2 me-lg-4"
-                        src="{% static 'website/img/banding.png' %}"
-                        width="35"
-                      />
-                      Endoscopic Gastric Sleeve
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      class="dropdown-item web-dropdown-item"
-                      href="/gastricballon"
-                    >
-                      <img
-                        class="me-2 me-lg-4"
-                        src="{% static 'website/img/ballon.png' %}"
-                        width="35"
-                      />
-                      Gastric Balloon
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      class="dropdown-item web-dropdown-item"
-                      href="/gastricbypass"
-                    >
-                      <img
-                        class="me-2 me-lg-4"
-                        src="{% static 'website/img/minigastric.png' %}"
-                        width="35"
-                      />
-                      One Anastomosis Gastric Bypass
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      class="dropdown-item web-dropdown-item"
-                      href="/bypassyderoux"
-                    >
-                      <img
-                        class="me-2 me-lg-4"
-                        src="{% static 'website/img/roux.png' %}"
-                        width="35"
-                      />
-                      Bypass en Y de Roux
-                    </a>
-                  </li>
-                </ul>
               </li>
 
               <li class="nav-item">
@@ -246,110 +168,6 @@
 
     <!--Content-->
     {% block content %} {% endblock %}
-
-    <!--Footer-->
-    <footer class="footer-nb text-white pt-5 pb-3 text-start">
-      <div class="container-fluid">
-        <div class="container">
-          <!-- Top Footer -->
-          <div class="row pb-5">
-            <!-- Contact -->
-            <div class="col-md-3 mb-4 mb-md-0 mt-3">
-              <h5 class="mb-4">Contact Us</h5>
-              <p class="mb-1">
-                Dreams Hospital, Gobernador Ibarra 9721, America, 22044 Tijuana,
-                Baja California, Mexico
-              </p>
-              <p class="mb-1">US: (+1) 413 321 9187</p>
-              <p class="mb-0">MX: (+52) 646 102 4717</p>
-            </div>
-
-            <!-- Links -->
-            <div class="col-md-4 offset-md-1 mt-3">
-              <h5 class="mb-4">More Info</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a
-                    href="/services"
-                    class="text-white-50 text-decoration-none"
-                  >
-                    Services
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a href="/about" class="text-white-50 text-decoration-none">
-                    About Us
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a href="/faq" class="text-white-50 text-decoration-none">
-                    FAQ
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a
-                    href="/testimonials"
-                    class="text-white-50 text-decoration-none"
-                  >
-                    Testimonials
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Social -->
-            <div class="col-md-4 mt-3">
-              <h5 class="mb-4">Stay Connected</h5>
-              <div class="d-flex">
-                <a href="{{ social.facebook }}" target="_blank" class="me-3">
-                  <img
-                    src="{% static 'website/img/facebook.svg' %}"
-                    alt="Facebook"
-                    class="social-icon-modern"
-                  />
-                </a>
-                <a href="{{ social.instagram }}" target="_blank" class="me-3">
-                  <img
-                    src="{% static 'website/img/instagram.svg' %}"
-                    alt="Instagram"
-                    class="social-icon-modern"
-                  />
-                </a>
-                <a href="{{ social.tiktok }}" target="_blank" class="me-3">
-                  <img
-                    src="{% static 'website/img/tiktok.svg' %}"
-                    alt="TikTok"
-                    class="social-icon-modern"
-                  />
-                </a>
-                <a href="{{ social.whatsapp }}" target="_blank">
-                  <img
-                    src="{% static 'website/img/wsp.svg' %}"
-                    alt="Whatsapp"
-                    class="social-icon-modern"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Footer -->
-          <div class="row pt-4 align-items-center">
-            <div class="col-md-6 text-center text-md-start">
-              <p class="small text-white-50 mb-0">© 2026 Nieto Bariatric.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-              <a
-                href="#top"
-                class="text-white-50 text-decoration-none text-uppercase fw-bold"
-              >
-                <span class="h5 m-0 align-middle">↑</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
     <!-- Modal -->
     <form method="post" action="{% url 'appointment_create' %}">
       {% csrf_token %}
@@ -364,13 +182,13 @@
       >
         <div class="modal-dialog submit-modal">
           <div class="modal-content">
-            <div class="modal-header header-app">
-              <h1 class="modal-title fs-5" id="appModalLabel">
+            <div class="modal-header header-app position-relative center-items">
+              <h1 class="modal-title fs-5 text-center w-100" id="appModalLabel">
                 Schedule an appoinment
               </h1>
               <button
                 type="button"
-                class="btn-close"
+                class="btn-close btn-close-white"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
@@ -378,15 +196,14 @@
             <div class="modal-body">
               <div id="app-step0">
                 <p>
-                  🎉 You’ve taken the first step—our team is here to guide you
+                  You’ve taken the first step—our team is here to guide you
                   every step of the way.
                 </p>
                 <p>
-                  This will only take 2–3 minutes. Answer a few quick questions
-                  so we can guide you better.
+                  This will only take 1 minute. Answer a few quick questions so
+                  we can guide you better.
                 </p>
               </div>
-
               <div id="app-step1" hidden>
                 <p>👋 Let’s get started</p>
                 <div class="form-floating mb-3">
@@ -417,7 +234,6 @@
                   <label for="txtAppAge">How old are you?</label>
                 </div>
               </div>
-
               <div id="app-step2" hidden>
                 <p>📏 A bit about you</p>
                 <div class="mb-3">
@@ -526,56 +342,7 @@
                 </div>
               </div>
               <div id="app-step4" hidden>
-                <p>🩺 Medical history</p>
-                <p>
-                  This information is confidential and helps us guide you
-                  safely.
-                </p>
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="txtAppPrevSurgeries"
-                    name="prev_surgeries"
-                    placeholder="None"
-                    required
-                  />
-                  <label for="txtAppPrevSurgeries"
-                    >Have you had any previous surgeries? If yes, please
-                    specify.</label
-                  >
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="txtAppIllnesses"
-                    name="medical_conditions"
-                    placeholder="None"
-                    required
-                  />
-                  <label for="txtAppIllnesses"
-                    >Do you have any medical conditions or illnesses?</label
-                  >
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="txtAppMedications"
-                    placeholder="None"
-                    required
-                    name="medications"
-                  />
-                  <label for="txtAppMedications"
-                    >Do you currently take any medications?</label
-                  >
-                </div>
-              </div>
-              <div id="app-step5" hidden>
-                <p>✈️ Travel</p>
+                <p>📞 Contact preferences</p>
                 <p>Are you able to travel to Tijuana for your procedure?</p>
                 <div class="center-items">
                   <input
@@ -598,9 +365,7 @@
                   />
                   <label class="btn" for="travelNo">No</label>
                 </div>
-              </div>
-              <div id="app-step6" hidden>
-                <p>📞 Contact preferences</p>
+                <br />
                 <div class="form-floating mb-3">
                   <input
                     type="tel"
@@ -612,50 +377,50 @@
                   <label for="txtAppPhone"
                     >What is the best phone number to reach you?</label
                   >
-                </div>
-
-                <p>How would you like us to contact you?</p>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="checkDefault"
-                    value="phone"
-                    name="forms_of_contact"
-                    checked
-                  />
-                  <label class="form-check-label" for="checkDefault">
-                    Phone Call
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="checkChecked"
-                    value="whatsapp"
-                    checked
-                    name="forms_of_contact"
-                  />
-                  <label class="form-check-label" for="checkChecked">
-                    Whatsapp
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="checkChecked"
-                    value="sms"
-                    name="forms_of_contact"
-                    checked
-                  />
-                  <label class="form-check-label" for="checkChecked">
-                    SMS
-                  </label>
+                  <br />
+                  <p>How would you like us to contact you?</p>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="checkDefault"
+                      value="phone"
+                      name="forms_of_contact"
+                      checked
+                    />
+                    <label class="form-check-label" for="checkDefault">
+                      Phone Call
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="checkChecked"
+                      value="whatsapp"
+                      checked
+                      name="forms_of_contact"
+                    />
+                    <label class="form-check-label" for="checkChecked">
+                      Whatsapp
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="checkChecked"
+                      value="sms"
+                      name="forms_of_contact"
+                      checked
+                    />
+                    <label class="form-check-label" for="checkChecked">
+                      SMS
+                    </label>
+                  </div>
                 </div>
               </div>
-              <div id="app-step7" hidden>
+              <div id="app-step5" hidden>
                 <p>
                   🎉 Congratulations on taking the first step toward a
                   healthier, happier life.
@@ -692,10 +457,113 @@
         </div>
       </div>
     </form>
+    <!--Footer-->
+    <footer class="footer-nb text-white pt-5 pb-3 text-start">
+      <div class="container-fluid">
+        <div class="container">
+          <!-- Top Footer -->
+          <div class="row pb-5">
+            <!-- Contact -->
+            <div class="col-md-3 mb-4 mb-md-0 mt-3">
+              <h5 class="mb-4">Contact Us</h5>
+              <p class="mb-1">
+                Dreams Hospital, Gobernador Ibarra 9721, America, 22044 Tijuana,
+                Baja California, Mexico
+              </p>
+              <p class="mb-1">US: (+1) 413 321 9187</p>
+              <p class="mb-0">MX: (+52) 646 102 4717</p>
+            </div>
+
+            <!-- Links -->
+            <div class="col-md-4 offset-md-1 mt-3">
+              <h5 class="mb-4">More Info</h5>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a
+                    href="/#procedures"
+                    class="text-white-50 text-decoration-none"
+                  >
+                    Procedures
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/about" class="text-white-50 text-decoration-none">
+                    About Us
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="/travel" class="text-white-50 text-decoration-none">
+                    Travel
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a
+                    href="/#contact-us"
+                    class="text-white-50 text-decoration-none"
+                  >
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Social -->
+            <div class="col-md-4 mt-3">
+              <h5 class="mb-4">Stay Connected</h5>
+              <div class="d-flex">
+                <a href="{{ social.facebook }}" target="_blank" class="me-3">
+                  <img
+                    src="{% static 'website/img/facebook.svg' %}"
+                    alt="Facebook"
+                    class="social-icon-modern"
+                  />
+                </a>
+                <a href="{{ social.instagram }}" target="_blank" class="me-3">
+                  <img
+                    src="{% static 'website/img/instagram.svg' %}"
+                    alt="Instagram"
+                    class="social-icon-modern"
+                  />
+                </a>
+                <a href="{{ social.tiktok }}" target="_blank" class="me-3">
+                  <img
+                    src="{% static 'website/img/tiktok.svg' %}"
+                    alt="TikTok"
+                    class="social-icon-modern"
+                  />
+                </a>
+                <a href="{{ social.whatsapp }}" target="_blank">
+                  <img
+                    src="{% static 'website/img/wsp.svg' %}"
+                    alt="Whatsapp"
+                    class="social-icon-modern"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Footer -->
+          <div class="row pt-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="small text-white-50 mb-0">© 2026 Nieto Bariatric.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+              <a
+                href="#top"
+                class="text-white-50 text-decoration-none text-uppercase fw-bold"
+              >
+                <span class="h5 m-0 align-middle">↑</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
   <script>
     let currentStep = 0;
-    let TOTAL_STEPS = 6;
+    let TOTAL_STEPS = 4;
 
     //Modal functions
     function showOnlyStepNumber(stepNumber) {
@@ -706,7 +574,7 @@
 
       // Steps Label
       const label = document.getElementById("txtStepLabel");
-      if (stepNumber === 0 || stepNumber === 7) {
+      if (stepNumber === 0 || stepNumber === TOTAL_STEPS + 1) {
         label.hidden = true;
       } else {
         label.hidden = false;
@@ -716,13 +584,13 @@
 
     function showPrevButton() {
       document.getElementById("btnPrev").hidden = !(
-        currentStep > 0 && currentStep != 7
+        currentStep > 0 && currentStep != TOTAL_STEPS + 1
       );
     }
 
     function showSubmitButton() {
       document.getElementById("btnSubmit").hidden =
-        currentStep > 0 && currentStep != 7;
+        currentStep > 0 && currentStep != TOTAL_STEPS;
     }
 
     function nextStep() {
@@ -761,7 +629,6 @@
             return;
           }
         }
-
         if (currentStep === 2) {
           if (!validateWeight()) return;
           if (!validateHeight()) return;
@@ -771,27 +638,6 @@
           if (!validateWeightOff()) return;
         }
         if (currentStep == 4) {
-          // Surgeries
-          const prevSurgeriesInput = document.getElementById(
-            "txtAppPrevSurgeries",
-          );
-          const surgeriesMessage =
-            "If you do not have any prev surgeries, write ‘None’.";
-          if (!validateMedical(prevSurgeriesInput, surgeriesMessage)) return;
-          // Illness
-          const currentIllness = document.getElementById("txtAppIllnesses");
-          const IllnessMessage =
-            "If you do not have any illness, write ‘None’.";
-          if (!validateMedical(currentIllness, IllnessMessage)) return;
-          // Medications
-          const currentMedications =
-            document.getElementById("txtAppMedications");
-          const medicationMessage =
-            "If you do not take any medications, write ‘None’.";
-          if (!validateMedical(currentMedications, medicationMessage)) return;
-        }
-
-        if (currentStep == 6) {
           if (!validatePhone()) return;
         }
 
@@ -806,7 +652,7 @@
         showOnlyStepNumber(currentStep);
       }
 
-      if (currentStep === 7) {
+      if (currentStep === TOTAL_STEPS + 1) {
         // Hide next button
         document.getElementById("btnNext").hidden = true;
         // show close modal instead
