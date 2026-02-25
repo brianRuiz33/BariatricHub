@@ -1,173 +1,593 @@
-{% extends "base.html" %} {% block content %} {% load static %}
-<div class="container-fluid web-hero-cont-procedures">
-  <div class="container web-container">
-    <h1>Gastric Sleeve</h1>
-  </div>
-</div>
-<div class="container my-5">
-  <div class="row align-items-center">
-    <!-- Text Card -->
-    <div class="col-lg-6 mb-4 mb-lg-0">
-      <div class="card shadow-sm border-0 h-100">
-        <div class="card-body p-4 p-lg-5">
-          <p class="card-text">
-            An <strong>Endoscopic Gastric Sleeve</strong> is a newer, minimally
-            invasive weight-loss procedure. During endoscopic sleeve
-            gastroplasty, a suturing device is inserted through the throat and
-            into the stomach.
-          </p>
+{% extends "base.html" %} {% block content %}
 
-          <p class="card-text">
-            The endoscopist places sutures inside the stomach to reduce its
-            size, helping limit food intake and promote weight loss.
-          </p>
+<!-- HERO -->
+<section class="py-5 bg-dark text-white header-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <span class="badge badge-nb mb-3">For US Patients</span>
+        <h1 class="display-4 fw-bold mb-3 text-white">
+          Gastric Sleeve Surgery in Mexico
+        </h1>
+        <p class="lead mb-4 text-white">
+          Safe, minimally invasive bariatric surgery performed in a modern
+          private hospital with structured care from consultation to recovery.
+        </p>
 
-          <p class="card-text mb-0">
-            This procedure may be an option for patients with a
-            <strong>body mass index (BMI) of 30 or higher</strong> who have not
-            achieved results with diet and exercise alone.
-          </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <button
+            data-bs-toggle="modal"
+            data-bs-target="#appModal"
+            class="btn-nb-main"
+          >
+            SCHEDULE A CONSULTATION
+          </button>
+          <a href="#process">
+            <button class="btn-nb-secondary">SEE HOW IT WORKS</button>
+          </a>
+        </div>
+
+        <div class="mt-4 small text-light">
+          Board-Certified Surgeon · Accredited Hospital · English-Speaking Team
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Video -->
-    <div class="col-lg-6">
-      <div class="embed-responsive embed-responsive-16by9 shadow-sm rounded">
-        <iframe
-          class="embed-responsive-item"
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-          "
-          allowfullscreen
+<!-- WHAT IS GASTRIC SLEEVE -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">What Is Gastric Sleeve?</h2>
+        <p>
+          Gastric sleeve surgery reduces the stomach by approximately
+          <strong>75–80%</strong>, helping patients feel full faster and achieve
+          significant, sustainable weight loss.
+        </p>
+
+        <ul class="list-unstyled mt-4">
+          <li class="mb-2">✔ 60–70% excess weight loss</li>
+          <li class="mb-2">✔ Reduced hunger levels</li>
+          <li class="mb-2">✔ Improvement in diabetes & hypertension</li>
+          <li class="mb-2">✔ 1–2 hour laparoscopic procedure</li>
+        </ul>
+      </div>
+
+      <!-- VIDEO -->
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9 shadow rounded">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/o4CefC4JRLA?si=GIgrVwyL6V-AAv4t"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Why US Patients Choose Our Program</h2>
+      <p class="text-muted">
+        A structured, safe medical tourism experience with predictable care.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="p-4 bg-white shadow-sm rounded h-100 text-center">
+          <h5>Streamlined Process</h5>
+          <p class="small text-muted">No insurance delays.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="p-4 bg-white shadow-sm rounded h-100 text-center">
+          <h5>Private Hospital</h5>
+          <p class="small text-muted">Modern surgical facilities.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="p-4 bg-white shadow-sm rounded h-100 text-center">
+          <h5>Personalized Care</h5>
+          <p class="small text-muted">Direct communication & follow-up.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="p-4 bg-white shadow-sm rounded h-100 text-center">
+          <h5>English Support</h5>
+          <p class="small text-muted">Clear, structured guidance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">What to Expect</h2>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="p-4 border rounded h-100">
+          <h5 class="fw-bold">1. Before Arrival</h5>
+          <ul class="small">
+            <li>Virtual consultation</li>
+            <li>Medical evaluation</li>
+            <li>Pre-op instructions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 border rounded h-100">
+          <h5 class="fw-bold">2. During Your Stay</h5>
+          <ul class="small">
+            <li>2–3 night hospital stay</li>
+            <li>Laparoscopic surgery</li>
+            <li>Post-op monitoring</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 border rounded h-100">
+          <h5 class="fw-bold">3. After Returning Home</h5>
+          <ul class="small">
+            <li>Nutrition plan</li>
+            <li>Recovery guidance</li>
+            <li>Remote follow-up support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ALL-INCLUSIVE PACKAGE -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge bg-success mb-3">All-Inclusive Program</span>
+      <h2 class="fw-bold">What’s Included in Your Gastric Sleeve Package</h2>
+      <p class="text-muted">
+        Transparent, structured care designed specifically for US patients
+        traveling to Mexico.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Pre-Operative Tests -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Pre-Operative Tests</h5>
+            <ul class="list-unstyled small">
+              <li>✔ Blood tests</li>
+              <li>✔ Chest X-ray</li>
+              <li>✔ Electrocardiogram</li>
+              <li>✔ Spirometry</li>
+              <li>✔ Endoscopy</li>
+              <li>✔ Gastrography (if needed)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Evaluations -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Specialist Evaluations</h5>
+            <ul class="list-unstyled small">
+              <li>✔ Anesthesiologist assessment</li>
+              <li>✔ Internal medicine evaluation</li>
+              <li>✔ Nutrition consultation</li>
+              <li>✔ Psychological evaluation</li>
+              <li>✔ Respiratory therapy team</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospital -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Surgery</h5>
+            <ul class="list-unstyled small">
+              <li>✔ Procedure performed by Dr. Felipe Octavio Nieto Segura</li>
+              <li>✔ Hospital operating room fees</li>
+              <li>✔ Anesthesia team</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logistics -->
+      <div class="col-md-6 col-lg-6">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Travel & Logistics</h5>
+            <ul class="list-unstyled small">
+              <li>✔ Transportation from San Diego Airport</li>
+              <li>✔ Hospital stay with companion</li>
+              <li>✔ One hotel night (Quartz or Grand Hotel Tijuana*)</li>
+              <li>✔ Return transportation to airport</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post-Operative Care -->
+      <div class="col-md-6 col-lg-6">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Post-Operative Care</h5>
+            <ul class="list-unstyled small">
+              <li>✔ Leak test</li>
+              <li>✔ Medications during stay</li>
+              <li>✔ Structured nutrition plan</li>
+              <li>✔ One-year medical follow-up</li>
+            </ul>
+
+            <p class="text-muted small mt-3 mb-0">
+              *Promotional packages may exclude hotel stay.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-5">
+    <button
+      data-bs-toggle="modal"
+      data-bs-target="#appModal"
+      class="btn-nb-main"
+    >
+      SCHEDULE YOUR CONSULTATION
+    </button>
+  </div>
+</section>
+<!-- RISKS & CONSIDERATIONS -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge bg-warning text-dark mb-3">Important Information</span>
+      <h2 class="fw-bold">Risks & Considerations</h2>
+      <p class="text-muted">
+        Gastric sleeve surgery is a safe and commonly performed procedure, but
+        like any surgical intervention, it carries potential risks.
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="card shadow-sm border-0">
+          <div class="card-body">
+            <ul class="small mb-4">
+              <li>✔ Bleeding</li>
+              <li>✔ Infection</li>
+              <li>✔ Staple line leak</li>
+              <li>✔ Acid reflux</li>
+              <li>✔ Blood clots</li>
+              <li>✔ Temporary nausea or dehydration</li>
+            </ul>
+
+            <p class="small text-muted mb-0">
+              Every patient undergoes a comprehensive pre-operative evaluation
+              to determine candidacy and reduce complications. During your
+              consultation, your individual risk profile will be reviewed in
+              detail.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FAQ -->
+<!-- FAQ -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Frequently Asked Questions</h2>
+      <p class="text-muted">
+        Clear answers for US patients considering gastric sleeve surgery in
+        Mexico.
+      </p>
+    </div>
+
+    <div class="accordion col-lg-8 mx-auto" id="faqAccordion">
+      <!-- 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faq1"
+          >
+            How long do I stay in Mexico?
+          </button>
+        </h2>
+        <div
+          id="faq1"
+          class="accordion-collapse collapse show"
+          data-bs-parent="#faqAccordion"
         >
-        </iframe>
+          <div class="accordion-body">
+            Most patients stay 2–3 nights in the hospital after surgery. Your
+            total stay in Mexico is typically 3–4 days.
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faq2"
+          >
+            When can I fly home after surgery?
+          </button>
+        </h2>
+        <div
+          id="faq2"
+          class="accordion-collapse collapse"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            Most patients are cleared to fly 3–4 days after surgery. We provide
+            detailed travel instructions to ensure a safe return home.
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faq3"
+          >
+            Is it safe to travel after gastric sleeve surgery?
+          </button>
+        </h2>
+        <div
+          id="faq3"
+          class="accordion-collapse collapse"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            Yes. Patients are medically evaluated and cleared before travel. We
+            provide guidelines to reduce risks such as dehydration and blood
+            clots.
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faq4"
+          >
+            What happens if I have concerns after returning to the U.S.?
+          </button>
+        </h2>
+        <div
+          id="faq4"
+          class="accordion-collapse collapse"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            Our team remains available for remote follow-up and guidance. If
+            necessary, we coordinate with healthcare providers in your area.
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faq5"
+          >
+            Am I a candidate for gastric sleeve surgery?
+          </button>
+        </h2>
+        <div
+          id="faq5"
+          class="accordion-collapse collapse"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            Candidates typically have a BMI of 35 or higher, or 30+ with
+            obesity-related conditions. Final eligibility is determined during
+            your consultation.
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faq6"
+          >
+            How much weight can I expect to lose?
+          </button>
+        </h2>
+        <div
+          id="faq6"
+          class="accordion-collapse collapse"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            Most patients lose 60–70% of their excess body weight within 12–18
+            months, depending on adherence to dietary and lifestyle
+            recommendations.
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faq7"
+          >
+            How long is recovery?
+          </button>
+        </h2>
+        <div
+          id="faq7"
+          class="accordion-collapse collapse"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            Most patients return to light activity within 1–2 weeks. Full
+            recovery and diet progression occur gradually over several weeks.
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#faq8"
+          >
+            Can I bring a companion?
+          </button>
+        </h2>
+        <div
+          id="faq8"
+          class="accordion-collapse collapse"
+          data-bs-parent="#faqAccordion"
+        >
+          <div class="accordion-body">
+            Yes. A companion is encouraged and may stay with you during your
+            hospital stay according to hospital policy.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="container my-5">
-  <h2 class="text-center mb-5">All-Inclusive Gastric Sleeve Package</h2>
-
-  <div class="row">
-    <!-- Pre-Operative Tests -->
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="card package-card animate-on-scroll h-100">
-        <div class="card-body">
-          <h5 class="card-title">Pre-Operative Tests</h5>
-          <ul class="list-unstyled">
-            <li><i class="fas fa-vial"></i> Blood tests</li>
-            <li><i class="fas fa-x-ray"></i> Chest X-ray</li>
-            <li><i class="fas fa-heartbeat"></i> Electrocardiogram</li>
-            <li><i class="fas fa-lungs"></i> Spirometry</li>
-            <li><i class="fas fa-procedures"></i> Endoscopy</li>
-            <li>
-              <i class="fas fa-notes-medical"></i> Gastrography (if needed)
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Evaluations -->
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="card package-card animate-on-scroll h-100">
-        <div class="card-body">
-          <h5 class="card-title">Evaluations</h5>
-          <ul class="list-unstyled">
-            <li><i class="fas fa-user-md"></i> Anesthesiologist</li>
-            <li><i class="fas fa-stethoscope"></i> Internist</li>
-            <li><i class="fas fa-apple-alt"></i> Nutritionist</li>
-            <li><i class="fas fa-brain"></i> Psychologist</li>
-            <li><i class="fas fa-wind"></i> Inhalation therapy team</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Hospital -->
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="card package-card animate-on-scroll h-100">
-        <div class="card-body">
-          <h5 class="card-title">Hospital</h5>
-          <ul class="list-unstyled">
-            <li>
-              <i class="fas fa-user-md"></i> Procedure by Dr. Felipe Octavio
-              Nieto Segura
-            </li>
-            <li><i class="fas fa-hospital"></i> Hospital fees included</li>
-            <li><i class="fas fa-bed"></i> Two-day hospital stay</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Logistics -->
-    <div class="col-md-6 col-lg-6 mb-4">
-      <div class="card package-card animate-on-scroll h-100">
-        <div class="card-body">
-          <h5 class="card-title">Logistics</h5>
-          <ul class="list-unstyled">
-            <li>
-              <i class="fas fa-plane-arrival"></i> Transportation from San Diego
-              Airport
-            </li>
-            <li>
-              <i class="fas fa-user-friends"></i> Two nights in hospital (with
-              companion)
-            </li>
-            <li>
-              <i class="fas fa-hotel"></i> One hotel night (Quartz or Grand
-              Hotel Tijuana*)
-            </li>
-            <li>
-              <i class="fas fa-plane-departure"></i> Return transportation to
-              airport
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Post-Operative Care -->
-    <div class="col-md-6 col-lg-6 mb-4">
-      <div class="card package-card animate-on-scroll h-100">
-        <div class="card-body">
-          <h5 class="card-title">Post-Operative Care</h5>
-          <ul class="list-unstyled">
-            <li><i class="fas fa-vials"></i> Leak test</li>
-            <li><i class="fas fa-pills"></i> Medication</li>
-            <li>
-              <i class="fas fa-calendar-check"></i> One-year medical follow-up
-            </li>
-          </ul>
-
-          <p class="font-italic text-muted small mb-0">
-            *All promotions exclude hotel stay.
-          </p>
-        </div>
-      </div>
+<!-- FINAL CTA -->
+<section id="contact" class="py-5 text-white text-center">
+  <div class="cta-banner">
+    <div class="container">
+      <h2 class="mb-3">Start Your Journey Toward Better Health</h2>
+      <p class="mb-4">
+        Schedule a personalized consultation to explore the most effective
+        bariatric and metabolic treatment options for your health goals.
+      </p>
+      <button data-bs-toggle="modal" data-bs-target="#appModal">
+        SCHEDULE YOUR CONSULTATION
+      </button>
     </div>
   </div>
-</div>
+</section>
 
-<div class="appointment-banner animate-on-scroll">
-  <div class="container text-center">
-    <p class="appointment-subtitle mb-3">Start your Journey now</p>
+<!-- ========================= -->
+<!-- SEO SCHEMA MARKUP -->
+<!-- ========================= -->
 
-    <a href="/contact" class="btn appointment-btn"> Schedule an Appointment </a>
-  </div>
-</div>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Gastric Sleeve Surgery",
+    "description": "Minimally invasive bariatric surgery reducing the stomach size by 75–80% to promote sustainable weight loss.",
+    "procedureType": "SurgicalProcedure",
+    "bodyLocation": "Stomach",
+    "followup": "Remote follow-up and structured post-operative care for US patients traveling to Mexico."
+  }
+</script>
 
-<br />
-<br />
-<br />
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. YOUR NAME",
+    "medicalSpecialty": "Bariatric Surgery",
+    "availableService": {
+      "@type": "MedicalProcedure",
+      "name": "Gastric Sleeve Surgery"
+    }
+  }
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long do I stay in Mexico?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most patients stay 2–3 nights after surgery."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When can I fly home?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typically 3–4 days after surgery depending on recovery."
+        }
+      }
+    ]
+  }
+</script>
 
 {% endblock %}

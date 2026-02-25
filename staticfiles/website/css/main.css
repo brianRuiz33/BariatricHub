@@ -13,6 +13,21 @@
   --gray-bg: #f3f5fd;
 }
 /*Common Styles*/
+
+/*White button*/
+ .btn-nb-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white !important;
+      border-radius: 3rem;
+      padding: 20px;
+      border: none;
+      font-size: 0.8rem;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+
+/*Blue button*/
     .btn-nb-main {
       background-color: var(--main-color);
       color: white;
@@ -28,7 +43,7 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-    p {
+    p, li {
       color: #666;
       line-height: 1.7em;
       font-weight: 300;
@@ -645,4 +660,20 @@ color: var(--main-color);
     letter-spacing: 3px;
     font-size: 1rem;
     font-weight: 300;
+}
+
+
+section h2{
+    color: var(--main-color);
+    font-size: 2rem;
+   
+}
+
+/*Procedure Pages*/
+.header-section{
+    background: var(--new-gradient); 
+}
+
+.badge-nb{
+  background-color: var(--main-color);
 }
