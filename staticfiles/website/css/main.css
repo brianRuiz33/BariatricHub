@@ -12,6 +12,15 @@
   --new-gradient: linear-gradient(180deg,rgba(27, 74, 103, 1) 4%, rgba(49, 197, 179, 1) 69%);
   --gray-bg: #f3f5fd;
 }
+
+.btn-outline-primary {
+  --bs-btn-color: var(--main-color);
+  --bs-btn-border-color: var(--main-color);
+  --bs-btn-hover-bg: var(--main-color);
+  --bs-btn-hover-border-color: var(--main-color);
+  --bs-btn-active-bg: var(--brand-color);
+  --bs-btn-active-border-color: var(--brand-color);
+}
 /*Common Styles*/
 
 /*White button*/

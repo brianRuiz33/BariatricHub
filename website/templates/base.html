@@ -35,12 +35,12 @@
 
     <!--Custom Scripts-->
     <link rel="stylesheet" href="{% static 'website/css/main.css' %}" />
-    <script src="{% static 'website/js/main.js' %}" />
+    <script src="{% static 'website/js/main.js' %}"></script>
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener('DOMContentLoaded', function () {
         AOS.init({
           duration: 600,
           once: true,
@@ -573,7 +573,7 @@
       });
 
       // Steps Label
-      const label = document.getElementById("txtStepLabel");
+      const label = document.getElementById('txtStepLabel');
       if (stepNumber === 0 || stepNumber === TOTAL_STEPS + 1) {
         label.hidden = true;
       } else {
@@ -583,13 +583,13 @@
     }
 
     function showPrevButton() {
-      document.getElementById("btnPrev").hidden = !(
+      document.getElementById('btnPrev').hidden = !(
         currentStep > 0 && currentStep != TOTAL_STEPS + 1
       );
     }
 
     function showSubmitButton() {
-      document.getElementById("btnSubmit").hidden =
+      document.getElementById('btnSubmit').hidden =
         currentStep > 0 && currentStep != TOTAL_STEPS;
     }
 
@@ -598,13 +598,13 @@
         // Validations Step 01
         if (currentStep === 1) {
           // Name should not be empty
-          const nameInput = document.getElementById("txtAppName");
-          nameInput.setCustomValidity("");
+          const nameInput = document.getElementById('txtAppName');
+          nameInput.setCustomValidity('');
 
           if (!nameInput.value.trim()) {
-            nameInput.setCustomValidity("Please enter your name");
+            nameInput.setCustomValidity('Please enter your name');
           } else if (nameInput.value.length < 2) {
-            nameInput.setCustomValidity("Name must be at least 2 characters");
+            nameInput.setCustomValidity('Name must be at least 2 characters');
           }
 
           if (!nameInput.checkValidity()) {
@@ -612,16 +612,16 @@
             return;
           }
           // Age between 16 - 90
-          const ageInput = document.getElementById("txtAppAge");
-          ageInput.setCustomValidity("");
+          const ageInput = document.getElementById('txtAppAge');
+          ageInput.setCustomValidity('');
           const age = Number(ageInput.value);
 
           if (!ageInput.value) {
-            ageInput.setCustomValidity("Please enter your age");
+            ageInput.setCustomValidity('Please enter your age');
           } else if (age < 16) {
-            ageInput.setCustomValidity("You must be at least 16 years old");
+            ageInput.setCustomValidity('You must be at least 16 years old');
           } else if (age > 90) {
-            ageInput.setCustomValidity("Age must be 90 or less");
+            ageInput.setCustomValidity('Age must be 90 or less');
           }
 
           if (!ageInput.checkValidity()) {
@@ -654,9 +654,9 @@
 
       if (currentStep === TOTAL_STEPS + 1) {
         // Hide next button
-        document.getElementById("btnNext").hidden = true;
+        document.getElementById('btnNext').hidden = true;
         // show close modal instead
-        document.getElementById("btnCloseModal").hidden = false;
+        document.getElementById('btnCloseModal').hidden = false;
       }
     }
 
@@ -668,12 +668,12 @@
 
     // Validations
     function validateHeight() {
-      const heightInput = document.getElementById("txtAppHeight");
+      const heightInput = document.getElementById('txtAppHeight');
       // TODO: Add validations by KG
-      heightInput.setCustomValidity("");
+      heightInput.setCustomValidity('');
       const value = Number(heightInput.value);
       if (!heightInput.value) {
-        heightInput.setCustomValidity("Please enter your height");
+        heightInput.setCustomValidity('Please enter your height');
       }
       /*else if (value < 50) {
         heightInput.setCustomValidity("Height must be at least 50 cm");
@@ -689,13 +689,13 @@
     }
 
     function validateWeight() {
-      const weightInput = document.getElementById("txtAppWeight");
-      weightInput.setCustomValidity("");
+      const weightInput = document.getElementById('txtAppWeight');
+      weightInput.setCustomValidity('');
 
       const value = Number(weightInput.value);
 
       if (!weightInput.value) {
-        weightInput.setCustomValidity("Please enter your weight");
+        weightInput.setCustomValidity('Please enter your weight');
       }
 
       /*else if (value < 20) {
@@ -713,22 +713,22 @@
     }
 
     function validateWeightOff() {
-      const weightInput = document.getElementById("txtAppWeight");
-      const weightOffInput = document.getElementById("txtAppWeightOff");
-      weightOffInput.setCustomValidity("");
+      const weightInput = document.getElementById('txtAppWeight');
+      const weightOffInput = document.getElementById('txtAppWeightOff');
+      weightOffInput.setCustomValidity('');
 
       const weight = Number(weightInput.value);
       const weightOff = Number(weightOffInput.value);
 
       if (!weightOffInput.value) {
         weightOffInput.setCustomValidity(
-          "Please enter how many kg you want to lose",
+          'Please enter how many kg you want to lose',
         );
       } else if (weightOff <= 0) {
-        weightOffInput.setCustomValidity("Weight loss must be greater than 0");
+        weightOffInput.setCustomValidity('Weight loss must be greater than 0');
       } else if (weightOff >= weight) {
         weightOffInput.setCustomValidity(
-          "Weight loss must be less than your current weight",
+          'Weight loss must be less than your current weight',
         );
       }
 
@@ -741,7 +741,7 @@
     }
 
     function validateMedical(inputElement, message) {
-      inputElement.setCustomValidity("");
+      inputElement.setCustomValidity('');
 
       if (!inputElement.value) {
         inputElement.setCustomValidity(message);
@@ -756,16 +756,16 @@
     }
 
     function validatePhone() {
-      const phoneInput = document.getElementById("txtAppPhone");
-      phoneInput.setCustomValidity("");
+      const phoneInput = document.getElementById('txtAppPhone');
+      phoneInput.setCustomValidity('');
 
       let value = phoneInput.value.trim();
 
       if (!value) {
-        phoneInput.setCustomValidity("Please enter your phone number");
+        phoneInput.setCustomValidity('Please enter your phone number');
       } else {
         // Remove spaces, dashes, parentheses
-        const cleaned = value.replace(/[\s\-()]/g, "");
+        const cleaned = value.replace(/[\s\-()]/g, '');
 
         // Match:
         // +1XXXXXXXXXX
@@ -775,7 +775,7 @@
 
         if (!phoneRegex.test(cleaned)) {
           phoneInput.setCustomValidity(
-            "Enter a valid US or Mexico phone number",
+            'Enter a valid US or Mexico phone number',
           );
         }
       }

@@ -133,50 +133,14 @@ function closeAllDropdowns(except = null) {
   })
 }
 
+// Enable tooltips
+  document.addEventListener('DOMContentLoaded', function () {
+    var tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]'),
+    );
 
-
-
-
-
-
-
-// ------------secciones wizard-------------
-$(document).ready(function () {
-    $('.web-nav-tabs > li a[title]').tooltip();
-    
-    //Wizard botones next
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-
-        var target = $(e.target);
-    
-        if (target.parent().hasClass('disabled')) {
-            return false;
-        }
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
     });
-
-    $(".next-step").click(function (e) {
-
-        var active = $('.web-wizard .web-nav-tabs li.active');
-        active.next().removeClass('disabled');
-        nextTab(active);
-
-    });
-    
-});
-
-function nextTab(elem) {
-    $(elem).next().find('a[data-toggle="tab"]').click();
-}
-function prevTab(elem) {
-    $(elem).prev().find('a[data-toggle="tab"]').click();
-}
-
-
-$('.web-nav-tabs').on('click', 'li', function() {
-    $('.web-nav-tabs li.active').removeClass('active');
-    $(this).addClass('active');
-});
-
-
-
+  });
 
