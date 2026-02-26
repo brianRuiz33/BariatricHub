@@ -158,7 +158,7 @@
                 data-bs-toggle="modal"
                 data-bs-target="#appModal"
               >
-                Schedule an appointment
+                Schedule a consultation
               </button>
             </div>
           </div>
@@ -184,7 +184,7 @@
           <div class="modal-content">
             <div class="modal-header header-app position-relative center-items">
               <h1 class="modal-title fs-5 text-center w-100" id="appModalLabel">
-                Schedule an appoinment
+                Schedule a consultation
               </h1>
               <button
                 type="button"
@@ -300,12 +300,17 @@
                     <option selected value="Gastric sleeve">
                       Gastric sleeve
                     </option>
-                    <option value="Gastric bypass">Gastric bypass</option>
-                    <option value="Balloon">Balloon</option>
-                    <option value="Revision">Revision</option>
-                    <option value="Not sure (I need guidence)">
-                      Not sure (I need guidence)
+                    <option value="Gastric Balloon">Gastric Balloon</option>
+                    <option value="One Anastomosis gastric bypass">
+                      One Anastomosis gastric bypass
                     </option>
+                    <option value="Roux-en-Y gastric bypass">
+                      Roux-en-Y gastric bypass
+                    </option>
+                    <option value="Intestinal Bipartition">
+                      Intestinal Bipartition
+                    </option>
+                    <option value="Revison">Revison</option>
                   </select>
                   <label for="selectAppProcedure">
                     Which procedure are you interested in?
@@ -386,7 +391,6 @@
                       id="checkDefault"
                       value="phone"
                       name="forms_of_contact"
-                      checked
                     />
                     <label class="form-check-label" for="checkDefault">
                       Phone Call
@@ -398,7 +402,6 @@
                       type="checkbox"
                       id="checkChecked"
                       value="whatsapp"
-                      checked
                       name="forms_of_contact"
                     />
                     <label class="form-check-label" for="checkChecked">
@@ -412,7 +415,6 @@
                       id="checkChecked"
                       value="sms"
                       name="forms_of_contact"
-                      checked
                     />
                     <label class="form-check-label" for="checkChecked">
                       SMS
@@ -763,25 +765,6 @@
 
       if (!value) {
         phoneInput.setCustomValidity('Please enter your phone number');
-      } else {
-        // Remove spaces, dashes, parentheses
-        const cleaned = value.replace(/[\s\-()]/g, '');
-
-        // Match:
-        // +1XXXXXXXXXX
-        // +52XXXXXXXXXX
-        // 10 digit local number
-        const phoneRegex = /^(\+1\d{10}|\+52\d{10}|\d{10})$/;
-
-        if (!phoneRegex.test(cleaned)) {
-          phoneInput.setCustomValidity(
-            'Enter a valid US or Mexico phone number',
-          );
-        }
-      }
-
-      if (!phoneInput.checkValidity()) {
-        phoneInput.reportValidity();
         return false;
       }
 
