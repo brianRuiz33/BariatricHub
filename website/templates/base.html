@@ -169,7 +169,7 @@
     <!--Content-->
     {% block content %} {% endblock %}
     <!-- Modal -->
-    <form method="post" action="{% url 'appointment_create' %}">
+    <form id="appForm" method="post" action="{% url 'appointment_create' %}">
       {% csrf_token %}
       <div
         class="modal fade"
@@ -205,7 +205,8 @@
                 </p>
               </div>
               <div id="app-step1" hidden>
-                <p>👋 Let’s get started</p>
+                <p class="text-center">👋 Let’s get started</p>
+                <hr />
                 <div class="form-floating mb-3">
                   <input
                     type="text"
@@ -235,7 +236,8 @@
                 </div>
               </div>
               <div id="app-step2" hidden>
-                <p>📏 A bit about you</p>
+                <p class="text-center">📏 A bit about you</p>
+                <hr />
                 <div class="mb-3">
                   <label class="form-label">What is your current weight?</label>
 
@@ -288,7 +290,8 @@
                 </div>
               </div>
               <div id="app-step3" hidden>
-                <p>🎯 Your goals</p>
+                <p class="text-center">🎯 Your goals</p>
+                <hr />
                 <div class="form-floating mb-3">
                   <select
                     id="selectAppProcedure"
@@ -299,6 +302,9 @@
                   >
                     <option selected value="Gastric sleeve">
                       Gastric sleeve
+                    </option>
+                    <option selected value="Endoscopic Gastric sleeve">
+                      Endoscopic Gastric sleeve
                     </option>
                     <option value="Gastric Balloon">Gastric Balloon</option>
                     <option value="One Anastomosis gastric bypass">
@@ -347,7 +353,8 @@
                 </div>
               </div>
               <div id="app-step4" hidden>
-                <p>📞 Contact preferences</p>
+                <p class="text-center">📞 Contact preferences</p>
+                <hr />
                 <p>Are you able to travel to Tijuana for your procedure?</p>
                 <div class="center-items">
                   <input
@@ -447,11 +454,13 @@
                 >
                   Prev
                 </button>
-                <button id="btnNext" class="btn-nb-main" onclick="nextStep()">
+                <button
+                  type="button"
+                  id="btnNext"
+                  class="btn-nb-main"
+                  onclick="nextStep()"
+                >
                   Next
-                </button>
-                <button hidden id="btnSubmit" type="submit" class="btn-nb-main">
-                  Submit
                 </button>
               </div>
             </div>
@@ -569,6 +578,7 @@
 
     //Modal functions
     function showOnlyStepNumber(stepNumber) {
+      document.activeElement.blur();
       const steps = document.querySelectorAll('[id^="app-step"]');
       steps.forEach((step) => {
         step.hidden = step.id !== `app-step${stepNumber}`;
@@ -590,75 +600,65 @@
       );
     }
 
-    function showSubmitButton() {
-      document.getElementById('btnSubmit').hidden =
-        currentStep > 0 && currentStep != TOTAL_STEPS;
-    }
-
     function nextStep() {
-      if (currentStep >= 1) {
-        // Validations Step 01
-        if (currentStep === 1) {
-          // Name should not be empty
-          const nameInput = document.getElementById('txtAppName');
-          nameInput.setCustomValidity('');
+      // Validations Step 01
+      if (currentStep === 1) {
+        // Name should not be empty
+        const nameInput = document.getElementById('txtAppName');
+        nameInput.setCustomValidity('');
 
-          if (!nameInput.value.trim()) {
-            nameInput.setCustomValidity('Please enter your name');
-          } else if (nameInput.value.length < 2) {
-            nameInput.setCustomValidity('Name must be at least 2 characters');
-          }
-
-          if (!nameInput.checkValidity()) {
-            nameInput.reportValidity();
-            return;
-          }
-          // Age between 16 - 90
-          const ageInput = document.getElementById('txtAppAge');
-          ageInput.setCustomValidity('');
-          const age = Number(ageInput.value);
-
-          if (!ageInput.value) {
-            ageInput.setCustomValidity('Please enter your age');
-          } else if (age < 16) {
-            ageInput.setCustomValidity('You must be at least 16 years old');
-          } else if (age > 90) {
-            ageInput.setCustomValidity('Age must be 90 or less');
-          }
-
-          if (!ageInput.checkValidity()) {
-            ageInput.reportValidity();
-            return;
-          }
-        }
-        if (currentStep === 2) {
-          if (!validateWeight()) return;
-          if (!validateHeight()) return;
-        }
-        if (currentStep == 3) {
-          //Weight Selection
-          if (!validateWeightOff()) return;
-        }
-        if (currentStep == 4) {
-          if (!validatePhone()) return;
+        if (!nameInput.value.trim()) {
+          nameInput.setCustomValidity('Please enter your name');
+        } else if (nameInput.value.length < 2) {
+          nameInput.setCustomValidity('Name must be at least 2 characters');
         }
 
-        // Move after validation
-        currentStep++;
-        showPrevButton();
-        showOnlyStepNumber(currentStep);
-      } else {
-        // Nothing to validate on step 0, will skip to next screen
-        currentStep++;
-        showPrevButton();
-        showOnlyStepNumber(currentStep);
+        if (!nameInput.checkValidity()) {
+          nameInput.reportValidity();
+          return;
+        }
+        // Age between 16 - 90
+        const ageInput = document.getElementById('txtAppAge');
+        ageInput.setCustomValidity('');
+        const age = Number(ageInput.value);
+
+        if (!ageInput.value) {
+          ageInput.setCustomValidity('Please enter your age');
+        } else if (age < 16) {
+          ageInput.setCustomValidity('You must be at least 16 years old');
+        } else if (age > 90) {
+          ageInput.setCustomValidity('Age must be 90 or less');
+        }
+
+        if (!ageInput.checkValidity()) {
+          ageInput.reportValidity();
+          return;
+        }
+      }
+      if (currentStep === 2) {
+        if (!validateWeight()) return;
+        if (!validateHeight()) return;
+      }
+      if (currentStep === 3) {
+        //Weight Selection
+        if (!validateWeightOff()) return;
+      }
+      if (currentStep === 4) {
+        if (!validatePhone()) return;
       }
 
+      currentStep++;
+      showOnlyStepNumber(currentStep);
+      showPrevButton();
+
+      // Submit form
       if (currentStep === TOTAL_STEPS + 1) {
-        // Hide next button
+        showOnlyStepNumber(currentStep);
         document.getElementById('btnNext').hidden = true;
-        // show close modal instead
-        document.getElementById('btnCloseModal').hidden = false;
+        const form = document.getElementById('appForm');
+        setTimeout(() => {
+          form.submit();
+        }, 3000);
       }
     }
 

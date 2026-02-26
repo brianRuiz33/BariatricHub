@@ -644,20 +644,6 @@ color: white;
 color: var(--main-color);
 }
 
-.cta-banner button {
-    background-color: var(--main-color);
-    color: white;
-    border-radius: 3rem;
-    padding: 20px;
-    border: none;
-    font-size: 0.8rem;
-    transition: transform .2s ease, box-shadow .2s ease;
-    letter-spacing: 3px;
-    font-size: 1rem;
-    font-weight: 300;
-}
-
-
 .cta-blue button {
   background-color: var(--main-color);
     color: white;
