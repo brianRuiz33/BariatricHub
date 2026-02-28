@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from website.forms import ContactForm
 from website.models import Appointment, Contact
+from django.contrib.auth.decorators import login_required
 
 social_links = {
         "facebook": "https://www.facebook.com/profile.php?id=100086618873618",
@@ -21,10 +22,11 @@ def sleeve(request):
 def travel(request):
     return render(request, 'travel.html')
 
-def table_view(request):
+@login_required
+def dashboard(request):
     contacts = Contact.objects.all().order_by("-created_date")
     leads = Appointment.objects.all().order_by("-created_at")
-    return render(request, "tables.html", {"leads": leads, "contacts": contacts})
+    return render(request, "dashboard.html", {"leads": leads, "contacts": contacts})
 
 def contact_submit(request):
     if request.method == "POST":

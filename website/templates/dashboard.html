@@ -36,8 +36,8 @@
               <th scope="col">Nombre</th>
               <th scope="col">Edad</th>
               <th scope="col">Telefono</th>
-              <th scope="col">Peso</th>
-              <th scope="col">Estatura</th>
+              <th scope="col">Peso (KG)</th>
+              <th scope="col">Estatura (CM)</th>
               <th scope="col">
                 Procedimiento <br />
                 de Interes
@@ -45,18 +45,6 @@
               <th scope="col">
                 Kilos a <br />
                 perder
-              </th>
-              <th scope="col">
-                Cirugias <br />
-                Previas
-              </th>
-              <th scope="col">
-                Condiciones <br />
-                Medicas
-              </th>
-              <th scope="col">
-                Medicacion <br />
-                actual
               </th>
               <th scope="col">
                 Puede <br />
@@ -83,9 +71,6 @@
               <td>{{ lead.height }}</td>
               <td>{{ lead.procedure_of_interest }}</td>
               <td>{{lead.weight_to_lose }}</td>
-              <td>{{ lead.prev_surgeries|default:"—" }}</td>
-              <td>{{ lead.medical_conditions|default:"—" }}</td>
-              <td>{{ lead.medications|default:"—" }}</td>
               <td>
                 {% if lead.travel %}
                 <span class="badge bg-success">Yes</span>
