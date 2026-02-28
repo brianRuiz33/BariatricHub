@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-n4yls3t_s!v0f9q06pptasz8kh4m3nyuv5y1o$wto$39(twlxt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["0.0.0.0", ".bariatrichub-production.up.railway.app", "192.168.68.58", "nietobariatric.com"]
+ALLOWED_HOSTS = ["127.0.0.1", ".bariatrichub-production.up.railway.app", "192.168.68.58", "nietobariatric.com"]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://bariatrichub-production.up.railway.app",
