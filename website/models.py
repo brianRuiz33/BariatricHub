@@ -32,6 +32,34 @@ class Appointment(models.Model):
     travel = models.BooleanField(default=True)
     forms_of_contact = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
+    was_contacted = models.BooleanField(default=False)
+
+    def weight_in_kg(self):
+        if self.weight_unit == "lb":
+            return round(self.weight * 0.453592, 2)
+        return self.weight
+
+    def weight_in_lb(self):
+        if self.weight_unit == "kg":
+            return round(self.weight * 2.20462, 2)
+        return self.weight
+    
+    def weight_to_lose_in_kg(self):
+        if self.weight_to_lose_unit == "lb":
+            return round(self.weight_to_lose * 0.453592, 2)
+        return self.weight_to_lose
+    
+    def weight_to_lose_in_lb(self):
+        if self.weight_to_lose_unit == "kg":
+            return round(self.weight_to_lose * 2.20462, 2)
+        return self.weight_to_lose
+
+      
+    def bmi(self):
+        height_m = self.height_cm / 100
+        return round(self.weight_in_kg() / (height_m ** 2), 2)
+    
+
 
 def __str__(self):
         return f"{self.full_name} - {self.phone}"

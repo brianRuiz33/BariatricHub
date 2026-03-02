@@ -18,77 +18,209 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/86e15347da.js"
+      crossorigin="anonymous"
+    ></script>
 
     <link rel="stylesheet" href="{% static 'website/css/main.css' %}" />
   </head>
 
   <body>
     <div class="container tables-nb">
-      <h1 class="mt-3">Appoinment Form Leads</h1>
-      <div style="overflow-x: scroll">
-        <table
-          class="mt-3 table table-striped table-bordered table-hover text-nowrap"
-          style="min-width: 1400px"
-        >
-          <thead class="table-dark text-nowrap text-center">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Edad</th>
-              <th scope="col">Telefono</th>
-              <th scope="col">Peso (KG)</th>
-              <th scope="col">Estatura (CM)</th>
-              <th scope="col">
-                Procedimiento <br />
-                de Interes
-              </th>
-              <th scope="col">
-                Kilos a <br />
-                perder
-              </th>
-              <th scope="col">
-                Puede <br />
-                Viajar
-              </th>
-              <th scope="col">
-                Formas de <br />
-                Contacto
-              </th>
-              <th scope="col">
-                Fecha de <br />
-                registro
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for lead in leads %}
-            <tr>
-              <td>{{ lead.id }}</td>
-              <td>{{ lead.full_name }}</td>
-              <td>{{ lead.age }}</td>
-              <td>{{ lead.phone }}</td>
-              <td>{{ lead.weight }}</td>
-              <td>{{ lead.height }}</td>
-              <td>{{ lead.procedure_of_interest }}</td>
-              <td>{{lead.weight_to_lose }}</td>
-              <td>
-                {% if lead.travel %}
-                <span class="badge bg-success">Yes</span>
-                {% else %}
-                <span class="badge bg-danger">No</span>
-                {% endif %}
-              </td>
-              <td>{{ lead.forms_of_contact }}</td>
-              <td>{{ lead.created_at}}</td>
-            </tr>
-            {% empty %}
-            <tr>
-              <td colspan="13" class="text-center">No records found</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+      <h1 class="mt-3">Appointment Form Leads</h1>
+
+      <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="pending-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#pending"
+            type="button"
+            role="tab"
+          >
+            Citas pendientes
+          </button>
+        </li>
+
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="contacted-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#contacted"
+            type="button"
+            role="tab"
+          >
+            Ya contactados
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content mt-3">
+        <!-- Por contactar-->
+        <div class="tab-pane fade show active" id="pending" role="tabpanel">
+          <div style="overflow-x: scroll">
+            <table
+              class="mt-3 table table-striped table-bordered table-hover text-nowrap"
+              style="min-width: 1400px"
+            >
+              <thead class="table-dark text-nowrap text-center">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Edad</th>
+                  <th scope="col">Telefono</th>
+                  <th scope="col">Peso</th>
+                  <th scope="col">Estatura</th>
+                  <th scope="col">A perder</th>
+                  <th scope="col">
+                    Procedimiento <br />
+                    de Interes
+                  </th>
+                  <th scope="col">
+                    Puede <br />
+                    Viajar
+                  </th>
+                  <th scope="col">
+                    Formas de <br />
+                    Contacto
+                  </th>
+                  <th scope="col">
+                    Fecha de <br />
+                    registro
+                  </th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for lead in pending_leads %}
+                <tr>
+                  <td>{{ lead.id }}</td>
+                  <td>{{ lead.full_name }}</td>
+                  <td>{{ lead.age }}</td>
+                  <td>{{ lead.phone }}</td>
+                  <td>
+                    {{ lead.weight_in_kg }} kg <br />
+                    {{ lead.weight_in_lb }} lb
+                  </td>
+                  <td>{{ lead.height }} cm</td>
+                  <td>
+                    {{lead.weight_to_lose_in_kg }} kg <br />
+                    {{lead.weight_to_lose_in_lb }} lb
+                  </td>
+                  <td>{{ lead.procedure_of_interest }}</td>
+                  <td>
+                    {% if lead.travel %}
+                    <span class="badge bg-success">SI</span>
+                    {% else %}
+                    <span class="badge bg-danger">NO</span>
+                    {% endif %}
+                  </td>
+                  <td>{{ lead.forms_of_contact }}</td>
+                  <td>{{ lead.created_at}}</td>
+                  <td>
+                    <button
+                      class="btn btn-primary"
+                      title="Marcar como Ya contactado"
+                      onclick="toggle_appointment({{ lead.id }})"
+                    >
+                      <i class="fa-solid fa-circle-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                {% empty %}
+                <tr>
+                  <td colspan="13" class="text-center">No records found</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Contactados -->
+        <div class="tab-pane fade" id="contacted" role="tabpanel">
+          <table class="table table-bordered mt-3">
+            <thead class="table-dark text-center">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Estatura</th>
+                <th scope="col">A perder</th>
+                <th scope="col">
+                  Procedimiento <br />
+                  de Interes
+                </th>
+                <th scope="col">
+                  Puede <br />
+                  Viajar
+                </th>
+                <th scope="col">
+                  Formas de <br />
+                  Contacto
+                </th>
+                <th scope="col">
+                  Fecha de <br />
+                  registro
+                </th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for lead in contacted_leads %}
+              <tr>
+                <td>{{ lead.id }}</td>
+                <td>{{ lead.full_name }}</td>
+                <td>{{ lead.age }}</td>
+                <td>{{ lead.phone }}</td>
+                <td>
+                  {{ lead.weight_in_kg }} kg <br />
+                  {{ lead.weight_in_lb }} lb
+                </td>
+                <td>{{ lead.height }} cm</td>
+                <td>
+                  {{lead.weight_to_lose_in_kg }} kg <br />
+                  {{lead.weight_to_lose_in_lb }} lb
+                </td>
+                <td>{{ lead.procedure_of_interest }}</td>
+                <td>
+                  {% if lead.travel %}
+                  <span class="badge bg-success">SI</span>
+                  {% else %}
+                  <span class="badge bg-danger">NO</span>
+                  {% endif %}
+                </td>
+                <td>{{ lead.forms_of_contact }}</td>
+                <td>{{ lead.created_at}}</td>
+                <td>
+                  <button
+                    type="button"
+                    title="Marcar como pendiente"
+                    class="btn btn-primary"
+                    onclick="toggle_appointment({{ lead.id }})"
+                  >
+                    <i class="fa-solid fa-user-xmark"></i>
+                  </button>
+                </td>
+              </tr>
+              {% empty %}
+              <tr>
+                <td colspan="13" class="text-center">
+                  No hay leads contactados aun
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
+
       <br /><br /><br />
       <div>
         <h1>Contact Form</h1>
@@ -119,7 +251,7 @@
             </tr>
             {% empty %}
             <tr>
-              <td colspan="7" class="text-center">No records found</td>
+              <td colspan="7" class="text-center">No records</td>
             </tr>
             {% endfor %}
           </tbody>
@@ -127,4 +259,46 @@
       </div>
     </div>
   </body>
+  <script>
+    function toggle_appointment(app_id) {
+      function getCookie(name) {
+        let cookieValue = null;
+
+        if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+
+            if (cookie.startsWith(name + '=')) {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1),
+              );
+              break;
+            }
+          }
+        }
+
+        return cookieValue;
+      }
+      fetch('/dashboard/appointment/update/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken'),
+        },
+        body: JSON.stringify({
+          id: app_id,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            console.log('Toggled');
+            location.reload();
+          }
+        })
+        .catch((error) => console.error('Error:', error));
+    }
+  </script>
 </html>

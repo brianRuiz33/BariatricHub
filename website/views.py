@@ -1,4 +1,7 @@
+import json
+from django.http import JsonResponse
 from django.shortcuts import redirect, render
+from django.db.models import F
 from website.forms import ContactForm
 from website.models import Appointment, Contact
 from django.contrib.auth.decorators import login_required
@@ -25,8 +28,9 @@ def travel(request):
 @login_required
 def dashboard(request):
     contacts = Contact.objects.all().order_by("-created_date")
-    leads = Appointment.objects.all().order_by("-created_at")
-    return render(request, "dashboard.html", {"leads": leads, "contacts": contacts})
+    pending_leads = Appointment.objects.filter(was_contacted=False).order_by("-created_at")
+    contacted_leads = Appointment.objects.filter(was_contacted=True).order_by("-created_at")
+    return render(request, "dashboard.html", {"pending_leads": pending_leads, "contacted_leads": contacted_leads,"contacts": contacts})
 
 def contact_submit(request):
     if request.method == "POST":
@@ -57,5 +61,15 @@ def appointment_create(request):
             forms_of_contact=", ".join(request.POST.getlist("forms_of_contact")),
         )
         return redirect("/")
+    
+def appointment_update(request):
+    data = json.loads(request.body)
+    appointment_id = int(data.get("id"))
 
-    return redirect("/")
+    updated = Appointment.objects.filter(id=appointment_id).update(
+        was_contacted=~F("was_contacted")
+    )
+
+    return JsonResponse({
+        "success": bool(updated)
+    })

@@ -12,4 +12,5 @@ urlpatterns = [
     # Forms
     path("contact/submit/", views.contact_submit, name="contact_submit"),
     path("appointment/create/", views.appointment_create, name="appointment_create"),
+    path("dashboard/appointment/update/", views.appointment_update, name="appointment_update")
 ]
