@@ -25,6 +25,9 @@ def sleeve(request):
 def travel(request):
     return render(request, 'travel.html')
 
+def questions(request):
+    return render(request, 'questions.html')
+
 @login_required
 def dashboard(request):
     contacts = Contact.objects.all().order_by("-created_date")
