@@ -7,6 +7,9 @@ urlpatterns = [
     path("login/", auth_views.LoginView.as_view(), name="login"),
     path('about/', views.about, name='about'),
     path('gastric-sleeve/', views.sleeve, name="gastric_sleeve"),
+    path('endoscopic-gastric-sleeve', views.endoscopic, name="endoscopic"),
+    path('gastric-balloon', views.balloon, name="balloon"),
+
     path('travel/', views.travel, name="travel"),
     path('dashboard/', views.dashboard, name="dashboard"), 
     path('questions/', views.questions, name="questions"), 

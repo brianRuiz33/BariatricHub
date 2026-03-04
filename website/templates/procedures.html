@@ -7,7 +7,7 @@
       <div class="col-lg-8">
         <span class="badge badge-nb mb-3">For US Patients</span>
         <h1 class="display-4 fw-bold mb-3 text-white">
-          Gastric Sleeve Surgery in Mexico
+          {{p.procedure_name}} Surgery in Mexico
         </h1>
         <p class="lead mb-4 text-white">
           Safe, minimally invasive bariatric surgery performed in a modern
@@ -40,18 +40,13 @@
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-6">
-        <h2 class="fw-bold mb-4">What is Gastric Sleeve?</h2>
-        <p>
-          Gastric sleeve surgery reduces the stomach by approximately
-          <strong>75–80%</strong>, helping patients feel full faster and achieve
-          significant, sustainable weight loss.
-        </p>
+        <h2 class="fw-bold mb-4">What is {{p.procedure_name}}?</h2>
+        <p>{{p.short_description.description|safe}}</p>
 
         <ul class="list-unstyled mt-4">
-          <li class="mb-2">✔ 60–80% excess weight loss</li>
-          <li class="mb-2">✔ Reduced hunger levels</li>
-          <li class="mb-2">✔ Improvement in diabetes & hypertension</li>
-          <li class="mb-2">✔ 30-40 minutes laparoscopic procedure</li>
+          {% for item in p.short_description.benefits %}
+          <li class="mb-2">✔ {{item}}</li>
+          {% endfor %}
         </ul>
       </div>
 
@@ -59,7 +54,7 @@
       <div class="col-lg-6">
         <div class="video-vertical shadow rounded">
           <iframe
-            src="https://www.youtube.com/embed/siwkLyWMeao"
+            src="{{p.short_description.video_url}}"
             title="YouTube video player"
             allow="
               accelerometer;
@@ -184,11 +179,9 @@
             <div class="card-body">
               <h5 class="fw-bold mb-3">Pre-Operative Tests</h5>
               <ul class="list-unstyled small">
-                <li>✔ Blood tests</li>
-                <li>✔ Chest X-ray</li>
-                <li>✔ Electrocardiogram</li>
-                <li>✔ Endoscopy</li>
-                <li>✔ Gastrography (if needed)</li>
+                {%for item in p.pre_operative_tests%}
+                <li>✔ {{item}}</li>
+                {%endfor%}
               </ul>
             </div>
           </div>
@@ -200,11 +193,9 @@
             <div class="card-body">
               <h5 class="fw-bold mb-3">Specialist Evaluations</h5>
               <ul class="list-unstyled small">
-                <li>✔ Anesthesiologist assessment</li>
-                <li>✔ Internal medicine evaluation</li>
-                <li>✔ Nutrition consultation</li>
-                <li>✔ Psychological evaluation</li>
-                <li>✔ Respiratory therapy team</li>
+                {%for item in p.specialist_evaluations%}
+                <li>✔ {{item}}</li>
+                {%endfor%}
               </ul>
             </div>
           </div>
@@ -216,9 +207,9 @@
             <div class="card-body">
               <h5 class="fw-bold mb-3">Surgery</h5>
               <ul class="list-unstyled small">
-                <li>✔ Procedure performed by Dr. Felipe Nieto</li>
-                <li>✔ Hospital operating room fees</li>
-                <li>✔ Anesthesia team</li>
+                {%for item in p.surgery%}
+                <li>✔ {{item}}</li>
+                {%endfor%}
               </ul>
             </div>
           </div>
@@ -230,9 +221,9 @@
             <div class="card-body">
               <h5 class="fw-bold mb-3">Travel & Logistics</h5>
               <ul class="list-unstyled small">
-                <li>✔ Transportation from San Diego Airport</li>
-                <li>✔ Hospital stay with companion</li>
-                <li>✔ Return transportation to airport</li>
+                {%for item in p.travel_and_logistics%}
+                <li>✔ {{item}}</li>
+                {%endfor%}
               </ul>
             </div>
           </div>
@@ -244,10 +235,9 @@
             <div class="card-body">
               <h5 class="fw-bold mb-3">Post-Operative Care</h5>
               <ul class="list-unstyled small">
-                <li>✔ Leak test</li>
-                <li>✔ Medications during stay</li>
-                <li>✔ Structured nutrition plan</li>
-                <li>✔ One-year medical follow-up</li>
+                {%for item in p.post_operative_care%}
+                <li>✔ {{item}}</li>
+                {%endfor%}
               </ul>
             </div>
           </div>
@@ -281,15 +271,9 @@
     <div class="text-center mb-5">
       <span class="badge bg-warning text-dark mb-3">Important Information</span>
       <h2 class="fw-bold">Risks & Considerations</h2>
-      <p class="text-muted">
-        Gastric sleeve surgery is a safe and commonly performed procedure, but
-        like any surgical intervention, it carries potential risks.
-      </p>
+      <p class="text-muted">{{p.risks_and_considerations.0}}</p>
       <p>
-        <b
-          >It’s a highly safe procedure, with less than 1% risk of major
-          complications in qualified hands.</b
-        >
+        <b>{{p.risks_and_considerations.1}}</b>
       </p>
     </div>
 
@@ -298,12 +282,9 @@
         <div class="card shadow-sm border-0">
           <div class="card-body">
             <ul class="small mb-4">
-              <li>✔ Bleeding</li>
-              <li>✔ Infection</li>
-              <li>✔ Staple line leak</li>
-              <li>✔ Acid reflux</li>
-              <li>✔ Blood clots</li>
-              <li>✔ Temporary nausea or dehydration</li>
+              {%for item in p.side_effects%}
+              <li>✔ {{item}}</li>
+              {%endfor%}
             </ul>
 
             <p class="small text-muted mb-0">

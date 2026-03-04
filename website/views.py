@@ -6,12 +6,15 @@ from website.forms import ContactForm
 from website.models import Appointment, Contact
 from django.contrib.auth.decorators import login_required
 
+from website.procedures_data.procedures import PROCEDURES
+
 social_links = {
         "facebook": "https://www.facebook.com/profile.php?id=100086618873618",
         "instagram": "https://www.instagram.com/nietobariatric/",
         "whatsapp": "https://wa.me/14133219187", 
         "tiktok": "https://www.tiktok.com/@nietobariatric",
     }
+
 
 def index(request):
     return render(request, 'index.html', {"social": social_links})
@@ -20,7 +23,13 @@ def about(request):
     return render(request, 'about.html')
 
 def sleeve(request):
-    return render(request, 'gastric-sleeve.html')
+    return render(request, 'procedures.html', {"p": PROCEDURES["GASTRIC_SLEEVE"]})
+
+def endoscopic(request):
+    return render(request, 'procedures.html', {"p": PROCEDURES["ENDOSCOPIC_G_SLEEVE"]})
+
+def balloon(request):
+    return render(request, 'procedures.html', {"p": PROCEDURES["GASTRIC BALLOON"]})
 
 def travel(request):
     return render(request, 'travel.html')
