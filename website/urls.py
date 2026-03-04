@@ -6,9 +6,14 @@ urlpatterns = [
     path('', views.index, name='index'),
     path("login/", auth_views.LoginView.as_view(), name="login"),
     path('about/', views.about, name='about'),
+    # Procedures
     path('gastric-sleeve/', views.sleeve, name="gastric_sleeve"),
-    path('endoscopic-gastric-sleeve', views.endoscopic, name="endoscopic"),
-    path('gastric-balloon', views.balloon, name="balloon"),
+    path('endoscopic-gastric-sleeve/', views.endoscopic, name="endoscopic"),
+    path('gastric-balloon/', views.balloon, name="balloon"),
+    path('one-anastomosis-gastric-bypass/', views.one_bypass, name="one"),
+    path('roux-en-y-gastric-bypass/', views.roux, name="roux"),
+    path('intestinal_bipartition/', views.bipartition, name="bipartition"),
+
 
     path('travel/', views.travel, name="travel"),
     path('dashboard/', views.dashboard, name="dashboard"), 

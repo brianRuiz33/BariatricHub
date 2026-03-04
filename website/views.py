@@ -29,7 +29,16 @@ def endoscopic(request):
     return render(request, 'procedures.html', {"p": PROCEDURES["ENDOSCOPIC_G_SLEEVE"]})
 
 def balloon(request):
-    return render(request, 'procedures.html', {"p": PROCEDURES["GASTRIC BALLOON"]})
+    return render(request, 'procedures.html', {"p": PROCEDURES["GASTRIC_BALLOON"]})
+
+def one_bypass(request):
+    return render(request, 'procedures.html', {"p": PROCEDURES["ONE_ANASTOMOSIS_GASTRIC_BYPASS"]})
+
+def roux(request):
+    return render(request, 'procedures.html', {"p": PROCEDURES["ROUX_EN_Y_GASTRIC_BYPASS"]})
+
+def bipartition(request):
+    return render(request, 'procedures.html', {"p": PROCEDURES["INTESTINAL_BIPARTITION"]})
 
 def travel(request):
     return render(request, 'travel.html')
