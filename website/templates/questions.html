@@ -13,25 +13,125 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{% static 'website/css/main.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       body {
         min-height: 100vh;
         background: linear-gradient(135deg, #4e73df, #1cc88a);
       }
+      h1 {
+        letter-spacing: 3px;
+      }
+      .logo {
+        animation: heartbeat 2s ease-in-out infinite;
+        transform-origin: center;
+      }
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+        10% {
+          transform: scale(1.08);
+        }
+        20% {
+          transform: scale(1);
+        }
+        30% {
+          transform: scale(1.12);
+        }
+        40% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* MOBILE ONLY */
+      @media (max-width: 767.98px) {
+        /* Hide logo */
+        .logo {
+          display: none !important;
+        }
+
+        /* Doctor fixed bottom */
+        .doctor-img {
+          position: fixed;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 50%;
+          max-width: 400px;
+          z-index: 1;
+          pointer-events: none;
+        }
+
+        /* Prevent overlap */
+        html,
+        body {
+          height: 100%;
+          overflow: hidden;
+        }
+
+        .col-md-6 {
+          min-height: auto !important;
+        }
+      }
+
+      .hero-text-mobile,
+      .hero-text-desktop {
+        animation: fadeUp 0.6s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .doctor-img {
+        animation: fadeIn 0.8s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
 
   <body>
     <div class="d-flex flex-column min-vh-100">
+      <div class="hero-text-mobile d-md-none text-center text-white py-3">
+        <h1>Ready to Feel Better?</h1>
+        <h1>Start Your Journey Today</h1>
+      </div>
       <div class="container-fluid flex-grow-1 d-flex">
         <div class="row flex-grow-1 w-100">
           <div
-            class="col-12 col-md-6 d-flex align-items-end justify-content-center order-2 order-md-1 h-100"
+            class="col-12 col-md-6 doctor-col d-flex flex-column align-items-center justify-content-end order-2 order-md-1 h-100"
           >
+            <div class="hero-text-desktop d-none d-md-block">
+              <h1 class="text-white text-center">Ready to Feel Better?</h1>
+              <h1 class="text-white text-center">Start Your Journey Today</h1>
+            </div>
             <img
               src="{% static 'website/img/nietodoc.png' %}"
               width="500"
+              class="doctor-img"
               alt=""
             />
           </div>
@@ -59,7 +159,7 @@
                   >
                     {% csrf_token %}
                     <div class="">
-                      <div id="app-step0">
+                      <div id="app-step0" hidden>
                         <p>
                           You’ve taken the first step—our team is here to guide
                           you every step of the way.
@@ -69,7 +169,7 @@
                           questions so we can guide you better.
                         </p>
                       </div>
-                      <div id="app-step1" hidden>
+                      <div id="app-step1">
                         <p class="text-center">👋 Let’s get started</p>
                         <hr />
                         <div class="form-floating mb-3">
@@ -170,7 +270,7 @@
                             <option selected value="Gastric sleeve">
                               Gastric sleeve
                             </option>
-                            <option selected value="Endoscopic Gastric sleeve">
+                            <option value="Endoscopic Gastric sleeve">
                               Endoscopic Gastric sleeve
                             </option>
                             <option value="Gastric Balloon">
@@ -347,7 +447,7 @@
                 src="{% static 'website/img/logotipo-new.png' %}"
                 alt="Logo"
                 width="180"
-                class="mt-4"
+                class="mt-4 logo"
               />
             </div>
           </div>
@@ -361,7 +461,7 @@
     ></script>
   </body>
   <script>
-    let currentStep = 0;
+    let currentStep = 1;
     let TOTAL_STEPS = 4;
 
     //Modal functions
