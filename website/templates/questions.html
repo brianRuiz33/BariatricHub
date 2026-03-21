@@ -24,298 +24,334 @@
 
   <body>
     <div class="d-flex flex-column min-vh-100">
-      <div class="flex-grow-1 d-flex justify-content-center align-items-center">
-        <div class="bg-white rounded shadow p-4 w-100" style="max-width: 500px">
-          <div class="position-relative center-items">
-            <h4 class="mb-3">Schedule a consultation</h4>
-          </div>
-          <form
-            id="appForm"
-            method="post"
-            action="{% url 'appointment_create' %}"
+      <div class="container-fluid flex-grow-1 d-flex">
+        <div class="row flex-grow-1 w-100">
+          <div
+            class="col-12 col-md-6 d-flex align-items-end justify-content-center order-2 order-md-1 h-100"
           >
-            {% csrf_token %}
-            <div class="">
-              <div id="app-step0">
-                <p>
-                  You’ve taken the first step—our team is here to guide you
-                  every step of the way.
-                </p>
-                <p>
-                  This will only take 1 minute. Answer a few quick questions so
-                  we can guide you better.
-                </p>
-              </div>
-              <div id="app-step1" hidden>
-                <p class="text-center">👋 Let’s get started</p>
-                <hr />
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="txtAppName"
-                    name="full_name"
-                    required
-                    minlength="2"
-                    maxlength="50"
-                    pattern="[A-Za-zÀ-ÿ\s]+"
-                  />
-                  <label for="txtAppName">What's your full name?</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="txtAppAge"
-                    name="age"
-                    placeholder="18"
-                    min="16"
-                    max="90"
-                    step="1"
-                    required
-                  />
-                  <label for="txtAppAge">How old are you?</label>
-                </div>
-              </div>
-              <div id="app-step2" hidden>
-                <p class="text-center">📏 A bit about you</p>
-                <hr />
-                <div class="mb-3">
-                  <label class="form-label">What is your current weight?</label>
-
-                  <div class="input-group">
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="txtAppWeight"
-                      name="weight"
-                      min="20"
-                      max="700"
-                      step="0.1"
-                      required
-                    />
-
-                    <select
-                      class="form-select"
-                      id="weightUnit"
-                      style="max-width: 100px"
-                      name="weight_unit"
-                    >
-                      <option value="kg" selected>kg</option>
-                      <option value="lb">lb</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">What is your height?</label>
-
-                  <div class="input-group">
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="txtAppHeight"
-                      name="height"
-                      step="0.1"
-                      required
-                    />
-
-                    <select
-                      class="form-select"
-                      id="heightUnit"
-                      name="height_unit"
-                      style="max-width: 100px"
-                    >
-                      <option value="cm" selected>cm</option>
-                      <option value="in">in</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div id="app-step3" hidden>
-                <p class="text-center">🎯 Your goals</p>
-                <hr />
-                <div class="form-floating mb-3">
-                  <select
-                    id="selectAppProcedure"
-                    name="procedure_of_interest"
-                    class="form-select"
-                    aria-label="Default select example"
-                    required
-                  >
-                    <option selected value="Gastric sleeve">
-                      Gastric sleeve
-                    </option>
-                    <option selected value="Endoscopic Gastric sleeve">
-                      Endoscopic Gastric sleeve
-                    </option>
-                    <option value="Gastric Balloon">Gastric Balloon</option>
-                    <option value="One Anastomosis gastric bypass">
-                      One Anastomosis gastric bypass
-                    </option>
-                    <option value="Roux-en-Y gastric bypass">
-                      Roux-en-Y gastric bypass
-                    </option>
-                    <option value="Intestinal Bipartition">
-                      Intestinal Bipartition
-                    </option>
-                    <option value="Revison">Revison</option>
-                  </select>
-                  <label for="selectAppProcedure">
-                    Which procedure are you interested in?
-                  </label>
-                </div>
-
-                <div class="mb-3">
-                  <label class="form-label">
-                    Approximately how much weight would you like to lose?
-                  </label>
-
-                  <div class="input-group">
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="txtAppWeightOff"
-                      name="weight_to_lose"
-                      min="1"
-                      max="700"
-                      step="0.1"
-                      required
-                    />
-
-                    <select
-                      class="form-select"
-                      id="weightToLoseUnit"
-                      style="max-width: 100px"
-                      name="weight_to_lose_unit"
-                    >
-                      <option value="kg" selected>kg</option>
-                      <option value="lb">lb</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div id="app-step4" hidden>
-                <p class="text-center">📞 Contact preferences</p>
-                <hr />
-                <p>Are you able to travel to Tijuana for your procedure?</p>
-                <div class="center-items">
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="travel"
-                    id="travelYes"
-                    value="true"
-                    checked
-                  />
-                  <label class="btn" for="travelYes">Yes</label>
-
-                  <input
-                    type="radio"
-                    class="btn-check"
-                    name="travel"
-                    id="travelNo"
-                    autocomplete="off"
-                    value="false"
-                  />
-                  <label class="btn" for="travelNo">No</label>
-                </div>
-                <br />
-                <div class="form-floating mb-3">
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="txtAppPhone"
-                    required
-                    name="phone"
-                  />
-                  <label for="txtAppPhone"
-                    >What is the best phone number to reach you?</label
-                  >
-                  <br />
-                  <p>How would you like us to contact you?</p>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="checkDefault"
-                      value="phone"
-                      name="forms_of_contact"
-                    />
-                    <label class="form-check-label" for="checkDefault">
-                      Phone Call
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="checkChecked"
-                      value="whatsapp"
-                      name="forms_of_contact"
-                    />
-                    <label class="form-check-label" for="checkChecked">
-                      Whatsapp
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="checkChecked"
-                      value="sms"
-                      name="forms_of_contact"
-                    />
-                    <label class="form-check-label" for="checkChecked">
-                      SMS
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div id="app-step5" hidden>
-                <p>
-                  🎉 Congratulations on taking the first step toward a
-                  healthier, happier life.
-                </p>
-
-                <p>
-                  Our medical team will review your information and contact you
-                  shortly.
-                </p>
-              </div>
-              <div id="txtStepLabel" hidden class="step-label center-items">
-                Step X of Y
-              </div>
-
-              <div class="text-end">
-                <button
-                  hidden
-                  id="btnPrev"
-                  type="button"
-                  class="btn-nb-main"
-                  onclick="prevStep()"
+            <img
+              src="{% static 'website/img/nietodoc.png' %}"
+              width="500"
+              alt=""
+            />
+          </div>
+          <div
+            class="col-12 col-md-6 d-flex order-1 order-md-2 min-vh-100 min-vh-md-0"
+          >
+            <div
+              class="w-100 d-flex flex-column justify-content-center align-items-center"
+            >
+              <div
+                class="d-flex flex-column align-items-center w-100"
+                style="max-width: 500px"
+              >
+                <div
+                  class="bg-white rounded shadow p-4 w-100"
+                  style="max-width: 500px"
                 >
-                  Prev
-                </button>
-                <button
-                  type="button"
-                  id="btnNext"
-                  class="btn-nb-main"
-                  onclick="nextStep()"
-                >
-                  Next
-                </button>
+                  <div class="position-relative center-items">
+                    <h4 class="mb-3">Schedule a consultation</h4>
+                  </div>
+                  <form
+                    id="appForm"
+                    method="post"
+                    action="{% url 'appointment_create' %}"
+                  >
+                    {% csrf_token %}
+                    <div class="">
+                      <div id="app-step0">
+                        <p>
+                          You’ve taken the first step—our team is here to guide
+                          you every step of the way.
+                        </p>
+                        <p>
+                          This will only take 1 minute. Answer a few quick
+                          questions so we can guide you better.
+                        </p>
+                      </div>
+                      <div id="app-step1" hidden>
+                        <p class="text-center">👋 Let’s get started</p>
+                        <hr />
+                        <div class="form-floating mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="txtAppName"
+                            name="full_name"
+                            required
+                            minlength="2"
+                            maxlength="50"
+                            pattern="[A-Za-zÀ-ÿ\s]+"
+                          />
+                          <label for="txtAppName">What's your full name?</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="txtAppAge"
+                            name="age"
+                            placeholder="18"
+                            min="16"
+                            max="90"
+                            step="1"
+                            required
+                          />
+                          <label for="txtAppAge">How old are you?</label>
+                        </div>
+                      </div>
+                      <div id="app-step2" hidden>
+                        <p class="text-center">📏 A bit about you</p>
+                        <hr />
+                        <div class="mb-3">
+                          <label class="form-label"
+                            >What is your current weight?</label
+                          >
+
+                          <div class="input-group">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="txtAppWeight"
+                              name="weight"
+                              min="20"
+                              max="700"
+                              step="0.1"
+                              required
+                            />
+
+                            <select
+                              class="form-select"
+                              id="weightUnit"
+                              style="max-width: 100px"
+                              name="weight_unit"
+                            >
+                              <option value="kg" selected>kg</option>
+                              <option value="lb">lb</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">What is your height?</label>
+
+                          <div class="input-group">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="txtAppHeight"
+                              name="height"
+                              step="0.1"
+                              required
+                            />
+
+                            <select
+                              class="form-select"
+                              id="heightUnit"
+                              name="height_unit"
+                              style="max-width: 100px"
+                            >
+                              <option value="cm" selected>cm</option>
+                              <option value="in">in</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="app-step3" hidden>
+                        <p class="text-center">🎯 Your goals</p>
+                        <hr />
+                        <div class="form-floating mb-3">
+                          <select
+                            id="selectAppProcedure"
+                            name="procedure_of_interest"
+                            class="form-select"
+                            aria-label="Default select example"
+                            required
+                          >
+                            <option selected value="Gastric sleeve">
+                              Gastric sleeve
+                            </option>
+                            <option selected value="Endoscopic Gastric sleeve">
+                              Endoscopic Gastric sleeve
+                            </option>
+                            <option value="Gastric Balloon">
+                              Gastric Balloon
+                            </option>
+                            <option value="One Anastomosis gastric bypass">
+                              One Anastomosis gastric bypass
+                            </option>
+                            <option value="Roux-en-Y gastric bypass">
+                              Roux-en-Y gastric bypass
+                            </option>
+                            <option value="Intestinal Bipartition">
+                              Intestinal Bipartition
+                            </option>
+                            <option value="Revison">Revison</option>
+                          </select>
+                          <label for="selectAppProcedure">
+                            Which procedure are you interested in?
+                          </label>
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="form-label">
+                            Approximately how much weight would you like to
+                            lose?
+                          </label>
+
+                          <div class="input-group">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="txtAppWeightOff"
+                              name="weight_to_lose"
+                              min="1"
+                              max="700"
+                              step="0.1"
+                              required
+                            />
+
+                            <select
+                              class="form-select"
+                              id="weightToLoseUnit"
+                              style="max-width: 100px"
+                              name="weight_to_lose_unit"
+                            >
+                              <option value="kg" selected>kg</option>
+                              <option value="lb">lb</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="app-step4" hidden>
+                        <p class="text-center">📞 Contact preferences</p>
+                        <hr />
+                        <p>
+                          Are you able to travel to Tijuana for your procedure?
+                        </p>
+                        <div class="center-items">
+                          <input
+                            type="radio"
+                            class="btn-check"
+                            name="travel"
+                            id="travelYes"
+                            value="true"
+                            checked
+                          />
+                          <label class="btn" for="travelYes">Yes</label>
+
+                          <input
+                            type="radio"
+                            class="btn-check"
+                            name="travel"
+                            id="travelNo"
+                            autocomplete="off"
+                            value="false"
+                          />
+                          <label class="btn" for="travelNo">No</label>
+                        </div>
+                        <br />
+                        <div class="form-floating mb-3">
+                          <input
+                            type="tel"
+                            class="form-control"
+                            id="txtAppPhone"
+                            required
+                            name="phone"
+                          />
+                          <label for="txtAppPhone"
+                            >What is the best phone number to reach you?</label
+                          >
+                          <br />
+                          <p>How would you like us to contact you?</p>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="checkDefault"
+                              value="phone"
+                              name="forms_of_contact"
+                            />
+                            <label class="form-check-label" for="checkDefault">
+                              Phone Call
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="checkChecked"
+                              value="whatsapp"
+                              name="forms_of_contact"
+                            />
+                            <label class="form-check-label" for="checkChecked">
+                              Whatsapp
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="checkChecked"
+                              value="sms"
+                              name="forms_of_contact"
+                            />
+                            <label class="form-check-label" for="checkChecked">
+                              SMS
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="app-step5" hidden>
+                        <p>
+                          🎉 Congratulations on taking the first step toward a
+                          healthier, happier life.
+                        </p>
+
+                        <p>
+                          Our medical team will review your information and
+                          contact you shortly.
+                        </p>
+                      </div>
+                      <div
+                        id="txtStepLabel"
+                        hidden
+                        class="step-label center-items"
+                      >
+                        Step X of Y
+                      </div>
+
+                      <div class="text-end">
+                        <button
+                          hidden
+                          id="btnPrev"
+                          type="button"
+                          class="btn-nb-main"
+                          onclick="prevStep()"
+                        >
+                          Prev
+                        </button>
+                        <button
+                          type="button"
+                          id="btnNext"
+                          class="btn-nb-main"
+                          onclick="nextStep()"
+                        >
+                          Next
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
+              <img
+                src="{% static 'website/img/logotipo-new.png' %}"
+                alt="Logo"
+                width="180"
+                class="mt-4"
+              />
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-
-      <div class="text-center pb-4">
-        <img
-          src="{% static 'website/img/logotipo-new.png' %}"
-          alt="Logo"
-          width="180"
-        />
       </div>
     </div>
     <!--Tracking script-->
