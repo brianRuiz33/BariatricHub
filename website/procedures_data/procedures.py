@@ -1,6 +1,7 @@
 PROCEDURES = { 
 "GASTRIC_SLEEVE" : {
   "procedure_name": "Gastric Sleeve",
+  "surgery_type":"Laparoscopic surgery",
   "short_description": {
     "description": "Gastric sleeve surgery reduces the stomach by approximately 60–80%, helping patients feel full faster and achieve significant, sustainable weight loss.",
     "benefits": [
@@ -52,6 +53,7 @@ PROCEDURES = {
 },
 "ENDOSCOPIC_G_SLEEVE" : {
   "procedure_name": "Endoscopic gastric sleeve",
+  "surgery_type":"Laparoscopic surgery",
   "short_description": {
     "description": "Reduces the stomach size using an endoscopic suturing technique — no incisions, no scars — helping patients feel full faster and lose weight safely.",
     "benefits": [
@@ -102,6 +104,7 @@ PROCEDURES = {
 },
 "GASTRIC_BALLOON" : {
   "procedure_name": "Gastric Balloon",
+  "surgery_type":"Laparoscopic surgery",
   "short_description": {
     "description": "A soft silicone balloon is placed inside the stomach and filled with saline to reduce appetite and promote portion control.",
     "benefits": [
@@ -152,6 +155,7 @@ PROCEDURES = {
 },
 "ONE_ANASTOMOSIS_GASTRIC_BYPASS" : {
   "procedure_name": "One anastomosis gastric bypass",
+  "surgery_type":"Laparoscopic surgery",
   "short_description": {
     "description": "Creates a small stomach pouch and connects it to the small intestine with a single connection, reducing calorie absorption and food intake.",
     "benefits": [
@@ -206,6 +210,7 @@ PROCEDURES = {
 },
 "ROUX_EN_Y_GASTRIC_BYPASS" : {
   "procedure_name": "Roux en Y gastric bypass",
+  "surgery_type":"Laparoscopic surgery",
   "short_description": {
     "description": "Roux-en-Y Gastric Bypass (RYGB) is a bariatric surgical procedure in which a small gastric pouch (~15–30 mL) is created from the proximal stomach and anastomosed to the jejunum (gastrojejunostomy), bypassing the distal stomach, duodenum, and a portion of the proximal jejunum. A jejunojejunostomy is then performed to restore intestinal continuity, forming the Roux limb. This procedure induces weight loss through a combination of restrictive and malabsorptive mechanisms, along with significant hormonal modulation (including increased GLP-1 secretion), contributing to improved glycemic control and metabolic outcomes.",
     "benefits": [
@@ -260,6 +265,7 @@ PROCEDURES = {
 },
 "INTESTINAL_BIPARTITION" : {
   "procedure_name": "Intestinal Bipartition",
+  "surgery_type":"Laparoscopic surgery",
   "short_description": {
     "description": "Combines a sleeve gastrectomy with partial intestinal rerouting to enhance metabolic changes while preserving normal digestion.",
     "benefits": [

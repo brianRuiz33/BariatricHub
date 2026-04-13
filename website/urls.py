@@ -16,6 +16,7 @@ urlpatterns = [
 
 
     path('travel/', views.travel, name="travel"),
+    path('testimonials/', views.testimonials, name="testimonials"),
     path('dashboard/', views.dashboard, name="dashboard"), 
     path('questions/', views.questions, name="questions"), 
 
