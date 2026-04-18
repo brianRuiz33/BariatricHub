@@ -24,13 +24,16 @@
       crossorigin="anonymous"
     ></script>
 
+    <link rel="icon" type="image/x-icon" href="{% static 'website/img/favicon.ico' %}" />
     <link rel="stylesheet" href="{% static 'website/css/main.css' %}" />
   </head>
 
   <body>
     <nav class="navbar sticky-top" style="background-color: #1b4a67;">
       <div class="container-fluid justify-content-center">
-        <img src="{% static 'website/img/logo_web.png' %}" alt="Nieto Bariatric" height="60" />
+        <a href="{% url 'index' %}">
+          <img src="{% static 'website/img/logo_web.png' %}" alt="Nieto Bariatric" height="60" />
+        </a>
       </div>
     </nav>
 
