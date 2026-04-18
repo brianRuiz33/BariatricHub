@@ -53,7 +53,7 @@ PROCEDURES = {
 },
 "ENDOSCOPIC_G_SLEEVE" : {
   "procedure_name": "Endoscopic gastric sleeve",
-  "surgery_type":"Laparoscopic surgery",
+  "surgery_type":"Endoscopic (non-surgical)",
   "short_description": {
     "description": "Reduces the stomach size using an endoscopic suturing technique — no incisions, no scars — helping patients feel full faster and lose weight safely.",
     "benefits": [
@@ -104,7 +104,7 @@ PROCEDURES = {
 },
 "GASTRIC_BALLOON" : {
   "procedure_name": "Gastric Balloon",
-  "surgery_type":"Laparoscopic surgery",
+  "surgery_type":"Endoscopic (non-surgical)",
   "short_description": {
     "description": "A soft silicone balloon is placed inside the stomach and filled with saline to reduce appetite and promote portion control.",
     "benefits": [

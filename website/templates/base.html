@@ -5,7 +5,26 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="{% static 'website/img/favicon.ico' %}" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'website/img/favicon.ico' %}"
+    />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-599ZTY1MWD"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-599ZTY1MWD');
+    </script>
+
     <!-- Fontawesome -->
     <script
       src="https://kit.fontawesome.com/86e15347da.js"
