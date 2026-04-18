@@ -22,5 +22,7 @@ urlpatterns = [
     # Forms
     path("contact/submit/", views.contact_submit, name="contact_submit"),
     path("appointment/create/", views.appointment_create, name="appointment_create"),
-    path("dashboard/appointment/update/", views.appointment_update, name="appointment_update")
+    path("dashboard/appointment/update/", views.appointment_update, name="appointment_update"),
+    path("dashboard/contact/update/", views.contact_update, name="contact_update"),
+    path("dashboard/contact/spam/", views.contact_spam_update, name="contact_spam_update"),
 ]

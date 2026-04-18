@@ -15,7 +15,9 @@ class Contact(models.Model):
     reason = models.CharField(max_length=150)
     message = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
-     
+    was_contacted = models.BooleanField(default=False)
+    is_spam = models.BooleanField(default=False)
+
 #Patient
 
 class Appointment(models.Model):

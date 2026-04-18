@@ -43,15 +43,24 @@ def bipartition(request):
 def travel(request):
     return render(request, 'travel.html')
 
+def testimonials(request):
+    return render(request, 'testimonials.html')
+
 def questions(request):
     return render(request, 'questions.html')
 
 @login_required
 def dashboard(request):
-    contacts = Contact.objects.all().order_by("-created_date")
+    pending_contacts = Contact.objects.filter(was_contacted=False, is_spam=False).order_by("-created_date")
+    contacted_contacts = Contact.objects.filter(was_contacted=True, is_spam=False).order_by("-created_date")
     pending_leads = Appointment.objects.filter(was_contacted=False).order_by("-created_at")
     contacted_leads = Appointment.objects.filter(was_contacted=True).order_by("-created_at")
-    return render(request, "dashboard.html", {"pending_leads": pending_leads, "contacted_leads": contacted_leads,"contacts": contacts})
+    return render(request, "dashboard.html", {
+        "pending_leads": pending_leads,
+        "contacted_leads": contacted_leads,
+        "pending_contacts": pending_contacts,
+        "contacted_contacts": contacted_contacts,
+    })
 
 def contact_submit(request):
     if request.method == "POST":
@@ -94,3 +103,23 @@ def appointment_update(request):
     return JsonResponse({
         "success": bool(updated)
     })
+
+def contact_update(request):
+    data = json.loads(request.body)
+    contact_id = int(data.get("id"))
+
+    updated = Contact.objects.filter(id=contact_id).update(
+        was_contacted=~F("was_contacted")
+    )
+
+    return JsonResponse({"success": bool(updated)})
+
+def contact_spam_update(request):
+    data = json.loads(request.body)
+    contact_id = int(data.get("id"))
+
+    updated = Contact.objects.filter(id=contact_id).update(
+        is_spam=~F("is_spam")
+    )
+
+    return JsonResponse({"success": bool(updated)})

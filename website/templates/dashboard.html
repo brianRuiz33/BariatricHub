@@ -28,6 +28,12 @@
   </head>
 
   <body>
+    <nav class="navbar sticky-top" style="background-color: #1b4a67;">
+      <div class="container-fluid justify-content-center">
+        <img src="{% static 'website/img/logo_web.png' %}" alt="Nieto Bariatric" height="60" />
+      </div>
+    </nav>
+
     <div class="container tables-nb">
       <h1 class="mt-3">Appointment Form Leads</h1>
 
@@ -64,10 +70,10 @@
         <div class="tab-pane fade show active" id="pending" role="tabpanel">
           <div style="overflow-x: scroll">
             <table
-              class="mt-3 table table-striped table-bordered table-hover text-nowrap"
+              class="mt-3 table table-striped table-bordered table-hover"
               style="min-width: 1400px"
             >
-              <thead class="table-dark text-nowrap text-center">
+              <thead class="table-dark text-center">
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Nombre</th>
@@ -111,17 +117,17 @@
                     {{lead.weight_to_lose_in_kg }} kg <br />
                     {{lead.weight_to_lose_in_lb }} lb
                   </td>
-                  <td>{{ lead.procedure_of_interest }}</td>
-                  <td>
+                  <td style="white-space: normal; min-width: 180px">{{ lead.procedure_of_interest }}</td>
+                  <td class="text-nowrap">
                     {% if lead.travel %}
                     <span class="badge bg-success">SI</span>
                     {% else %}
                     <span class="badge bg-danger">NO</span>
                     {% endif %}
                   </td>
-                  <td>{{ lead.forms_of_contact }}</td>
-                  <td>{{ lead.created_at}}</td>
-                  <td>
+                  <td style="white-space: normal; min-width: 160px">{{ lead.forms_of_contact }}</td>
+                  <td class="text-nowrap">{{ lead.created_at}}</td>
+                  <td class="text-nowrap">
                     <button
                       class="btn btn-primary"
                       title="Marcar como Ya contactado"
@@ -188,17 +194,17 @@
                   {{lead.weight_to_lose_in_kg }} kg <br />
                   {{lead.weight_to_lose_in_lb }} lb
                 </td>
-                <td>{{ lead.procedure_of_interest }}</td>
-                <td>
+                <td style="white-space: normal; min-width: 180px">{{ lead.procedure_of_interest }}</td>
+                <td class="text-nowrap">
                   {% if lead.travel %}
                   <span class="badge bg-success">SI</span>
                   {% else %}
                   <span class="badge bg-danger">NO</span>
                   {% endif %}
                 </td>
-                <td>{{ lead.forms_of_contact }}</td>
-                <td>{{ lead.created_at}}</td>
-                <td>
+                <td style="white-space: normal; min-width: 160px">{{ lead.forms_of_contact }}</td>
+                <td class="text-nowrap">{{ lead.created_at}}</td>
+                <td class="text-nowrap">
                   <button
                     type="button"
                     title="Marcar como pendiente"
@@ -224,63 +230,161 @@
       <br /><br /><br />
       <div>
         <h1>Contact Form</h1>
-        <table
-          class="mt-3 table table-striped table-bordered table-hover text-nowrap"
-        >
-          <thead class="table-dark text-nowrap text-center">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Reason</th>
-              <th scope="col">Message</th>
-              <th scope="col">Created Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for contact in contacts %}
-            <tr>
-              <td>{{ contact.id }}</td>
-              <td>{{ contact.name }}</td>
-              <td>{{ contact.email }}</td>
-              <td>{{ contact.phone }}</td>
-              <td>{{ contact.reason }}</td>
-              <td>{{ contact.message }}</td>
-              <td>{{ contact.created_date }}</td>
-            </tr>
-            {% empty %}
-            <tr>
-              <td colspan="7" class="text-center">No records</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+
+        <ul class="nav nav-tabs" id="contactTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="contact-pending-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#contact-pending"
+              type="button"
+              role="tab"
+            >
+              Por contactar
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="contact-contacted-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#contact-contacted"
+              type="button"
+              role="tab"
+            >
+              Ya contactados
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content mt-3">
+          <!-- Por contactar -->
+          <div class="tab-pane fade show active" id="contact-pending" role="tabpanel">
+            <div style="overflow-x: scroll">
+              <table class="mt-3 table table-striped table-bordered table-hover" style="min-width: 900px">
+                <thead class="table-dark text-center">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Created Date</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for contact in pending_contacts %}
+                  <tr>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.phone }}</td>
+                    <td style="white-space: normal; min-width: 150px">{{ contact.reason }}</td>
+                    <td style="white-space: normal; min-width: 220px">{{ contact.message }}</td>
+                    <td class="text-nowrap">{{ contact.created_date }}</td>
+                    <td class="text-nowrap">
+                      <button
+                        class="btn btn-primary"
+                        title="Marcar como Ya contactado"
+                        onclick="toggle_contact({{ contact.id }})"
+                      >
+                        <i class="fa-solid fa-circle-check"></i>
+                      </button>
+                      <button
+                        class="btn btn-warning"
+                        title="Marcar como spam"
+                        onclick="toggle_contact_spam({{ contact.id }})"
+                      >
+                        <i class="fa-solid fa-ban"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  {% empty %}
+                  <tr>
+                    <td colspan="8" class="text-center">No records found</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Ya contactados -->
+          <div class="tab-pane fade" id="contact-contacted" role="tabpanel">
+            <div style="overflow-x: scroll">
+              <table class="mt-3 table table-striped table-bordered table-hover" style="min-width: 900px">
+                <thead class="table-dark text-center">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Created Date</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for contact in contacted_contacts %}
+                  <tr>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.phone }}</td>
+                    <td style="white-space: normal; min-width: 150px">{{ contact.reason }}</td>
+                    <td style="white-space: normal; min-width: 220px">{{ contact.message }}</td>
+                    <td class="text-nowrap">{{ contact.created_date }}</td>
+                    <td class="text-nowrap">
+                      <button
+                        class="btn btn-primary"
+                        title="Marcar como pendiente"
+                        onclick="toggle_contact({{ contact.id }})"
+                      >
+                        <i class="fa-solid fa-user-xmark"></i>
+                      </button>
+                      <button
+                        class="btn btn-warning"
+                        title="Marcar como spam"
+                        onclick="toggle_contact_spam({{ contact.id }})"
+                      >
+                        <i class="fa-solid fa-ban"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  {% empty %}
+                  <tr>
+                    <td colspan="8" class="text-center">No hay contactos contactados aun</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
   <script>
-    function toggle_appointment(app_id) {
-      function getCookie(name) {
-        let cookieValue = null;
-
-        if (document.cookie && document.cookie !== '') {
-          const cookies = document.cookie.split(';');
-
-          for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-
-            if (cookie.startsWith(name + '=')) {
-              cookieValue = decodeURIComponent(
-                cookie.substring(name.length + 1),
-              );
-              break;
-            }
+    function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.startsWith(name + '=')) {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
           }
         }
-
-        return cookieValue;
       }
+      return cookieValue;
+    }
+
+    function toggle_appointment(app_id) {
       fetch('/dashboard/appointment/update/', {
         method: 'POST',
         headers: {
@@ -298,6 +402,34 @@
             location.reload();
           }
         })
+        .catch((error) => console.error('Error:', error));
+    }
+
+    function toggle_contact(contact_id) {
+      fetch('/dashboard/contact/update/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken'),
+        },
+        body: JSON.stringify({ id: contact_id }),
+      })
+        .then((res) => res.json())
+        .then((data) => { if (data.success) location.reload(); })
+        .catch((error) => console.error('Error:', error));
+    }
+
+    function toggle_contact_spam(contact_id) {
+      fetch('/dashboard/contact/spam/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken'),
+        },
+        body: JSON.stringify({ id: contact_id }),
+      })
+        .then((res) => res.json())
+        .then((data) => { if (data.success) location.reload(); })
         .catch((error) => console.error('Error:', error));
     }
   </script>
