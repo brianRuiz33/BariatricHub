@@ -82,9 +82,9 @@
   </head>
 
   <body>
-    <div class="container-fluid web-nav-fixed pt-0 pt-lg-3 px-0">
-      <div class="container web-container p-0">
-        <nav class="navbar navbar-expand-lg navbar-light p-2">
+    <div class="container-fluid nb-navbar-bg pt-0 pt-lg-3 px-0">
+      <div class="container p-0">
+        <nav class="navbar navbar-expand-lg p-2">
           <a class="navbar-brand" href="/">
             <img
               src="{% static 'website/img/logo_web.png' %}"
@@ -94,7 +94,7 @@
           </a>
 
           <button
-            class="navbar-toggler"
+            class="navbar-toggler border-0"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -102,13 +102,20 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <img src="{% static 'website/img/menu.svg' %}" alt="" width="30" />
+            <img class="nb-icon-hamburger" src="{% static 'website/img/menu.svg' %}" alt="" width="30" />
+            <i class="nb-icon-close fas fa-times text-white fs-3"></i>
           </button>
 
           <div
-            class="collapse navbar-collapse web-collapse-navbar"
+            class="collapse navbar-collapse nb-navbar-collapse px-3"
             id="navbarSupportedContent"
           >
+            <img
+              class="nb-menu-logo d-lg-none"
+              src="{% static 'website/img/logo_web.png' %}"
+              alt="Logo"
+              width="160"
+            />
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
                 <a class="nav-link web-nav-link" href="/about">About us</a>
@@ -130,51 +137,49 @@
                 >
               </li>
 
-              <li class="nav-item">
-                <div class="web-cont-icon-socialmedia ms-3 py-0">
-                  <a
-                    href="https://www.facebook.com/profile.php?id=100086618873618"
-                    target="_blank"
-                    ><img
-                      class="web-icon-socialmedia"
-                      src="/static/website/img/facebook.svg"
-                      alt=""
-                    />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/nietobariatric/"
-                    target="_blank"
-                  >
-                    <img
-                      class="web-icon-socialmedia"
-                      src="/static/website/img/instagram.svg"
-                      alt=""
-                    />
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@nietobariatric"
-                    target="_blank"
-                  >
-                    <img
-                      class="web-icon-socialmedia"
-                      src="/static/website/img/tiktok.svg"
-                      alt=""
-                    />
-                  </a>
-                  <a href="https://wa.me/16199049303" target="_blank">
-                    <img
-                      class="web-icon-socialmedia"
-                      src="/static/website/img/wsp.svg"
-                      alt=""
-                    />
-                  </a>
-                </div>
+              <li class="nav-item d-none d-lg-flex align-items-center ms-3">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100086618873618"
+                  target="_blank"
+                  ><img
+                    class="web-icon-socialmedia"
+                    src="/static/website/img/facebook.svg"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="https://www.instagram.com/nietobariatric/"
+                  target="_blank"
+                >
+                  <img
+                    class="web-icon-socialmedia"
+                    src="/static/website/img/instagram.svg"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@nietobariatric"
+                  target="_blank"
+                >
+                  <img
+                    class="web-icon-socialmedia"
+                    src="/static/website/img/tiktok.svg"
+                    alt=""
+                  />
+                </a>
+                <a href="https://wa.me/16199049303" target="_blank">
+                  <img
+                    class="web-icon-socialmedia"
+                    src="/static/website/img/wsp.svg"
+                    alt=""
+                  />
+                </a>
               </li>
             </ul>
 
             <div class="d-flex">
               <button
-                class="btn web-btn-contact"
+                class="btn btn-light fw-semibold rounded-pill px-4 py-2 nb-btn-contact"
                 data-bs-toggle="modal"
                 data-bs-target="#appModal"
               >
@@ -613,6 +618,24 @@
     </script>
   </body>
   <script>
+    // Mobile full-screen nav: lock body scroll while open, close on link tap
+    (function () {
+      var navEl = document.getElementById('navbarSupportedContent');
+      if (!navEl) return;
+      navEl.addEventListener('show.bs.collapse', function () {
+        document.body.style.overflow = 'hidden';
+      });
+      navEl.addEventListener('hide.bs.collapse', function () {
+        document.body.style.overflow = '';
+      });
+      navEl.querySelectorAll('.nav-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          var bsCollapse = bootstrap.Collapse.getInstance(navEl);
+          if (bsCollapse) bsCollapse.hide();
+        });
+      });
+    })();
+
     let currentStep = 0;
     let TOTAL_STEPS = 4;
 

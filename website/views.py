@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.db.models import F
 from website.forms import ContactForm
-from website.models import Appointment, Contact
+from website.models import Appointment, Contact, Review
 from django.contrib.auth.decorators import login_required
 
 from website.procedures_data.procedures import PROCEDURES
@@ -17,7 +17,8 @@ social_links = {
 
 
 def index(request):
-    return render(request, 'index.html', {"social": social_links})
+    reviews = Review.objects.all().order_by("date_review")
+    return render(request, 'index.html', {"social": social_links, "reviews": reviews})
 
 def about(request):
     return render(request, 'about.html')
