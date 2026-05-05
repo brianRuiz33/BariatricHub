@@ -7,6 +7,10 @@ class Review(models.Model):
     description = models.TextField()
     stars = models.PositiveSmallIntegerField(default=5)
 
+    @property
+    def stars_range(self):
+        return range(self.stars)
+
 # Contact
 class Contact(models.Model):
     name = models.CharField(max_length=100)

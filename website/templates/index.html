@@ -467,10 +467,9 @@
         </p>
       </div>
 
-      <!-- Reviews Grid -->
+      <!-- Reviews Grid: first 3 + CTA -->
       <div class="row g-4 align-items-stretch">
-        {% for review in reviews %}
-        <!-- Review Card -->
+        {% for review in reviews|slice:":3" %}
         <div class="col-12 col-md-3">
           <div class="card h-100 d-flex flex-column text-center p-4 shadow-sm">
             <div
@@ -486,11 +485,15 @@
               {% endfor %}
             </div>
 
-            <p class="small text-justify flex-grow-1">{{ review.description }}</p>
+            <p class="small text-justify flex-grow-1">
+              {{ review.description }}
+            </p>
 
             <div>
               <div class="fw-bold small">{{ review.name }}</div>
-              <div class="small text-muted">{{ review.date_review|timesince }} ago</div>
+              <div class="small text-muted">
+                {{ review.date_review|timesince }} ago
+              </div>
             </div>
           </div>
         </div>
